@@ -11,17 +11,17 @@ Kits de origem: `Kit_Ensaio_Secretariado` (rota A) e `Kit_Tres_Demos_Secretariad
 
 | Arquivo | Origem | Tipo |
 | --- | --- | --- |
-| `A1_ChatGPT_Briefing_pre-reuniao_slide14/ANEXAR_estes_arquivos/01_manual_executivo.txt` | `Kit_Ensaio_Secretariado/01_manual_executivo.txt` | cópia idêntica |
-| `A1_ChatGPT_Briefing_pre-reuniao_slide14/ANEXAR_estes_arquivos/02_fontes_pre_reuniao.txt` | `Kit_Ensaio_Secretariado/02_fontes_pre_reuniao.txt` | cópia idêntica |
-| `A1_ChatGPT_Briefing_pre-reuniao_slide14/A1_PROMPT_para_copiar.txt` | `Kit_Ensaio_Secretariado/05_prompts_ensaio.txt` (DEMO 1) | texto extraído/derivado |
-| `A1_ChatGPT_Briefing_pre-reuniao_slide14/A1_PROMPT_correcao_se_precisar.txt` | `Kit_Ensaio_Secretariado/05_prompts_ensaio.txt` (DEMO 1, correção) | texto extraído/derivado |
-| `A1_ChatGPT_Briefing_pre-reuniao_slide14/RESERVA_plano_B_nao_anexar/reserva_briefing_trecho_do_06.txt` | `Kit_Ensaio_Secretariado/06_reserva_briefing_e_ata.txt` (BRIEFING + CHECKLIST) | texto extraído/derivado |
+| `A1_Claude_Briefing_pre-reuniao_slide14/ANEXAR_estes_arquivos/01_manual_executivo.txt` | `Kit_Ensaio_Secretariado/01_manual_executivo.txt` | cópia idêntica |
+| `A1_Claude_Briefing_pre-reuniao_slide14/ANEXAR_estes_arquivos/02_fontes_pre_reuniao.txt` | `Kit_Ensaio_Secretariado/02_fontes_pre_reuniao.txt` | cópia idêntica |
+| `A1_Claude_Briefing_pre-reuniao_slide14/A1_PROMPT_para_copiar.txt` | `Kit_Ensaio_Secretariado/05_prompts_ensaio.txt` (DEMO 1) | texto extraído/derivado; removido em 11/10/2026 |
+| `A1_Claude_Briefing_pre-reuniao_slide14/A1_PROMPT_correcao_se_precisar.txt` | `Kit_Ensaio_Secretariado/05_prompts_ensaio.txt` (DEMO 1, correção) | texto extraído/derivado; removido em 11/10/2026 |
+| `A1_Claude_Briefing_pre-reuniao_slide14/RESERVA_plano_B_nao_anexar/reserva_briefing_trecho_do_06.txt` | `Kit_Ensaio_Secretariado/06_reserva_briefing_e_ata.txt` (BRIEFING + CHECKLIST) | texto extraído/derivado; removido em 11/10/2026 |
 | `A2_Claude_Ata_e_acompanhamento_slide15/ANEXAR_estes_arquivos/01_manual_executivo.txt` | `Kit_Ensaio_Secretariado/01_manual_executivo.txt` | cópia idêntica |
 | `A2_Claude_Ata_e_acompanhamento_slide15/ANEXAR_estes_arquivos/03_transcricao_reuniao.txt` | `Kit_Ensaio_Secretariado/03_transcricao_reuniao.txt` | cópia idêntica |
-| `A2_Claude_Ata_e_acompanhamento_slide15/ANEXAR_estes_arquivos/04_procedimento_ata.txt` | `Kit_Ensaio_Secretariado/04_procedimento_ata.txt` | cópia idêntica |
-| `A2_Claude_Ata_e_acompanhamento_slide15/A2_PROMPT_para_copiar.txt` | `Kit_Ensaio_Secretariado/05_prompts_ensaio.txt` (DEMO 2) | texto extraído/derivado |
-| `A2_Claude_Ata_e_acompanhamento_slide15/A2_PROMPT_correcao_se_precisar.txt` | `Kit_Ensaio_Secretariado/05_prompts_ensaio.txt` (DEMO 2, correção) | texto extraído/derivado |
-| `A2_Claude_Ata_e_acompanhamento_slide15/RESERVA_plano_B_nao_anexar/reserva_ata_e_email_trecho_do_06.txt` | `Kit_Ensaio_Secretariado/06_reserva_briefing_e_ata.txt` (ATA + E-MAIL + CHECKLIST) | texto extraído/derivado |
+| `A2_Claude_Ata_e_acompanhamento_slide15/ANEXAR_estes_arquivos/04_procedimento_ata.txt` | `Kit_Ensaio_Secretariado/04_procedimento_ata.txt` | cópia idêntica; removido em 11/10/2026 |
+| `A2_Claude_Ata_e_acompanhamento_slide15/A2_PROMPT_para_copiar.txt` | `Kit_Ensaio_Secretariado/05_prompts_ensaio.txt` (DEMO 2) | texto extraído/derivado; removido em 11/10/2026 |
+| `A2_Claude_Ata_e_acompanhamento_slide15/A2_PROMPT_correcao_se_precisar.txt` | `Kit_Ensaio_Secretariado/05_prompts_ensaio.txt` (DEMO 2, correção) | texto extraído/derivado; removido em 11/10/2026 |
+| `A2_Claude_Ata_e_acompanhamento_slide15/RESERVA_plano_B_nao_anexar/reserva_ata_e_email_trecho_do_06.txt` | `Kit_Ensaio_Secretariado/06_reserva_briefing_e_ata.txt` (ATA + E-MAIL + CHECKLIST) | texto extraído/derivado; removido em 11/10/2026 |
 | `A3_Jarvis_voz_Reuniao_mudou_slides19-20/COLAR_na_conversa_antes_da_chamada/07_caso_voz_Jarvis.txt` | `Kit_Ensaio_Secretariado/07_caso_voz_Jarvis.txt` | cópia idêntica |
 | `A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/0_Antes_reiniciar_rodada.txt` | `Manual_Ensaio_Demos_Secretariado.docx` (Pronto para o evento) | texto extraído/derivado |
 | `A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/1_Apresentacao.txt` | `05_prompts_ensaio.txt` (DEMO 3, fala 1) | texto extraído/derivado |
@@ -30,7 +30,7 @@ Kits de origem: `Kit_Ensaio_Secretariado` (rota A) e `Kit_Tres_Demos_Secretariad
 | `A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/3_Entrega_plano.txt` | `05_prompts_ensaio.txt` (DEMO 3, fala 3) | texto extraído/derivado |
 | `A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/4_Mudanca_14h45.txt` | `05_prompts_ensaio.txt` (DEMO 3, fala 4) | texto extraído/derivado |
 | `A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/5_Papel_humano.txt` | `05_prompts_ensaio.txt` (DEMO 3, fala 5) | texto extraído/derivado |
-| `A3_Jarvis_voz_Reuniao_mudou_slides19-20/RESERVA_plano_B_nao_anexar/08_reserva_voz_Jarvis.txt` | `Kit_Ensaio_Secretariado/08_reserva_voz_Jarvis.txt` | cópia idêntica |
+| `A3_Jarvis_voz_Reuniao_mudou_slides19-20/RESERVA_plano_B_nao_anexar/08_reserva_voz_Jarvis.txt` | `Kit_Ensaio_Secretariado/08_reserva_voz_Jarvis.txt` | cópia idêntica; removido em 11/10/2026 |
 | `Z_Apoio_manuais_e_ensaio/Manual_Ensaio_Demos_Secretariado__rota_A.docx` | `Kit_Ensaio_Secretariado/Manual_Ensaio_Demos_Secretariado.docx` | cópia idêntica |
 
 ## Acréscimos depois da revisão
@@ -46,9 +46,9 @@ As seções "Sugestões para a plateia sentir a aceleração", no fim de A1, A2 
 
 | Arquivo | Origem | Tipo |
 | --- | --- | --- |
-| `A1_ChatGPT_Briefing_pre-reuniao_slide14/A1_PROMPT_com_skill.txt` | `A1_PROMPT_para_copiar.txt` com a última frase trocada pelo uso da skill | texto derivado; não ensaiado |
-| `A2_Claude_Ata_e_acompanhamento_slide15/A2_PROMPT_com_skill.txt` | `A2_PROMPT_para_copiar.txt`: anexos passam a ser 01 e 03 e o procedimento da ata vem da skill | texto derivado; não ensaiado |
-| `A2_Claude_Ata_e_acompanhamento_slide15/ANEXAR_com_skill_estes_arquivos/01_manual_executivo.txt` e `03_transcricao_reuniao.txt` | cópias idênticas de `ANEXAR_estes_arquivos` (sem o 04, que está dentro da skill) | cópia idêntica |
+| `A1_Claude_Briefing_pre-reuniao_slide14/A1_PROMPT.txt` (até 11/10/2026, `A1_PROMPT_com_skill.txt`) | `A1_PROMPT_para_copiar.txt` com a última frase trocada pelo uso da skill | texto derivado; testado no Claude em 10/10/2026 |
+| `A2_Claude_Ata_e_acompanhamento_slide15/A2_PROMPT.txt` (até 11/10/2026, `A2_PROMPT_com_skill.txt`) | `A2_PROMPT_para_copiar.txt`: anexos passam a ser 01 e 03 e o procedimento da ata vem da skill | texto derivado; testado no Claude em 10/10/2026 |
+| `A2_Claude_Ata_e_acompanhamento_slide15/ANEXAR_com_skill_estes_arquivos/01_manual_executivo.txt` e `03_transcricao_reuniao.txt` | cópias idênticas de `ANEXAR_estes_arquivos` (sem o 04, que está dentro da skill) | cópia idêntica; removido em 11/10/2026 (o 01 e o 03 seguem em `ANEXAR_estes_arquivos`) |
 | `A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/6_Opcional_documento_no_padrao.txt` | uma frase pedindo o documento no papel timbrado pela skill | texto derivado; não ensaiado |
 | `A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/X_Correcao_se_errar_horario.txt` | acrescentado o limite de sala e equipe até 16h30 (caso 07) | ajuste |
 | `00_SKILL_Padrao_Secretariado_Sob_Medida/` | skill nova criada em 10/10/2026: logo e cores dos arquivos enviados por Lawrence; assinatura e tom do site secretariadosobmedida.com.br; procedimento de ata a partir do `04_procedimento_ata.txt`. Os exemplos internos usam um caso fictício diferente (Fórum Atlas), para não revelar as respostas das demos | skill nova |
@@ -69,9 +69,18 @@ As seções "Sugestões para a plateia sentir a aceleração", no fim de A1, A2 
 - A1 e A2: o roteiro passa a citar a cópia do deck com os slides 16 a 18 ocultos.
 - `COMPARACAO_mesma_ata_sem_e_com_skill/LEIA.md` e `COMO_INSTALAR_E_USAR.md`: "Mesmo pedido, mesma IA" virou "Mesma tarefa, mesma transcrição", porque os pedidos com e sem a skill não são iguais.
 
+## Ajustes de 11/10/2026
+
+- A1 passou do ChatGPT para o Claude, como a A2. A pasta `A1_ChatGPT_Briefing_pre-reuniao_slide14` foi renomeada para `A1_Claude_Briefing_pre-reuniao_slide14`; as tabelas acima já usam o nome novo. No histórico do Git (commit f113211), os arquivos removidos da A1 estão na pasta com o nome antigo. O manual de ensaio (cópia idêntica do kit) e as notas do PPT continuam citando o ChatGPT na A1.
+- Lawrence simplificou as pastas: ficou um pedido por demo, `A1_PROMPT.txt` e `A2_PROMPT.txt`, que são os antigos pedidos com a skill, sem mudança no texto. Saíram os pedidos sem skill e de correção, a pasta `ANEXAR_com_skill_estes_arquivos`, o `04_procedimento_ata.txt` e as pastas `RESERVA_plano_B_nao_anexar` das três demos (marcados como removidos nas tabelas). Eles continuam no histórico do Git (commit f113211).
+- As pastas `SAIDAS_salve_aqui_o_resultado` da A1 e da A2 guardam as saídas do teste de 10/10/2026 no Claude, com a skill: `Briefing_Encontro_Parceiros_Aurora.docx` e `Ata_reuniao_15-10-2026.docx`. Elas viraram o plano B, com os exemplos em PDF da skill.
+- Foram ajustados os roteiros das três demos, `00_LEIA_PRIMEIRO.md`, o painel, `COMO_INSTALAR_E_USAR.md`, `folha_de_ensaio_A.md` e o `LEIA.md` desta pasta. Recomendações novas: A1 e A2 em duas abas do Claude, memória do Claude pausada ("Pause memory", nunca "Reset memory") e busca em conversas anteriores desligada. A frase de correção da A1 e da A2 passou para o roteiro e o painel, sem arquivo.
+- PPT: a cópia com os slides 16 a 18 ocultos passou a se chamar `Lawrence Teixeira - Agentes de IA.pptx` e substituiu o original, que ficou no histórico do Git (commit d0163f4). Os guias passaram a citar o nome novo.
+- Raiz do repositório (fora desta pasta): `README.md` novo, escrito a partir do README da versão pública preparada em 10/10 e revisado contra os arquivos, e as imagens dele em `docs/`, cópias idênticas das imagens dessa versão.
+
 ## Observações
 
-- Cópias idênticas: `01_manual_executivo.txt` em A1, A2 e A2/`ANEXAR_com_skill_estes_arquivos` (e em C1, no arquivo); `03_transcricao_reuniao.txt` em A2 e A2/`ANEXAR_com_skill_estes_arquivos`; `02_fontes_pre_reuniao.txt` em A1 (e em C1, no arquivo); `00_regras.txt` em B1, B2 e B3 (no arquivo). Se editar uma cópia, edite todas ou nenhuma.
+- Cópias idênticas: `01_manual_executivo.txt` em A1 e A2 (e em C1, no arquivo); `02_fontes_pre_reuniao.txt` em A1 (e em C1, no arquivo); `00_regras.txt` em B1, B2 e B3 (no arquivo). Se editar uma cópia, edite todas ou nenhuma.
 - Os IDs V1 a V7 de `C2_Extra_Viagem_slide17/ANEXAR_estes_arquivos/caso_viagem_ficticio.txt` (no arquivo) foram criados na montagem do caso; não existem nas fontes.
 - O `00_ABRIR_RESERVAS.html` do kit B não foi copiado: seus links não funcionariam na estrutura nova. O painel `00_PAINEL_abrir_no_navegador.html` faz esse papel.
 - `tarefas_v1.json` do kit B tem duas cópias idênticas: B1/`RESERVA_plano_B_nao_anexar` e B2/`ANEXAR_so_se_B1_falhou`.

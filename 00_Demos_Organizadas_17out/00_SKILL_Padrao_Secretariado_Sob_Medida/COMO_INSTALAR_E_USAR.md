@@ -21,18 +21,20 @@ Criada em 10/10/2026 para a palestra de 17/10/2026. Os dados das demos são fict
 - [papel_timbrado.docx](padrao-secretariado-sob-medida/assets/papel_timbrado.docx): papel timbrado em branco, para uso manual no Word.
 - [COMPARACAO_mesma_ata_sem_e_com_skill](COMPARACAO_mesma_ata_sem_e_com_skill/): a mesma ata gerada em teste sem e com a skill, em PDF, para mostrar no slide 10.
 
-## Instalar no Claude (demo A2)
+## Instalar no Claude (demos A1 e A2)
 
 1. No claude.ai ou no app: Customize > Skills (claude.ai/customize/skills). Envie `padrao-secretariado-sob-medida.zip` e ligue a skill.
-2. Requisito: plano pago (Pro, Max, Team ou Enterprise) com execução de código ligada.
-3. Sua conta já tem a skill "ata-de-reuniao". Desligue-a para a demo: as duas disputariam o mesmo pedido de ata, e ela usa "[confirmar]" onde a demo espera "não informado". Religue depois, se quiser.
+2. Requisito: a execução de código ligada, em Settings > Capabilities ("Code execution and file creation"). Ela vem ligada nos planos Free, Pro e Max; no Team e no Enterprise, depende do administrador. Em outubro de 2026, a ajuda do Claude listava as skills em todos os planos, inclusive o gratuito.
+3. Sua conta já tem a skill "ata-de-reuniao". Desligue-a para as demos: as duas disputariam o mesmo pedido de ata, e ela usa "[confirmar]" onde a demo espera "não informado". Religue depois, se quiser.
 4. Teste numa conversa nova: "Use a skill padrao-secretariado-sob-medida e gere um documento de teste com o título Teste do papel timbrado". Confira se o Claude carrega a skill e se o Word abre com logo e rodapé.
+5. A A1 e a A2 usam a skill: `A1_PROMPT.txt` e `A2_PROMPT.txt` já pedem o papel timbrado, e na A2 o procedimento da ata vem dela. A skill vale para a conta inteira: deixe-a ligada para as duas demos e não mexa nela no palco.
 
-## Instalar no ChatGPT (demo A1)
+## ChatGPT (opcional)
 
-1. As skills do ChatGPT seguem o mesmo padrão aberto (`SKILL.md`). Em outubro de 2026, estavam em beta e podiam vir desligadas; em contas de empresa, quem libera é o administrador do workspace.
-2. Se a sua conta tiver Skills, envie o mesmo ZIP como skill nova, a partir do computador. O nome do menu muda com frequência: procure "Skills" no perfil ou nas configurações.
-3. Se a conta não tiver Skills, use o pedido original da A1 (Word simples) ou anexe `padrao-secretariado-sob-medida\assets\papel_timbrado.docx` e peça: "use este papel timbrado como modelo do DOCX". Diga à plateia que foi um modelo anexado, não uma skill instalada.
+Desde 11/10/2026, a A1 roda no Claude. O ChatGPT fica só na A3, com o Jarvis, e a skill no ChatGPT só importa se você for testar a fala 6 do Jarvis.
+
+1. As skills do ChatGPT seguem o mesmo padrão aberto (`SKILL.md`). Saíram do beta em 9/7/2026 e, em outubro de 2026, estavam disponíveis nas contas de empresa e de ensino (planos Business, Enterprise, Healthcare e Edu). Nelas, quem libera é o administrador.
+2. Para enviar, abra o ChatGPT no computador, clique em Plugins, na barra lateral, e abra a aba Skills. Clique em Create > Upload from your computer e envie o mesmo ZIP. Os nomes dos menus mudam com frequência.
 
 ## Jarvis (A3)
 
@@ -40,11 +42,11 @@ Criada em 10/10/2026 para a palestra de 17/10/2026. Os dados das demos são fict
 
 ## Teste antes do evento (com os arquivos das demos)
 
-- **A1 com skill:** `A1_PROMPT_com_skill.txt`, com os 2 arquivos de `ANEXAR_estes_arquivos`.
-- **A2 com skill:** `A2_PROMPT_com_skill.txt`, com os 2 arquivos de `ANEXAR_com_skill_estes_arquivos`. O 04 não entra: o procedimento da ata está dentro da skill.
+- **A1, no Claude:** `A1_PROMPT.txt`, com os 2 arquivos de `ANEXAR_estes_arquivos` (01 e 02).
+- **A2, no Claude:** `A2_PROMPT.txt`, com os 2 arquivos de `ANEXAR_estes_arquivos` (01 e 03). O procedimento da ata está dentro da skill.
 - Confira os mesmos pontos de sempre (`PASSO_A_PASSO.md` de cada demo). Confira também logo, rodapé, a faixa "Rascunho para revisão" e a seção "O que depende de revisão humana".
-- Se a skill não carregar ou o arquivo não sair, volte ao pedido original da pasta: a demo continua de pé.
-- **Atenção:** com a skill ligada, até o pedido original pode acioná-la, porque a descrição dela manda usá-la em documentos de secretariado. Se quiser mostrar a versão sem skill, desligue-a antes.
+- Se a skill não carregar ou o arquivo não sair, siga com o texto da conversa e, como plano B, mostre a saída salva em `SAIDAS_salve_aqui_o_resultado` ou o exemplo em PDF. Não troque de pedido nem mexa na skill no palco.
+- As saídas do teste de 10/10 estão em `SAIDAS_salve_aqui_o_resultado`, na pasta de cada demo.
 
 ## Como mostrar na palestra (slide 10, de 30 a 60 segundos)
 

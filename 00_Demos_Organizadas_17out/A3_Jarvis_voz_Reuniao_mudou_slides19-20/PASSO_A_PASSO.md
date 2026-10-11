@@ -4,6 +4,8 @@
 
 Todos os dados são fictícios. Nada é enviado, agendado, reservado ou pago.
 
+> **Mudança de 11/10/2026:** a pasta de reserva (`08_reserva_voz_Jarvis.txt`) saiu. O plano B agora é seguir por texto na mesma conversa e, sem rede, mostrar o exemplo em PDF (só na opção B, depois da fala 4) ou conferir o plano com a plateia pelo slide 19.
+
 ## Tarefa do dia a dia
 
 A reunião da diretoria mudou: a diretora só chega às 14h20 e há um compromisso fixo com cliente das 15h às 15h45. Reorganizar a pauta, propor horários, listar o que validar e redigir a mensagem à equipe, conversando por voz.
@@ -13,7 +15,7 @@ A reunião da diretoria mudou: a diretora só chega às 14h20 e há um compromis
 - **Antes da chamada**, no Windows e fora da projeção (no dia 17, antes da palestra): o conteúdo completo de [`COLAR_na_conversa_antes_da_chamada\07_caso_voz_Jarvis.txt`](COLAR_na_conversa_antes_da_chamada/07_caso_voz_Jarvis.txt) (Bloco de Notas, Ctrl+A, Ctrl+C, colar na conversa com Jarvis e enviar).
 - **Durante a chamada:** as falas 1 a 5 de [FALAS_para_copiar](FALAS_para_copiar/), uma por vez (na fala 2, só a 2A ou a 2B, conforme o voto; a fala 6 é opcional, veja **Com a skill**). Fora delas, só o voto e uma resposta curta da plateia, que você repete.
 
-> **Nunca cole nem anexe:** `RESERVA_plano_B_nao_anexar\08_reserva_voz_Jarvis.txt`, respostas de ensaio, o que estiver em `SAIDAS_salve_aqui_o_resultado`, este `PASSO_A_PASSO.md` ou a pasta inteira. Não misture Ana, fornecedores ou datas das demos A1 e A2.
+> **Nunca cole nem anexe:** respostas de ensaio, o exemplo preparado em PDF, o que estiver em `SAIDAS_salve_aqui_o_resultado`, este `PASSO_A_PASSO.md` ou a pasta inteira. Não misture Ana, fornecedores ou datas das demos A1 e A2.
 
 ## Antes de subir ao palco
 
@@ -24,9 +26,9 @@ A reunião da diretoria mudou: a diretora só chega às 14h20 e há um compromis
 - No iPhone, confira que está na conta correta. Prepare sem projetar o histórico pessoal. Desative notificações no iPhone e no Windows.
 - Recomendação nova: até 13/10, confira se o Jarvis tem Gmail ou agenda reais conectados e desconecte para a demo, porque ele fala em voz alta.
 - Ensaie duas rodadas: uma com `2A_Escolha_opcao_A.txt` e outra com `2B_Escolha_opcao_B.txt`. Em cada uma, informe a condição das 14h45 só depois de receber o plano inicial.
-- No ensaio, teste o plano B com a rede desligada: abra `RESERVA_plano_B_nao_anexar\08_reserva_voz_Jarvis.txt` e localize CONFLITO, OPÇÃO A, OPÇÃO B e NOVA CONDIÇÃO. Religue a rede depois.
+- No ensaio, teste o plano B com a rede desligada: abra o [A3_Plano_v2_opcao_B_exemplo_preparado.pdf](../00_SKILL_Padrao_Secretariado_Sob_Medida/EXEMPLOS_preparados_no_padrao/A3_Plano_v2_opcao_B_exemplo_preparado.pdf) e confira que ele abre sem internet. Religue a rede depois.
 - **Pronto para o evento:** reenvie o conteúdo de `COLAR_na_conversa_antes_da_chamada\07_caso_voz_Jarvis.txt` e diga ou cole `FALAS_para_copiar\0_Antes_reiniciar_rodada.txt`. Confira que Jarvis não começa a solução sozinho.
-- Deixe aberto no Windows, em janela separada, `RESERVA_plano_B_nao_anexar\08_reserva_voz_Jarvis.txt`. Tenha as falas à mão para ler ou colar.
+- Deixe aberto no Windows, em janela separada, o `A3_Plano_v2_opcao_B_exemplo_preparado.pdf` (só serve se a turma escolher B). Tenha as falas à mão para ler ou colar.
 - A conversa é entre você e Jarvis no app. Ela não telefona para terceiros nem coloca o assistente em uma reunião externa.
 
 ## No palco, passo a passo
@@ -41,7 +43,7 @@ Nos passos 2 a 7, os minutos são da chamada (0 = minuto 36 da palestra).
 4. **4–7 min:** diga ou cole `3_Entrega_plano.txt`. Mostre só o texto do caso. Se ele não aparecer no computador, encerre a voz e siga por texto na mesma conversa, inclusive nos próximos passos.
    - **Confira logo depois:** os horários, antes de ler a mensagem.
 5. **7–9 min:** só agora diga `4_Mudanca_14h45.txt`.
-   - **Confira logo depois** o plano realmente gerado: se o orçamento já terminava até 14h45, pode manter; se terminava depois, tem de mudar. Isso vale também para a A: ela só se mantém se o orçamento já terminava até 14h45 (na reserva, às 14h40). No exemplo B, cabem 25 minutos de decisão (14h20 às 14h45) e 5 de registro; é preciso validar se esse tempo basta.
+   - **Confira logo depois** o plano realmente gerado: se o orçamento já terminava até 14h45, pode manter; se terminava depois, tem de mudar. Isso vale também para a A: ela só se mantém se o orçamento já terminava até 14h45 (no exemplo, às 14h40). No exemplo B, cabem 25 minutos de decisão (14h20 às 14h45) e 5 de registro; é preciso validar se esse tempo basta.
 6. **9–11 min:** pergunte à turma: "O que vocês ainda revisariam?" Repita uma resposta curta para Jarvis. Depois diga `5_Papel_humano.txt`.
    - **Confira logo depois** se a resposta aponta: conferir fatos, validar formato, presença e sala, revisar a mensagem e autorizar ações quando aplicável. Nada foi enviado ou agendado.
 7. **11–12 min:** use a folga para latência, encerre a chamada e volte ao slide 21.
@@ -52,10 +54,10 @@ Nos passos 2 a 7, os minutos são da chamada (0 = minuto 36 da palestra).
 
 - **Conflito:** das 14h20 às 15h cabem só 40 minutos para uma pauta de 60. A escolha entre A e B é humana.
 - **Antes da surpresa:** A, reunião das 14h20 às 15h. B, orçamento das 14h20 às 14h50; restante das 15h45 às 16h15.
-- **Depois da surpresa:** orçamento decidido até 14h45. A reserva A já decide às 14h40. A reserva B decide das 14h20 às 14h45 e registra até 14h50.
+- **Depois da surpresa:** orçamento decidido até 14h45. Exemplos: na A, a decisão às 14h40; na B, a decisão das 14h20 às 14h45 e o registro até 14h50.
 - **Nunca pode acontecer:** sobrepor o cliente das 15h às 15h45, assumir confirmações, ou dizer que enviou mensagem ou mudou convite.
 - O plano é rascunho para revisão, com mensagem de até 90 palavras para a equipe fictícia.
-- A resposta ao vivo pode organizar os blocos de outro modo. Julgue pelas restrições, não pela semelhança com a reserva.
+- A resposta ao vivo pode organizar os blocos de outro modo. Julgue pelas restrições, não pela semelhança com os exemplos.
 
 ## Se der errado
 
@@ -63,10 +65,10 @@ Nos passos 2 a 7, os minutos são da chamada (0 = minuto 36 da palestra).
 - **Chamada começando com atraso** (por exemplo, depois do minuto 40 da palestra): pule a fala 4 (14h45) e preserve a entrega escrita e a fala 5, como preveem as notas do slide 20.
 - **Voz falhou:** tente de novo uma vez, por até 30 segundos. Evite abrir configurações e histórico no telão.
 - Se o texto ainda funcionar, siga colando as falas de `FALAS_para_copiar` na conversa. Diga que a demonstração segue por texto.
-- Se o acesso ou a rede também falharem, abra `RESERVA_plano_B_nao_anexar\08_reserva_voz_Jarvis.txt`. Mostre CONFLITO, a opção escolhida (OPÇÃO A ou OPÇÃO B) e depois NOVA CONDIÇÃO.
-- Explique que esse resultado foi preparado antes. Convide a plateia a conferir os horários e as validações.
+- Se o acesso ou a rede também falharem, a turma tiver escolhido B e a fala 4 já tiver entrado, mostre o `A3_Plano_v2_opcao_B_exemplo_preparado.pdf`, que é o plano depois da fala 4, e diga que é um exemplo preparado. Nos outros casos, volte ao slide 19 e confira o plano com a plateia pelas restrições: na A, das 14h20 às 15h; na B, orçamento das 14h20 às 14h50 e o restante das 15h45 às 16h15. Se a fala 4 já tiver entrado, o orçamento precisa estar decidido até 14h45.
+- Convide a plateia a conferir os horários e as validações.
 - **Atrasado:** o limite de encerramento vale mais que cada frase. Volte ao slide 21 até o minuto 50 da palestra e preserve os 10 minutos finais (fechamento e perguntas).
-- Se guardou em `SAIDAS_salve_aqui_o_resultado` uma saída verdadeira do ensaio, pode mostrá-la no lugar da reserva, dizendo que é do ensaio.
+- Se guardou em `SAIDAS_salve_aqui_o_resultado` uma saída verdadeira do ensaio, pode mostrá-la, dizendo que é do ensaio.
 
 ## Com a skill (opcional)
 
@@ -89,7 +91,6 @@ Sugestão nova, fora do kit e não ensaiada. A A3 não depende disso.
 - [`FALAS_para_copiar\5_Papel_humano.txt`](FALAS_para_copiar/5_Papel_humano.txt): fala 5 (9–11 min).
 - [`FALAS_para_copiar\6_Opcional_documento_no_padrao.txt`](FALAS_para_copiar/6_Opcional_documento_no_padrao.txt): fala 6, nova e opcional (fora do kit); pede o plano no papel timbrado, com a skill. Só se sobrar tempo e o ensaio aprovar.
 - [`FALAS_para_copiar\X_Correcao_se_errar_horario.txt`](FALAS_para_copiar/X_Correcao_se_errar_horario.txt): sugestão nova (fora do kit); só se Jarvis errar um horário, uma vez.
-- [`RESERVA_plano_B_nao_anexar\08_reserva_voz_Jarvis.txt`](RESERVA_plano_B_nao_anexar/08_reserva_voz_Jarvis.txt): resultado preparado (conflito, opções A e B, nova condição, checklist humano). Só mostrar.
 - `SAIDAS_salve_aqui_o_resultado\`: vazia. Guarde aqui o plano em texto gerado no ensaio.
 
 ## Sugestões para a plateia sentir a aceleração
