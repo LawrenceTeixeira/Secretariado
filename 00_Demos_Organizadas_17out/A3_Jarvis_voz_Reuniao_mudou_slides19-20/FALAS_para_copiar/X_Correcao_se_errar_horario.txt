@@ -1,0 +1,1 @@
+Confira o plano com as regras do caso: a diretora só está disponível a partir das 14h20, o cliente das 15h às 15h45 não pode ser movido nem sobreposto; a decisão do orçamento precisa respeitar o prazo atual; e a sala e as demais pessoas estão disponíveis só até 16h30. Corrija só o que violar essas regras e diga o que mudou.

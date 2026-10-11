@@ -1,0 +1,23 @@
+RESULTADO PREPARADO PARA RESERVA
+Exemplo didático elaborado para a oficina. Não é registro de uma execução ao vivo.
+Todos os dados são fictícios.
+
+BRIEFING ANTES DA REUNIÃO
+Objetivo: definir próximos passos do encontro Aurora para 05/11/2026 [F1].
+Público: 30 confirmados e 4 aguardando resposta [F3]. A capacidade para 34 precisa de confirmação.
+Limite: R$ 8.000,00 para local e coffee break, com audiovisual dentro do total [F1].
+Horizonte: R$ 7.600,00 incluindo sala, coffee break e audiovisual, com acessibilidade confirmada. Folga de R$ 400,00 [F2]. Capacidade e condições de cancelamento não informadas em F2.
+Casa do Parque: R$ 6.900,00 + R$ 1.400,00 = R$ 8.300,00. Excede o limite em R$ 300,00. Acessibilidade não informada [F2].
+Terceira proposta: pendente [F2]. Não há contratação [F1].
+Camila revisará a lista de participantes. Prazo: não informado [F1].
+Próxima reunião: o texto pede "sexta-feira, dia 22/10/2026" [F3]. 22/10/2026 é quinta-feira. A sexta é 23/10/2026. Além disso, Ana está ocupada às 9h de 22/10 [F4].
+Opções para 30 minutos: 22/10/2026 das 10h às 10h30, ou 23/10/2026 das 9h às 9h30, em America/Sao_Paulo [F4]. Confirmar qual dia era a intenção antes de criar qualquer convite.
+
+CHECKLIST DE REVISÃO
+No briefing, conferir F1 a F4. Na ata, conferir T1 a T10 e os arquivos 01 e 04. A agenda F4 não faz parte da entrada da ata.
+Conferir R$ 6.900 + R$ 1.400 = R$ 8.300 e excesso de R$ 300.
+Confirmar que o pedido não autorizou envio, reserva ou convite.
+Resolver a data da próxima reunião com Ana.
+Verificar se as lacunas estão marcadas, sem nomes ou prazos inventados.
+
+Fonte: trecho de 06_reserva_briefing_e_ata.txt (Kit_Ensaio_Secretariado).

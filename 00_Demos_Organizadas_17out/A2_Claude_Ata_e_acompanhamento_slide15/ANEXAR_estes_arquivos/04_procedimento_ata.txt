@@ -1,0 +1,16 @@
+PROCEDIMENTO REUTILIZÁVEL • ATA E ACOMPANHAMENTO
+Exemplo didático de instruções que podem compor uma skill.
+Este arquivo não instala uma skill automaticamente.
+
+Quando usar: ao receber transcrição ou anotações de reunião.
+Entradas: transcrição, Manual do Executivo e fontes relevantes.
+1. Identificar a data e os participantes apenas quando estiverem informados.
+2. Separar decisão, tarefa, sugestão e dúvida. Uma proposta não vira decisão sem evidência.
+3. Para cada tarefa, registrar ação, responsável, prazo e origem. Escrever "não informado" nos campos ausentes.
+4. Verificar coerência entre data e dia da semana. Apontar conflitos sem corrigi-los silenciosamente.
+5. Conferir cálculos citados na reunião.
+6. Omitir comentários pessoais irrelevantes. Não acrescentar inferências sobre pessoas.
+7. Produzir uma ata curta e uma lista de acompanhamento.
+8. Redigir um e-mail de acompanhamento com até 120 palavras, no tom do Manual.
+9. Não enviar, agendar ou alterar sistemas. Entregar rascunhos para revisão.
+10. Encerrar listando dúvidas e verificações humanas pendentes.

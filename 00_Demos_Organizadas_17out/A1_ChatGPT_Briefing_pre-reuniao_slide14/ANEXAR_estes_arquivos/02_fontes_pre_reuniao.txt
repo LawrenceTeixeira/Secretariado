@@ -1,0 +1,28 @@
+DADOS FICTÍCIOS PARA DEMONSTRAÇÃO
+
+[F1] PAUTA ANTERIOR • 08/10/2026
+Reunião do encontro de parceiros Aurora.
+Objetivo: organizar um encontro presencial para 30 pessoas em 05/11/2026.
+Ana pediu comparação de locais com acessibilidade e equipamento audiovisual.
+Orçamento máximo para local, coffee break e equipamento audiovisual: R$ 8.000,00.
+Bruno ficou de enviar três propostas até 14/10/2026.
+Camila ficou de revisar a lista de participantes. O prazo não foi informado.
+Nenhum fornecedor foi contratado.
+
+[F2] E-MAIL FICTÍCIO DE BRUNO • 13/10/2026
+Assunto: Propostas do encontro
+Recebi duas propostas. A terceira ainda não chegou.
+Espaço Horizonte: R$ 7.600,00, incluindo sala, coffee break e equipamento audiovisual. Disponível em 05/11. Acessibilidade confirmada no orçamento.
+Casa do Parque: R$ 6.900,00, incluindo sala e coffee break. Audiovisual custa mais R$ 1.400,00. Disponível em 05/11. Acessibilidade ainda não informada.
+Preciso que Ana escolha quais dúvidas vamos esclarecer.
+
+[F3] E-MAIL FICTÍCIO DE CAMILA • 13/10/2026
+Assunto: Lista e próxima reunião
+A lista tem 30 pessoas confirmadas e 4 aguardando resposta.
+Podemos tratar disso na sexta-feira, dia 22/10/2026, às 9h?
+
+[F4] AGENDA FICTÍCIA DE ANA
+22/10/2026: compromisso das 9h às 9h30. Livre das 10h às 11h.
+23/10/2026: livre das 9h às 10h.
+Fuso: America/Sao_Paulo.
+Observação: são janelas de teste. Nenhum convite foi criado.

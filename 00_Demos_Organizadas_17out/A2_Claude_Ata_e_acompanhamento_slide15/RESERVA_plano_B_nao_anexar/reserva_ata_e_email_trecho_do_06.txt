@@ -1,0 +1,30 @@
+RESULTADO PREPARADO PARA RESERVA
+Exemplo didático elaborado para a oficina. Não é registro de uma execução ao vivo.
+Todos os dados são fictícios.
+
+ATA APÓS A REUNIÃO FICTÍCIA DE 15/10/2026
+Participantes mencionados: Ana Ribeiro, Bruno Costa e Camila Lima [cabeçalho].
+Decisões: manter o encontro em 05/11/2026 e o limite de R$ 8.000,00 com audiovisual incluído [T1]. Não contratar fornecedor nesta reunião [T3].
+Tarefa 1: confirmar por escrito a capacidade para 34 pessoas e as condições de cancelamento da Horizonte. Responsável: Bruno. Prazo: 21/10/2026. Origem: T3–T4.
+Tarefa 2: revisar a lista de participantes. Responsável: Camila. Prazo: 20/10/2026. Origem: T5.
+Pendência 3: validar restrições alimentares. Responsável: não informado. Prazo: não informado. Origem: T6.
+Pendência 4: terceira proposta. Responsável pelo acompanhamento: não explicitamente definido em T4. Prazo: não informado. Origem: T4.
+Próxima reunião: data a confirmar. "Sexta-feira, dia 22" contém conflito de calendário [T7–T8]. Não corrigir silenciosamente.
+Comentário pessoal de T9 omitido por não contribuir para a decisão.
+
+RASCUNHO DE E-MAIL
+Assunto: Encontro Aurora | pendências e próxima reunião
+Olá, equipe.
+Mantivemos o encontro em 5/11 e o orçamento de R$ 8.000, com audiovisual incluído. Bruno confirmará capacidade e cancelamento da Horizonte até 21/10. Camila revisará a lista até 20/10.
+Ainda precisamos definir responsável e prazo para as restrições alimentares e acompanhar a terceira proposta.
+A data da próxima reunião precisa de confirmação: 22/10 é quinta-feira. Precisamos consultar a agenda antes de sugerir um horário.
+Nenhum fornecedor foi contratado. Aguardo a revisão antes de qualquer envio ou convite.
+
+CHECKLIST DE REVISÃO
+No briefing, conferir F1 a F4. Na ata, conferir T1 a T10 e os arquivos 01 e 04. A agenda F4 não faz parte da entrada da ata.
+Conferir R$ 6.900 + R$ 1.400 = R$ 8.300 e excesso de R$ 300.
+Confirmar que o pedido não autorizou envio, reserva ou convite.
+Resolver a data da próxima reunião com Ana.
+Verificar se as lacunas estão marcadas, sem nomes ou prazos inventados.
+
+Fonte: trecho de 06_reserva_briefing_e_ata.txt (Kit_Ensaio_Secretariado).

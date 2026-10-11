@@ -1,0 +1,8 @@
+{
+  "name": "secretariado-sob-medida",
+  "version": "1.0.0",
+  "description": "Pacote do Secretariado Sob Medida: reúne a skill de padrão de documentos (papel timbrado, modelos e conferência). Conectores aprovados pela organização podem ser acrescentados depois.",
+  "author": {
+    "name": "Lawrence Teixeira"
+  }
+}

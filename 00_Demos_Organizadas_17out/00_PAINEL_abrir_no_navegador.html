@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel das Demos</title>
+<style>
+:root {
+  --bg: #f3f5f8; --surface: #ffffff; --text: #17212b; --muted: #5b6b7a; --border: #d8e0e8;
+  --accent: #532832; --accent-ink: #ffffff; --soft: #f3f1e8;
+  --ok-bg: #e3f4ea; --ok: #1d6b3d; --warn-bg: #fff4e5; --warn: #8a4b00; --code-bg: #f4f3ee;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121012; --surface: #1d1a1c; --text: #ece7e8; --muted: #b1a6a9; --border: #3a3135;
+    --accent: #e0a3b0; --accent-ink: #1b1113; --soft: #2a2426; --ok-bg: #173325; --ok: #7fd3a1;
+    --warn-bg: #3a2a14; --warn: #f3bf7a; --code-bg: #171416;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121012; --surface: #1d1a1c; --text: #ece7e8; --muted: #b1a6a9; --border: #3a3135;
+  --accent: #e0a3b0; --accent-ink: #1b1113; --soft: #2a2426; --ok-bg: #173325; --ok: #7fd3a1;
+  --warn-bg: #3a2a14; --warn: #f3bf7a; --code-bg: #171416;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 17px/1.55 "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif; }
+main { max-width: 1120px; margin: 0 auto; padding: 24px 16px 64px; }
+h1 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; font-size: 32px; line-height: 1.2; margin: 0 0 4px; color: var(--accent); }
+h2 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; font-size: 24px; margin: 40px 0 12px; color: var(--accent); }
+h3 { font-size: 18px; margin: 14px 0 6px; }
+h4 { font-size: 15px; margin: 22px 0 8px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+a { color: var(--accent); }
+code { background: var(--code-bg); padding: 1px 6px; border-radius: 4px; font-size: .9em; overflow-wrap: anywhere; }
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+.nowrap { white-space: nowrap; }
+.lead { font-size: 18px; }
+.top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+.nav a { text-decoration: none; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px; font-size: 15px; }
+.box { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px; }
+.box + .box { margin-top: 14px; }
+.rec { border-left: 6px solid var(--accent); }
+.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; }
+table { border-collapse: collapse; width: 100%; min-width: 820px; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+th { background: var(--soft); font-size: 13px; text-transform: uppercase; letter-spacing: .03em; }
+tr:last-child td { border-bottom: 0; }
+.pill { display: inline-block; min-width: 38px; text-align: center; background: var(--accent); color: var(--accent-ink); border-radius: 8px; padding: 1px 8px; font-weight: 700; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px 20px; margin: 18px 0; scroll-margin-top: 12px; }
+.card-head { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 19px; }
+.warn { background: var(--warn-bg); color: var(--warn); border-radius: 10px; padding: 8px 12px; margin: 8px 0; }
+.attach { background: var(--soft); border-radius: 12px; padding: 10px 14px; margin: 8px 0; }
+.files { margin: 6px 0 8px; padding-left: 20px; }
+.prompt { border: 1px solid var(--border); border-radius: 12px; margin: 10px 0; overflow: hidden; }
+.prompt-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 8px 12px; background: var(--soft); }
+.prompt-label { font-weight: 600; }
+.prompt-text { margin: 0; padding: 12px 14px; white-space: pre-wrap; overflow-wrap: anywhere; font: 15px/1.5 Consolas, "Cascadia Mono", ui-monospace, monospace; background: var(--code-bg); }
+.roteiro { padding: 6px 18px 12px; background: var(--code-bg); border-radius: 10px; font-size: 16px; }
+.md h1 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; font-size: 1.45em; line-height: 1.25; color: var(--accent); margin: .5em 0 .3em; }
+.md h2 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; font-size: 1.2em; color: var(--accent); margin: 1.2em 0 .35em; }
+.md p { margin: .45em 0; }
+.md ul, .md ol { margin: .35em 0; padding-left: 1.5em; }
+.md li { margin: .25em 0; }
+.md blockquote { margin: .6em 0; padding: .45em .9em; border-left: 5px solid var(--accent); background: var(--warn-bg); border-radius: 0 8px 8px 0; }
+.md blockquote p { margin: .2em 0; }
+.md table { min-width: 0; margin: .5em 0; }
+.md code { font-size: .88em; background: var(--surface); border: 1px solid var(--border); }
+.prompt-text { max-height: 320px; overflow-y: auto; }
+.prompt-file { padding: 6px 12px; font-size: 13px; color: var(--muted); }
+.reserves { padding-left: 0; list-style: none; }
+.reserves li { margin: 8px 0; }
+.row { display: flex; gap: 12px; align-items: center; margin: 8px 0; flex-wrap: wrap; }
+details summary { cursor: pointer; font-weight: 600; margin-top: 16px; }
+.btn { display: inline-block; font: inherit; font-size: 14.5px; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 9px; padding: 6px 12px; cursor: pointer; text-decoration: none; }
+.btn:hover { border-color: var(--accent); }
+.btn-primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; min-width: 96px; }
+.hidden { display: none; }
+.checklist { list-style: none; padding-left: 0; }
+.checklist li { padding: 6px 0; border-bottom: 1px dashed var(--border); }
+.checklist label { display: flex; gap: 10px; align-items: flex-start; }
+.checklist input { width: 18px; height: 18px; flex: none; margin-top: 4px; }
+#cola .cola-bloco { break-inside: avoid; }
+#cola ul { margin: 4px 0 8px; padding-left: 20px; }
+#overlay { position: fixed; inset: 0; background: var(--surface); color: var(--text); z-index: 10; display: none; overflow: auto; padding: 64px 16px 60px; }
+#overlay.on { display: block; }
+#overlay pre { max-width: 1200px; margin: 0 auto; white-space: pre-wrap; overflow-wrap: anywhere; font: var(--ov-size, 26px)/1.45 "Segoe UI", system-ui, Arial, sans-serif; }
+#overlay #ov-html { max-width: 1150px; margin: 0 auto; overflow-wrap: anywhere; font-size: var(--ov-size, 26px); line-height: 1.45; }
+#overlay .bar { position: fixed; top: 10px; right: 12px; display: flex; gap: 8px; }
+#ov-tag { position: fixed; top: 12px; left: 16px; background: var(--warn-bg); color: var(--warn); font-weight: 700; border-radius: 8px; padding: 6px 12px; font-size: 15px; }
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--text); color: var(--bg); padding: 8px 16px; border-radius: 999px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+.toast.on { opacity: 1; }
+@media (max-width: 640px) { body { font-size: 16px; } h1 { font-size: 25px; } .card, .box { padding: 14px; } #ov-tag { font-size: 12px; max-width: 55%; } }
+@media print {
+  .btn, .nav, #overlay, .toast, .noprint { display: none !important; }
+  body { background: #fff; color: #000; font-size: 13px; }
+  .card, .box, .table-wrap { break-inside: avoid; border-color: #999; }
+  details > *:not(summary) { display: block; }
+  body.print-cola main > *:not(#cola-wrap) { display: none !important; }
+  body.print-cola #cola-wrap h2 { margin-top: 0; }
+  body.print-cola #cola { font-size: 13.5px; border: 0; padding: 0; }
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <div>
+      <h1>Painel das demonstrações</h1>
+      <div class="muted">Agentes de IA na prática · Secretariado Sob Medida · sábado, 17/10/2026 · Lawrence Teixeira</div>
+    </div>
+    <button class="btn" id="theme">Tema claro/escuro</button>
+  </div>
+  <nav class="nav">
+    <a href="#demos">As três demos</a><a href="#skill">A skill</a><a href="#aceleracao">Mostrar a aceleração</a>
+    <a href="#A1">A1</a><a href="#A2">A2</a><a href="#A3">A3</a>
+    <a href="#checklist">Checklist do dia</a><a href="#cronograma">Cronograma</a><a href="#cola-wrap">Cola de palco</a>
+  </nav>
+
+  <p class="warn" style="margin-top:18px">Este painel é para preparar e ensaiar, não para o palco. Com o projetor em Duplicar, tudo o que está no notebook aparece no telão, inclusive as respostas esperadas que estão aqui. No dia, monte as conversas antes de a plateia entrar e use no palco a cola impressa e os .txt de cada pasta.</p>
+
+  <h2>Como usar esta pasta</h2>
+  <div class="box"><ul><li>Cada exemplo tem uma pasta com o mesmo padrão: ANEXAR_estes_arquivos (o que entra na conversa), pedidos com o prefixo da demo (A1_PROMPT_para_copiar.txt etc.) ou FALAS_para_copiar, RESERVA_plano_B_nao_anexar (resultado preparado) e SAIDAS_salve_aqui_o_resultado (o que a IA gerar). O roteiro de cada demo está no PASSO_A_PASSO.md da pasta (e formatado aqui, em cada demo).</li><li>Antes de a plateia entrar: em cada conversa nova, anexe os arquivos da pasta ANEXAR (arrastando do Explorer ou com &quot;Copiar caminho da pasta&quot; + Alt+D na janela de anexar) e cole o pedido sem enviar. No palco, só mostre os anexos e envie.</li><li>Para pedir: botão Copiar ao lado do pedido e Ctrl+V na conversa. Os mesmos textos estão nos .txt de cada pasta.</li><li>Reservas: &quot;Mostrar em tela cheia&quot; abre o resultado preparado em letras grandes. Use para ensaiar e para revisar a reserva antes do dia; no palco, abra a mesma reserva pelo .txt ou pelo PDF de exemplo e diga que é um exemplo preparado.</li><li>A cola de palco para imprimir está no fim do painel (botão &quot;Imprimir a cola&quot;).</li></ul></div>
+
+  <h2 id="demos">As três demos</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Demo</th><th>Ferramenta</th><th>Tarefa do dia a dia</th><th>Slide</th><th>Tempo</th><th>Risco ao vivo</th><th>Notas*</th></tr></thead>
+    <tbody><tr><td><a href="#A1"><b>A1</b></a></td><td>ChatGPT</td><td><b>Briefing antes da reunião</b><div class="muted small">Antes da reunião: juntar pauta, e-mails e agenda da executiva num briefing com custos conferidos, conflito de data e opções de horário.</div></td><td>14</td><td>7 min</td><td class="small">Baixo: anexa 2 TXT e devolve texto (e Word, se a conta gerar).</td><td class="nowrap">9 · 8,5 · 9</td></tr><tr><td><a href="#A2"><b>A2</b></a></td><td>Claude</td><td><b>Ata e e-mail de acompanhamento</b><div class="muted small">Depois da reunião: transformar a transcrição em ata, tarefas com responsável, prazo e origem, e rascunho do e-mail de acompanhamento.</div></td><td>15</td><td>6 min</td><td class="small">Baixo: anexa TXT e devolve texto (e Word, se a conta gerar).</td><td class="nowrap">9,5 · 8 · 8,5</td></tr><tr><td><a href="#A3"><b>A3</b></a></td><td>Jarvis por voz (dot do ChatGPT)</td><td><b>A reunião mudou: a plateia vota</b><div class="muted small">Quando a reunião muda em cima da hora: reorganizar a pauta, propor horários, listar o que validar e redigir o aviso à equipe, conversando por voz.</div></td><td>19–20</td><td>3 + 12 min</td><td class="small">Médio-alto: a voz do iPhone no som da sala ainda não foi testada. Recuo: texto na mesma conversa, depois a reserva.</td><td class="nowrap">8,5 · 7 · 8,5</td></tr></tbody>
+  </table></div>
+  <p class="muted small">* Notas de 0 a 10 de três análises independentes: plateia de secretariado · risco da demo ao vivo · narrativa e encaixe no deck. Os outros cinco exemplos (B1, B2, B3, C1 e C2) e o material de apoio da rota B foram tirados da pasta do dia.</p>
+  <div class="box rec"><p class="lead"><b>Sua escolha: A1 (ChatGPT) → A2 (Claude) → A3 (Jarvis por voz), a mesma que as três análises independentes recomendaram.</b></p><ul><li>Conta a semana de uma secretária: antes da reunião (briefing), depois da reunião (ata e e-mail) e quando a reunião muda em cima da hora (voz).</li><li>Já está no PPT (slides 14, 15, 19 e 20) e no relógio de 60 minutos (7 + 6 + 12 min), sem refazer slides.</li><li>Mostra ChatGPT e Claude, como promete o slide 13, e fecha com o Jarvis nos slides 19 e 20. Cada um entrega algo que a plateia confere na hora.</li><li>Os pedidos estão em português de escritório (sem JSON, UTC ou ICS). As demos não dependem umas das outras: se uma falhar, as outras seguem.</li><li>Cada demo tem um achado que a secretária reconhece: o local &quot;mais barato&quot; que custa R$ 8.300, R$ 300 acima do teto; a data que não bate com o dia da semana; o responsável &quot;não informado&quot;; e o comentário pessoal que fica fora da ata.</li><li>Os slides 16 a 18 ficam ocultos na cópia do PPT. Os 6 minutos viram folga no Jarvis e no fechamento, e a mensagem de limites do slide 18 continua no slide 11, na fala 5 do Jarvis e na frase de fechamento.</li></ul></div>
+  <div class="box"><p><b>Se o tempo apertar</b></p><ul><li>Programação encurtada antes da sua fala: mantenha o Jarvis e faça ao vivo só uma das duas primeiras demos. Fique com a A1 se quiser menor risco (análise de risco) ou com a A2 se quiser a tarefa mais reconhecível (análise da plateia). A outra vira 1 minuto de explicação no próprio slide.</li><li>Atraso durante a fala: se chegar ao slide 13 depois do minuto 23, ou ao minuto 27 com mais de 4 minutos de atraso, mostre a A2 só pelo slide 15. Se a chamada do Jarvis começar depois do minuto 40, pule a fala 4 (14h45) e mantenha as falas 3 e 5.</li></ul></div>
+  <div class="box"><p><b>Ajustes sugeridos no PPT</b> <span class="muted small">(o PPT original não foi alterado)</span></p><ul><li>Feito: a cópia &quot;Lawrence Teixeira - Agentes de IA - slides 16 a 18 ocultos.pptx&quot; tem os slides 16, 17 e 18 ocultos (conferido no PowerPoint). Apresente com ela. O original não foi alterado.</li><li>As notas dos slides 1 a 20 têm horários de uma versão antiga; vale o cronograma deste painel (manual A). As notas dos slides 14, 15, 19 e 20 também têm pedidos antigos, e a do 14 cita &quot;06_resultados_reserva.txt&quot;, que não existe.</li><li>Os slides 14 e 15 mostram as respostas antes da demo. Sugestão: fazer &quot;R$ 8.300&quot;, &quot;22/10 é quinta-feira&quot; e a tabela do 15 aparecerem por clique, depois da resposta da IA. Sem isso, não faça a caça ao erro.</li><li>Opcional: slide 13 com &quot;ChatGPT, Claude e Jarvis&quot; e o fio &quot;Antes da reunião • Depois da reunião • Quando a reunião muda&quot;; slide 10 com uma linha que aponte para a skill do Secretariado; slide 20 com as restrições do caso à vista; slide 21 com a frase &quot;O agente prepara. Você confere. Você decide.&quot;</li><li>Cosmético: os slides 22 a 26 mostram os números 23 a 27.</li></ul></div>
+
+  <h2 id="skill">A skill do Secretariado Sob Medida</h2>
+  <div class="box rec"><p class="lead">A skill padrao-secretariado-sob-medida é o &quot;jeito da casa&quot; empacotado: papel timbrado (logo, cores vinho e sálvia, cabeçalho e rodapé), modelos de documentos de secretariado e conferência de datas, valores e horários, com um gerador de Word. É o exemplo concreto do slide 10: a skill ensina como fazer; ela não dá acesso a contas nem a sistemas (isso é papel do conector, com permissão).</p><ul><li>Onde está: pasta 00_SKILL_Padrao_Secretariado_Sob_Medida. Para instalar, use padrao-secretariado-sob-medida.zip. O guia é COMO_INSTALAR_E_USAR.md.</li><li>Claude (A2): Customize &gt; Skills, enviar o ZIP e ligar. Exige plano pago com execução de código. Desligue a skill &quot;ata-de-reuniao&quot; que você já tem, para as duas não disputarem o pedido.</li><li>Com a skill ligada, até o pedido original pode acioná-la. Para mostrar a versão sem skill, desligue-a antes.</li><li>ChatGPT (A1): as skills seguem o mesmo padrão aberto, mas estão em beta e podem vir desligadas. Se a sua conta não tiver, use o pedido original ou anexe o papel timbrado como modelo e diga isso à plateia.</li><li>Jarvis (A3): não se sabe se o dot usa skills. A fala 6 é opcional e só entra se o ensaio mostrar que funciona.</li><li>Melhor momento para mostrar: A2. Os anexos passam a ser 2 (o procedimento da ata está dentro da skill). Abra o SKILL.md por alguns segundos e diga: &quot;montei uma vez o padrão da casa; agora todo agente entrega igual&quot;.</li><li>Os exemplos dentro da skill usam outro caso fictício (Fórum Atlas). Assim, ela não revela as respostas das demos: quem acha o R$ 8.300 é o agente, lendo as fontes.</li><li>Plugin (opcional): a pasta plugin-secretariado-sob-medida mostra o &quot;pacote&quot; do slide 10, que reúne a skill e, no futuro, conectores aprovados pela TI. Passou na validação oficial do Claude.</li><li>Reserva visual: EXEMPLOS_preparados_no_padrao tem o briefing, a ata e o plano (opção B) no padrão, em Word e PDF. Diga que são exemplos preparados.</li><li>Comparação para o slide 10: COMPARACAO_mesma_ata_sem_e_com_skill tem a mesma ata gerada em teste sem e com a skill (PDF). Mostre lado a lado e diga que são resultados de teste.</li><li>Testada em 10/10 por agentes independentes, em duas rodadas: com a skill, os documentos passaram em todas as checagens das demos e saíram no papel timbrado; sem a skill, cada agente escolheu um visual, e no plano do Jarvis faltou a conta do conflito.</li></ul>
+    <p class="small"><a href="00_SKILL_Padrao_Secretariado_Sob_Medida/COMO_INSTALAR_E_USAR.md">Guia: COMO_INSTALAR_E_USAR.md</a> ·
+    <a href="00_SKILL_Padrao_Secretariado_Sob_Medida/padrao-secretariado-sob-medida/SKILL.md">SKILL.md</a> ·
+    <a href="00_SKILL_Padrao_Secretariado_Sob_Medida/EXEMPLOS_preparados_no_padrao/A2_Ata_e_email_exemplo_preparado.pdf" target="_blank">ver um documento no padrão (PDF)</a> · <a href="00_SKILL_Padrao_Secretariado_Sob_Medida/COMPARACAO_mesma_ata_sem_e_com_skill/1_SEM_skill_ata_teste_10out.pdf" target="_blank">ata sem skill</a> × <a href="00_SKILL_Padrao_Secretariado_Sob_Medida/COMPARACAO_mesma_ata_sem_e_com_skill/2_COM_skill_ata_teste_10out.pdf" target="_blank">ata com skill</a></p></div>
+
+  <h2 id="aceleracao">Para a plateia sentir a aceleração</h2>
+  <div class="box"><ul><li>Antes de cada demo, pergunte: &quot;Quanto tempo vocês levam para fazer isso hoje?&quot; Repita duas ou três respostas. No máximo 1 minuto; se tiver passado do marco, pule.</li><li>Ao enviar o pedido, dispare um cronômetro visível (app Relógio do Windows, em janela compacta). Marque &quot;Volta&quot; quando o texto terminar e pare depois da sua conferência. Diga os dois tempos e use só tempos medidos (anote os do ensaio na folha de ensaio).</li><li>Caça ao erro: só funciona se as respostas dos slides 14 e 15 aparecerem por clique. Nesse caso, enquanto a IA trabalha, a plateia procura o custo escondido e a data que não bate no arquivo de fontes.</li><li>Mostre de onde vem a aceleração: o Manual do Executivo e a skill são escritos uma vez e reaproveitados em todo pedido.</li><li>Feche cada demo com o papel humano: &quot;o agente preparou; eu conferi; a decisão continua com a executiva&quot;.</li><li>Fale a língua da plateia: &quot;pedido&quot; em vez de prompt e &quot;arquivo Word&quot; em vez de DOCX. Ao falar do 04, diga &quot;procedimento padrão, como um POP&quot;: é o tipo de instrução que vira uma skill.</li></ul></div>
+  <div class="box"><p><b>Modelo de pedido para a plateia</b> <span class="muted small">Material ainda a preparar para a plateia: só prometa no palco se houver um canal (slide, post ou arquivo enviado à organização).</span></p>
+    <div class="prompt"><div class="prompt-head"><span class="prompt-label">Modelo em 6 partes</span><button class="btn btn-primary" data-copy="modelo">Copiar</button></div>
+    <pre id="modelo" class="prompt-text">Prepare [o quê] para [quem vai usar e para quê].
+Use somente [os arquivos anexos / este e-mail]. Não consulte a internet nem outras contas.
+Entregue [1 página / tabela / ata / e-mail de até 120 palavras] no tom do Manual do Executivo.
+Confira [totais, datas e dias da semana, conflitos de agenda] e cite de onde veio cada informação.
+Quando faltar um dado, escreva &quot;não informado&quot;. Se houver contradição, mostre as versões e pergunte.
+Não envie, não agende, não reserve e não pague nada. Entregue como rascunho para minha revisão.</pre></div></div>
+
+  <h2>Riscos e como se proteger</h2>
+  <div class="box"><ul><li>Voz do iPhone no som da sala (o maior risco): pergunte já à organização qual entrada de áudio existe e se há técnico de som; compre adaptador e cabo até 13/10 (12/10 é feriado); teste no local antes de a plateia entrar. Se falhar: uma nova tentativa de 30 segundos, depois texto na mesma conversa, depois a reserva 08.</li><li>Rede do evento: leve internet própria (roteador 4G ou segundo celular) e deixe as reservas abertas antes de começar.</li><li>Dados pessoais no telão: projetor em Duplicar; perfil de navegador só para a palestra, com barra lateral recolhida e memória desligada; &quot;Não incomodar&quot; no Windows e Foco no iPhone; Outlook, Teams e WhatsApp fechados. Não projete este painel, os manuais nem o Explorer.</li><li>Jarvis com apps reais: confira se ele acessa Gmail ou agenda e desconecte para a demo, porque ele fala em voz alta.</li><li>Skills: confira no ensaio que a skill nova carrega e que a &quot;ata-de-reuniao&quot; está desligada. Se a skill falhar no palco, use o pedido original da pasta.</li><li>Login, verificação em duas etapas ou limite de uso: entre nas contas na manhã do dia 17 e não faça ensaio completo no próprio dia.</li><li>Tempo: siga os marcos da cola de palco. Regra de ouro: 2 minutos sem resposta útil, ou 1 correção sem sucesso, e você passa para a reserva.</li><li>Melhor plano B: grave cada demo do ensaio em separado (A1 e A2 na tela do Windows; a A3 também na tela do iPhone, com o áudio testado), corte as esperas e guarde em SAIDAS. No palco, diga que é gravação do ensaio.</li></ul></div>
+
+  <h2>As demonstrações, passo a passo</h2>
+  
+<section class="card" id="A1">
+  <div class="card-head">
+    <div><span class="pill">A1</span> <b>ChatGPT</b> · Briefing antes da reunião</div>
+    <div class="muted">Slide(s) 14 · 7 min</div>
+  </div>
+  <p class="lead">Antes da reunião: juntar pauta, e-mails e agenda da executiva num briefing com custos conferidos, conflito de data e opções de horário.</p>
+  <p class="warn">Com a skill (opcional): use A1_PROMPT_com_skill.txt. Depende de a sua conta do ChatGPT ter Skills (beta); teste no ensaio.</p>
+  <h4>1. Entra na conversa</h4>
+  <div class="attach"><div><b>Anexe os 2 arquivos desta pasta</b></div><div class="muted small">pasta <code>A1_ChatGPT_Briefing_pre-reuniao_slide14/ANEXAR_estes_arquivos</code></div><ul class="files"><li><code>01_manual_executivo.txt</code></li><li><code>02_fontes_pre_reuniao.txt</code></li></ul><button class="btn" data-path="A1_ChatGPT_Briefing_pre-reuniao_slide14/ANEXAR_estes_arquivos">Copiar caminho da pasta</button></div>
+  <h4>2. Pedidos</h4>
+  <div class="prompt"><div class="prompt-head"><span class="prompt-label">Pedido</span><button class="btn btn-primary" data-copy="b1">Copiar</button></div><pre id="b1" class="prompt-text">Prepare um briefing de uma página para Ana decidir os próximos passos do encontro de parceiros. Use somente os dois arquivos anexos e siga o Manual do Executivo. Mostre objetivo, situação, comparação dos locais, pendências e duas opções de reunião de 30 minutos. Confira o custo total, a data, o dia da semana e a agenda fictícia. Cite as seções F1 a F4. Escreva “não informado” quando faltar um dado e destaque contradições. Não consulte a internet, contas ou agendas reais. Não envie mensagens nem crie convites. Entregue o texto completo na conversa e um arquivo DOCX editável. Se esta conta não gerar o arquivo, informe a limitação e mantenha o texto completo para revisão.</pre><div class="prompt-file">Arquivo: <a href="A1_ChatGPT_Briefing_pre-reuniao_slide14/A1_PROMPT_para_copiar.txt">A1_PROMPT_para_copiar.txt</a></div></div><div class="prompt"><div class="prompt-head"><span class="prompt-label">Pedido com a skill (opcional)</span><button class="btn btn-primary" data-copy="b2">Copiar</button></div><pre id="b2" class="prompt-text">Prepare um briefing de uma página para Ana decidir os próximos passos do encontro de parceiros. Use somente os dois arquivos anexos e siga o Manual do Executivo. Mostre objetivo, situação, comparação dos locais, pendências e duas opções de reunião de 30 minutos. Confira o custo total, a data, o dia da semana e a agenda fictícia. Cite as seções F1 a F4. Escreva “não informado” quando faltar um dado e destaque contradições. Não consulte a internet, contas ou agendas reais. Não envie mensagens nem crie convites. Use a skill padrao-secretariado-sob-medida: entregue o texto completo na conversa e o arquivo DOCX no papel timbrado do Secretariado Sob Medida. Se a skill não estiver disponível ou esta conta não gerar o arquivo, informe a limitação e mantenha o texto completo para revisão.</pre><div class="prompt-file">Arquivo: <a href="A1_ChatGPT_Briefing_pre-reuniao_slide14/A1_PROMPT_com_skill.txt">A1_PROMPT_com_skill.txt</a></div></div><div class="prompt"><div class="prompt-head"><span class="prompt-label">Correção curta (só se errar custo, data ou agenda; uma vez)</span><button class="btn btn-primary" data-copy="b3">Copiar</button></div><pre id="b3" class="prompt-text">Revise o custo completo em F2 e a data e a agenda em F3 e F4. Mostre o cálculo e a contradição. Atualize o briefing sem escolher a data por conta própria.</pre><div class="prompt-file">Arquivo: <a href="A1_ChatGPT_Briefing_pre-reuniao_slide14/A1_PROMPT_correcao_se_precisar.txt">A1_PROMPT_correcao_se_precisar.txt</a></div></div>
+  <h4>3. Se der errado: reserva (nunca anexar)</h4>
+  <ul class="reserves"><li><button class="btn" data-show="b4" data-reserva="1">Mostrar em tela cheia</button> <code>reserva_briefing_trecho_do_06.txt</code> <a class="small" href="A1_ChatGPT_Briefing_pre-reuniao_slide14/RESERVA_plano_B_nao_anexar/reserva_briefing_trecho_do_06.txt">abrir o arquivo</a><pre id="b4" class="hidden">RESULTADO PREPARADO PARA RESERVA
+Exemplo didático elaborado para a oficina. Não é registro de uma execução ao vivo.
+Todos os dados são fictícios.
+
+BRIEFING ANTES DA REUNIÃO
+Objetivo: definir próximos passos do encontro Aurora para 05/11/2026 [F1].
+Público: 30 confirmados e 4 aguardando resposta [F3]. A capacidade para 34 precisa de confirmação.
+Limite: R$ 8.000,00 para local e coffee break, com audiovisual dentro do total [F1].
+Horizonte: R$ 7.600,00 incluindo sala, coffee break e audiovisual, com acessibilidade confirmada. Folga de R$ 400,00 [F2]. Capacidade e condições de cancelamento não informadas em F2.
+Casa do Parque: R$ 6.900,00 + R$ 1.400,00 = R$ 8.300,00. Excede o limite em R$ 300,00. Acessibilidade não informada [F2].
+Terceira proposta: pendente [F2]. Não há contratação [F1].
+Camila revisará a lista de participantes. Prazo: não informado [F1].
+Próxima reunião: o texto pede &quot;sexta-feira, dia 22/10/2026&quot; [F3]. 22/10/2026 é quinta-feira. A sexta é 23/10/2026. Além disso, Ana está ocupada às 9h de 22/10 [F4].
+Opções para 30 minutos: 22/10/2026 das 10h às 10h30, ou 23/10/2026 das 9h às 9h30, em America/Sao_Paulo [F4]. Confirmar qual dia era a intenção antes de criar qualquer convite.
+
+CHECKLIST DE REVISÃO
+No briefing, conferir F1 a F4. Na ata, conferir T1 a T10 e os arquivos 01 e 04. A agenda F4 não faz parte da entrada da ata.
+Conferir R$ 6.900 + R$ 1.400 = R$ 8.300 e excesso de R$ 300.
+Confirmar que o pedido não autorizou envio, reserva ou convite.
+Resolver a data da próxima reunião com Ana.
+Verificar se as lacunas estão marcadas, sem nomes ou prazos inventados.
+
+Fonte: trecho de 06_reserva_briefing_e_ata.txt (Kit_Ensaio_Secretariado).</pre></li><li><a class="btn" href="00_SKILL_Padrao_Secretariado_Sob_Medida/EXEMPLOS_preparados_no_padrao/A1_Briefing_exemplo_preparado.pdf" target="_blank">Abrir o PDF</a> <code>A1_Briefing_exemplo_preparado.pdf</code></li></ul>
+  <details><summary>Roteiro completo desta demo (PASSO_A_PASSO.md)</summary>
+    <div class="row"><button class="btn" data-show="b5">Tela cheia</button>
+    <a href="A1_ChatGPT_Briefing_pre-reuniao_slide14/PASSO_A_PASSO.md">abrir o arquivo .md</a></div>
+    <div id="b5" class="roteiro md"><h1>A1 · ChatGPT · Briefing para preparar a reunião</h1>
+<p><strong>Slide 14</strong> · Tempo de palco: 7 minutos (minutos 20 a 27 da palestra) · Origem: Kit_Ensaio_Secretariado</p>
+<p>Todos os dados são fictícios. Nada é enviado, agendado, reservado ou pago.</p>
+<h2>Tarefa do dia a dia</h2>
+<p>Antes de uma reunião, juntar a pauta anterior, os e-mails e a agenda da executiva em um briefing curto, com custos conferidos, conflito de data e opções de horário para ela decidir.</p>
+<h2>Entra na conversa</h2>
+<ul>
+<li>Anexe só os 2 arquivos da pasta <a href="A1_ChatGPT_Briefing_pre-reuniao_slide14/ANEXAR_estes_arquivos/">ANEXAR_estes_arquivos</a>: <code>01_manual_executivo.txt</code> e <code>02_fontes_pre_reuniao.txt</code>.</li>
+<li>Cole o texto de <a href="A1_ChatGPT_Briefing_pre-reuniao_slide14/A1_PROMPT_para_copiar.txt">A1_PROMPT_para_copiar.txt</a>. Copie o texto; não anexe o arquivo.</li>
+</ul>
+<blockquote>
+<p><strong>Nunca anexe:</strong> a pasta inteira, este <code>PASSO_A_PASSO.md</code>, os arquivos PROMPT, nada de <code>RESERVA_plano_B_nao_anexar</code> ou de <code>SAIDAS_salve_aqui_o_resultado</code>, nem arquivos de outras demos. Isso mistura instruções e gabaritos com as fontes.</p>
+</blockquote>
+<h2>Antes de subir ao palco</h2>
+<ul>
+<li>Use a cópia do deck com os slides 16 a 18 ocultos (Lawrence Teixeira - Agentes de IA - slides 16 a 18 ocultos.pptx). A numeração dos slides é a mesma do original, que o kit chama de &quot;deck de 7/10/2026&quot;. Esta demo entra no slide 14.</li>
+<li>Entre na conta do ChatGPT antes de projetar. Feche e-mail, agenda e abas pessoais. Desative as notificações no Windows e no iPhone. Confira o que o projetor mostra: nenhum dado pessoal.</li>
+<li>Deixe abertos no Bloco de Notas: <code>A1_PROMPT_para_copiar.txt</code> e <code>A1_PROMPT_correcao_se_precisar.txt</code>. Em outra janela, abra <code>RESERVA_plano_B_nao_anexar\reserva_briefing_trecho_do_06.txt</code>.</li>
+<li>No ensaio, aprenda a abrir conversa nova, anexar TXT e abrir a resposta. Os nomes dos controles podem variar. Confira se a sua conta gera o DOCX. Não instale plugins nem conecte contas.</li>
+<li>Ensaie até conduzir sem procurar arquivos. Guarde a melhor saída (texto ou DOCX) em <code>SAIDAS_salve_aqui_o_resultado</code>.</li>
+<li>No ensaio, teste o plano B com a rede desligada: abra a reserva e localize a seção BRIEFING ANTES DA REUNIÃO. Religue a rede depois.</li>
+<li>Recomendação nova (fora do kit): pré-monte a conversa antes de a plateia entrar. Abra uma conversa nova no ChatGPT, anexe os 2 arquivos e cole o pedido, sem enviar. No palco, mostre os anexos, diga a frase do passo 3 e envie.</li>
+<li>Recomendação nova: abra os .txt de uma demo por vez. Deixe no Bloco de Notas só os da A1 e feche-os antes de abrir os da A2.</li>
+<li>Recomendação nova: o projetor fica em Duplicar, e a plateia vê toda a sua tela. Por isso, não deixe o Explorer nem o painel HTML na tela durante a palestra; o painel é só para preparação e ensaio.</li>
+</ul>
+<h2>No palco, passo a passo</h2>
+<ol>
+<li>Abra uma conversa nova no ChatGPT.</li>
+<li>Anexe somente <code>ANEXAR_estes_arquivos\01_manual_executivo.txt</code> e <code>ANEXAR_estes_arquivos\02_fontes_pre_reuniao.txt</code>. Confira os dois nomes antes de enviar.</li>
+<li>Diga: &quot;Vou dar duas fontes para o assistente preparar um briefing. Quero conferir o preço completo e a data da reunião.&quot;</li>
+<li>Abra <code>A1_PROMPT_para_copiar.txt</code> no Bloco de Notas, Ctrl+A, Ctrl+C, cole na conversa e envie. Espere a resposta sem abrir novas tarefas.</li>
+<li>Leia os três primeiros pontos de <strong>O que conferir na tela</strong> (preço, data e agenda, lacunas) e localize cada um na resposta. Abra <code>ANEXAR_estes_arquivos\02_fontes_pre_reuniao.txt</code>, mostre a seção de origem (F1 e F2 para preço e teto; F3 e F4 para data e agenda) e compare com a resposta.</li>
+<li>Abra o DOCX se ele já estiver pronto. Encerre e volte ao deck.</li>
+</ol>
+<p><strong>Fechamento:</strong> &quot;Temos opções e perguntas para decidir. A data ainda precisa de confirmação.&quot;</p>
+<h2>O que conferir na tela</h2>
+<ul>
+<li><strong>Preço:</strong> Horizonte = R$ 7.600, com R$ 400 de folga. Casa do Parque = R$ 6.900 + R$ 1.400 = R$ 8.300, R$ 300 acima do teto de R$ 8.000 [F1 e F2].</li>
+<li><strong>Data e agenda:</strong> 22/10/2026 é quinta-feira. A sexta é 23/10. Ana está ocupada às 9h do dia 22. Exemplos válidos de 30 minutos: 22/10 às 10h ou 23/10 às 9h [F3 e F4]. Outras janelas dentro da disponibilidade também podem estar corretas.</li>
+<li><strong>Lacunas:</strong> 30 confirmados e 4 pendentes. Capacidade e cancelamento da Horizonte, acessibilidade da Casa do Parque e terceira proposta ainda exigem confirmação. O prazo de Camila não está informado nesta etapa.</li>
+<li>A resposta cita F1 a F4, escreve &quot;não informado&quot; onde falta dado e não envia nada nem cria convite.</li>
+<li>As palavras podem variar. O que vale é passar nestas checagens. O slide 14 mostra duas delas: R$ 8.300 e 22/10 é quinta-feira.</li>
+</ul>
+<h2>Se der errado</h2>
+<ul>
+<li>Erro no custo, na data ou na agenda: abra <code>A1_PROMPT_correcao_se_precisar.txt</code>, Ctrl+A, Ctrl+C, cole e envie. Faça uma única correção.</li>
+<li>Desista se não houver resposta útil após 2 minutos de espera, ou se o erro persistir após a correção. Diga: &quot;Vou usar um exemplo preparado para continuarmos a conferência.&quot;</li>
+<li>Abra <code>RESERVA_plano_B_nao_anexar\reserva_briefing_trecho_do_06.txt</code>, seção BRIEFING ANTES DA REUNIÃO. Diga que é um exemplo preparado. Mostre os mesmos pontos de conferência e volte ao deck no horário previsto.</li>
+<li>DOCX atrasado: siga com o texto da conversa. Um arquivo atrasado não precisa consumir o restante da demo.</li>
+<li>Se guardou em <code>SAIDAS_salve_aqui_o_resultado</code> uma saída verdadeira do ensaio, pode mostrá-la no lugar da reserva, dizendo que é do ensaio.</li>
+</ul>
+<h2>Com a skill (opcional; só se o teste no ensaio passar)</h2>
+<p>Variante nova, fora do kit e ainda não ensaiada. O pedido original continua sendo o principal. Instalação e teste: <a href="00_SKILL_Padrao_Secretariado_Sob_Medida/COMO_INSTALAR_E_USAR.md">COMO_INSTALAR_E_USAR.md</a>.</p>
+<ul>
+<li><strong>Pré-requisito:</strong> a skill padrao-secretariado-sob-medida ativa no ChatGPT. Em outubro de 2026, as skills do ChatGPT estavam em beta e podiam vir desligadas. Instale só <code>padrao-secretariado-sob-medida.zip</code>, não o plugin: a skill não é plugin nem conector e não dá acesso a contas (slide 10).</li>
+<li><strong>Se a conta não tiver skills:</strong> use o pedido original. Ou anexe também <code>..\00_SKILL_Padrao_Secretariado_Sob_Medida\padrao-secretariado-sob-medida\assets\papel_timbrado.docx</code>, cole <code>A1_PROMPT_para_copiar.txt</code> e acrescente: &quot;O terceiro anexo, papel_timbrado.docx, não é fonte: use-o só como modelo do DOCX.&quot; Diga à plateia que foi um modelo anexado, não uma skill instalada. Nessa alternativa, confira só o logo e o rodapé.</li>
+<li>Se ficar com o pedido original numa conta com a skill ativa, desligue-a antes: a descrição dela cobre briefings e arquivos Word, e o ChatGPT pode usá-la sozinho.</li>
+<li><strong>Anexos:</strong> os mesmos 2 arquivos de <code>ANEXAR_estes_arquivos</code>.</li>
+<li><strong>Pedido:</strong> cole <code>A1_PROMPT_com_skill.txt</code> no lugar de <code>A1_PROMPT_para_copiar.txt</code>, também na pré-montagem.</li>
+<li><strong>O que conferir a mais:</strong> Word com o logo no cabeçalho, a faixa &quot;Rascunho para revisão&quot;, a seção &quot;O que depende de revisão humana&quot; e o rodapé com a marca Secretariado Sob Medida. Os pontos de <strong>O que conferir na tela</strong> continuam valendo.</li>
+<li><strong>Fala sugerida</strong>, só depois de o Word abrir no padrão: &quot;É a skill do slide 10, o como fazer: montei uma vez o padrão de documentos do Secretariado, e agora o briefing já sai no papel timbrado.&quot;</li>
+<li><strong>Se a skill não carregar ou o arquivo não sair em 2 minutos:</strong> siga com o texto da conversa. Como reserva visual, mostre <a href="00_SKILL_Padrao_Secretariado_Sob_Medida/EXEMPLOS_preparados_no_padrao/A1_Briefing_exemplo_preparado.pdf">A1_Briefing_exemplo_preparado.pdf</a> (deixe-o aberto antes, em outra janela; só mostrar, nunca anexar) e diga que é um exemplo preparado.</li>
+</ul>
+<h2>Arquivos desta pasta</h2>
+<ul>
+<li><code>PASSO_A_PASSO.md</code>: este roteiro. Nunca anexar.</li>
+<li><a href="A1_ChatGPT_Briefing_pre-reuniao_slide14/ANEXAR_estes_arquivos/01_manual_executivo.txt"><code>ANEXAR_estes_arquivos\01_manual_executivo.txt</code></a>: regras da executiva Ana (estilo, reuniões de 30 minutos, limites). <strong>Anexar.</strong></li>
+<li><a href="A1_ChatGPT_Briefing_pre-reuniao_slide14/ANEXAR_estes_arquivos/02_fontes_pre_reuniao.txt"><code>ANEXAR_estes_arquivos\02_fontes_pre_reuniao.txt</code></a>: fontes F1 a F4 (pauta anterior, e-mails de Bruno e Camila, agenda fictícia de Ana). <strong>Anexar.</strong></li>
+<li><a href="A1_ChatGPT_Briefing_pre-reuniao_slide14/A1_PROMPT_para_copiar.txt"><code>A1_PROMPT_para_copiar.txt</code></a>: pedido da demo. Colar o texto.</li>
+<li><a href="A1_ChatGPT_Briefing_pre-reuniao_slide14/A1_PROMPT_correcao_se_precisar.txt"><code>A1_PROMPT_correcao_se_precisar.txt</code></a>: correção curta, uma vez só.</li>
+<li><a href="A1_ChatGPT_Briefing_pre-reuniao_slide14/A1_PROMPT_com_skill.txt"><code>A1_PROMPT_com_skill.txt</code></a>: pedido da variante com a skill (novo, opcional). Colar o texto só se o teste no ensaio passar.</li>
+<li><a href="A1_ChatGPT_Briefing_pre-reuniao_slide14/RESERVA_plano_B_nao_anexar/reserva_briefing_trecho_do_06.txt"><code>RESERVA_plano_B_nao_anexar\reserva_briefing_trecho_do_06.txt</code></a>: briefing preparado e checklist de revisão. Só mostrar; nunca anexar.</li>
+<li><code>SAIDAS_salve_aqui_o_resultado\</code>: vazia. Guarde aqui o texto ou o DOCX gerado no ensaio ou no palco.</li>
+</ul>
+<h2>Sugestões para a plateia sentir a aceleração</h2>
+<p>Novas e opcionais; não estão no kit.</p>
+<ul>
+<li>Frase de entrada: &quot;Antes da reunião: juntar pauta, e-mails e agenda para a executiva decidir.&quot;</li>
+<li>Limite a participação da plateia a 1 minuto no total.</li>
+<li>Antes de enviar o pedido, pergunte: &quot;Quanto tempo vocês levariam para montar este briefing?&quot; Repita duas ou três respostas. Se a A1 começar depois do marco do minuto 20 da palestra, pule esta pergunta.</li>
+<li>Ao enviar, dispare um cronômetro visível (app Relógio do Windows, em janela compacta). Quando o texto terminar, clique em &quot;Volta&quot;; pare o cronômetro depois da sua conferência. Diga os dois tempos: o da IA (a volta) e o total com a conferência. Use só tempos medidos, nunca estimativas.</li>
+<li>Enquanto a IA trabalha, mostre <code>ANEXAR_estes_arquivos\02_fontes_pre_reuniao.txt</code> e pergunte: &quot;Qual local é o mais barato?&quot; e &quot;Tem algo estranho no e-mail da Camila?&quot;. Depois compare com a resposta.</li>
+<li>Essa caça ao erro só funciona se os quadros do slide 14 (R$ 8.300 e 22/10 é quinta-feira) entrarem por clique. Hoje o PPT não tem animação. Sem isso, mostre o slide 14 só depois da resposta ou pule as perguntas.</li>
+<li>Mostre o <code>01_manual_executivo.txt</code> por 15 segundos: &quot;É o que vocês já sabem de cabeça sobre o seu executivo, escrito uma vez e reaproveitado em todo pedido.&quot;</li>
+</ul>
+</div>
+  </details>
+</section>
+<section class="card" id="A2">
+  <div class="card-head">
+    <div><span class="pill">A2</span> <b>Claude</b> · Ata e e-mail de acompanhamento</div>
+    <div class="muted">Slide(s) 15 · 6 min</div>
+  </div>
+  <p class="lead">Depois da reunião: transformar a transcrição em ata, tarefas com responsável, prazo e origem, e rascunho do e-mail de acompanhamento.</p>
+  <p class="warn">Com a skill: anexe só os 2 arquivos de ANEXAR_com_skill_estes_arquivos (sem o 04) e use A2_PROMPT_com_skill.txt. Antes, desligue a skill &quot;ata-de-reuniao&quot; da sua conta para as duas não disputarem o pedido.</p>
+  <h4>1. Entra na conversa</h4>
+  <div class="attach"><div><b>Sem a skill: anexe os 3 arquivos desta pasta</b></div><div class="muted small">pasta <code>A2_Claude_Ata_e_acompanhamento_slide15/ANEXAR_estes_arquivos</code></div><ul class="files"><li><code>01_manual_executivo.txt</code></li><li><code>03_transcricao_reuniao.txt</code></li><li><code>04_procedimento_ata.txt</code></li></ul><button class="btn" data-path="A2_Claude_Ata_e_acompanhamento_slide15/ANEXAR_estes_arquivos">Copiar caminho da pasta</button></div><div class="attach"><div><b>Com a skill: anexe só estes 2 (o procedimento está na skill)</b></div><div class="muted small">pasta <code>A2_Claude_Ata_e_acompanhamento_slide15/ANEXAR_com_skill_estes_arquivos</code></div><ul class="files"><li><code>01_manual_executivo.txt</code></li><li><code>03_transcricao_reuniao.txt</code></li></ul><button class="btn" data-path="A2_Claude_Ata_e_acompanhamento_slide15/ANEXAR_com_skill_estes_arquivos">Copiar caminho da pasta</button></div>
+  <h4>2. Pedidos</h4>
+  <div class="prompt"><div class="prompt-head"><span class="prompt-label">Pedido</span><button class="btn btn-primary" data-copy="b6">Copiar</button></div><pre id="b6" class="prompt-text">Gere uma ata curta e uma lista de acompanhamento da transcrição fictícia. Use somente os três arquivos anexos. Siga o Manual do Executivo e o procedimento da ata. Separe decisões, tarefas, sugestões e dúvidas. Para cada tarefa, registre ação, responsável, prazo e trecho T de origem. Confira datas e valores. Escreva “não informado” nos campos ausentes. Não invente horários disponíveis, pois a agenda não está anexada. Omita comentários pessoais irrelevantes. Inclua um rascunho de e-mail com assunto e até 120 palavras. Não consulte contas reais, não envie, não agende e não altere sistemas. Entregue o texto completo na conversa e um arquivo DOCX editável. Se esta conta não gerar o arquivo, informe a limitação e mantenha o texto completo para revisão.</pre><div class="prompt-file">Arquivo: <a href="A2_Claude_Ata_e_acompanhamento_slide15/A2_PROMPT_para_copiar.txt">A2_PROMPT_para_copiar.txt</a></div></div><div class="prompt"><div class="prompt-head"><span class="prompt-label">Pedido com a skill</span><button class="btn btn-primary" data-copy="b7">Copiar</button></div><pre id="b7" class="prompt-text">Gere uma ata curta e uma lista de acompanhamento da transcrição fictícia. Use somente os dois arquivos anexos e siga o Manual do Executivo. Use a skill padrao-secretariado-sob-medida, que traz o procedimento de ata e o papel timbrado. Separe decisões, tarefas, sugestões e dúvidas. Para cada tarefa, registre ação, responsável, prazo e trecho T de origem. Confira datas e valores. Escreva “não informado” nos campos ausentes. Não invente horários disponíveis, pois a agenda não está anexada. Omita comentários pessoais irrelevantes. Inclua um rascunho de e-mail com assunto e até 120 palavras. Não consulte contas reais, não envie, não agende e não altere sistemas. Entregue o texto completo na conversa e o arquivo DOCX no papel timbrado. Se a skill não estiver disponível ou esta conta não gerar o arquivo, informe a limitação e mantenha o texto completo para revisão.</pre><div class="prompt-file">Arquivo: <a href="A2_Claude_Ata_e_acompanhamento_slide15/A2_PROMPT_com_skill.txt">A2_PROMPT_com_skill.txt</a></div></div><div class="prompt"><div class="prompt-head"><span class="prompt-label">Correção curta (só se errar responsável, prazo ou horário; uma vez)</span><button class="btn btn-primary" data-copy="b8">Copiar</button></div><pre id="b8" class="prompt-text">Confira T3, T5 e T6. Corrija responsáveis e prazos usando apenas esses trechos. Remova horários sem fonte e mantenha a próxima reunião como data a confirmar.</pre><div class="prompt-file">Arquivo: <a href="A2_Claude_Ata_e_acompanhamento_slide15/A2_PROMPT_correcao_se_precisar.txt">A2_PROMPT_correcao_se_precisar.txt</a></div></div>
+  <h4>3. Se der errado: reserva (nunca anexar)</h4>
+  <ul class="reserves"><li><button class="btn" data-show="b9" data-reserva="1">Mostrar em tela cheia</button> <code>reserva_ata_e_email_trecho_do_06.txt</code> <a class="small" href="A2_Claude_Ata_e_acompanhamento_slide15/RESERVA_plano_B_nao_anexar/reserva_ata_e_email_trecho_do_06.txt">abrir o arquivo</a><pre id="b9" class="hidden">RESULTADO PREPARADO PARA RESERVA
+Exemplo didático elaborado para a oficina. Não é registro de uma execução ao vivo.
+Todos os dados são fictícios.
+
+ATA APÓS A REUNIÃO FICTÍCIA DE 15/10/2026
+Participantes mencionados: Ana Ribeiro, Bruno Costa e Camila Lima [cabeçalho].
+Decisões: manter o encontro em 05/11/2026 e o limite de R$ 8.000,00 com audiovisual incluído [T1]. Não contratar fornecedor nesta reunião [T3].
+Tarefa 1: confirmar por escrito a capacidade para 34 pessoas e as condições de cancelamento da Horizonte. Responsável: Bruno. Prazo: 21/10/2026. Origem: T3–T4.
+Tarefa 2: revisar a lista de participantes. Responsável: Camila. Prazo: 20/10/2026. Origem: T5.
+Pendência 3: validar restrições alimentares. Responsável: não informado. Prazo: não informado. Origem: T6.
+Pendência 4: terceira proposta. Responsável pelo acompanhamento: não explicitamente definido em T4. Prazo: não informado. Origem: T4.
+Próxima reunião: data a confirmar. &quot;Sexta-feira, dia 22&quot; contém conflito de calendário [T7–T8]. Não corrigir silenciosamente.
+Comentário pessoal de T9 omitido por não contribuir para a decisão.
+
+RASCUNHO DE E-MAIL
+Assunto: Encontro Aurora | pendências e próxima reunião
+Olá, equipe.
+Mantivemos o encontro em 5/11 e o orçamento de R$ 8.000, com audiovisual incluído. Bruno confirmará capacidade e cancelamento da Horizonte até 21/10. Camila revisará a lista até 20/10.
+Ainda precisamos definir responsável e prazo para as restrições alimentares e acompanhar a terceira proposta.
+A data da próxima reunião precisa de confirmação: 22/10 é quinta-feira. Precisamos consultar a agenda antes de sugerir um horário.
+Nenhum fornecedor foi contratado. Aguardo a revisão antes de qualquer envio ou convite.
+
+CHECKLIST DE REVISÃO
+No briefing, conferir F1 a F4. Na ata, conferir T1 a T10 e os arquivos 01 e 04. A agenda F4 não faz parte da entrada da ata.
+Conferir R$ 6.900 + R$ 1.400 = R$ 8.300 e excesso de R$ 300.
+Confirmar que o pedido não autorizou envio, reserva ou convite.
+Resolver a data da próxima reunião com Ana.
+Verificar se as lacunas estão marcadas, sem nomes ou prazos inventados.
+
+Fonte: trecho de 06_reserva_briefing_e_ata.txt (Kit_Ensaio_Secretariado).</pre></li><li><a class="btn" href="00_SKILL_Padrao_Secretariado_Sob_Medida/EXEMPLOS_preparados_no_padrao/A2_Ata_e_email_exemplo_preparado.pdf" target="_blank">Abrir o PDF</a> <code>A2_Ata_e_email_exemplo_preparado.pdf</code></li></ul>
+  <details><summary>Roteiro completo desta demo (PASSO_A_PASSO.md)</summary>
+    <div class="row"><button class="btn" data-show="b10">Tela cheia</button>
+    <a href="A2_Claude_Ata_e_acompanhamento_slide15/PASSO_A_PASSO.md">abrir o arquivo .md</a></div>
+    <div id="b10" class="roteiro md"><h1>A2 · Claude · Ata e acompanhamento da reunião</h1>
+<p><strong>Slide 15</strong> · Tempo de palco: 6 minutos (minutos 27 a 33 da palestra) · Origem: Kit_Ensaio_Secretariado</p>
+<p>Todos os dados são fictícios. Nada é enviado, agendado, reservado ou pago.</p>
+<h2>Tarefa do dia a dia</h2>
+<p>Depois da reunião, transformar a transcrição em ata curta, lista de tarefas com responsável, prazo e origem, e rascunho de e-mail de acompanhamento, tudo para revisar antes de enviar.</p>
+<h2>Entra na conversa</h2>
+<ul>
+<li>Anexe só os 3 arquivos da pasta <a href="A2_Claude_Ata_e_acompanhamento_slide15/ANEXAR_estes_arquivos/">ANEXAR_estes_arquivos</a>: <code>01_manual_executivo.txt</code>, <code>03_transcricao_reuniao.txt</code> e <code>04_procedimento_ata.txt</code>.</li>
+<li>Cole o texto de <a href="A2_Claude_Ata_e_acompanhamento_slide15/A2_PROMPT_para_copiar.txt">A2_PROMPT_para_copiar.txt</a>. Copie o texto; não anexe o arquivo.</li>
+<li>O <code>04_procedimento_ata.txt</code> é um exemplo de instruções para uma skill. Anexá-lo não instala uma skill. Diga o que foi usado de verdade: um arquivo anexado.</li>
+</ul>
+<blockquote>
+<p><strong>Nunca anexe:</strong> as fontes e a agenda da demo A1 (a ata recebe só 01, 03 e 04), a pasta inteira, este <code>PASSO_A_PASSO.md</code>, os arquivos PROMPT, nada de <code>RESERVA_plano_B_nao_anexar</code> ou de <code>SAIDAS_salve_aqui_o_resultado</code>.</p>
+</blockquote>
+<h2>Antes de subir ao palco</h2>
+<ul>
+<li>Use a cópia do deck com os slides 16 a 18 ocultos (Lawrence Teixeira - Agentes de IA - slides 16 a 18 ocultos.pptx). A numeração dos slides é a mesma do original, que o kit chama de &quot;deck de 7/10/2026&quot;. Esta demo entra no slide 15.</li>
+<li>Entre na conta do Claude antes de projetar. Feche e-mail, agenda e abas pessoais. Desative as notificações no Windows e no iPhone. Confira que a projeção não mostra dados pessoais.</li>
+<li>Deixe abertos no Bloco de Notas: <code>A2_PROMPT_para_copiar.txt</code>, <code>A2_PROMPT_correcao_se_precisar.txt</code> e <code>ANEXAR_estes_arquivos\04_procedimento_ata.txt</code> (para o passo 3). Em outra janela, abra <code>RESERVA_plano_B_nao_anexar\reserva_ata_e_email_trecho_do_06.txt</code>.</li>
+<li>No ensaio, aprenda a abrir conversa nova, anexar TXT e abrir a resposta no Claude. Os nomes dos controles podem variar. Confira se a sua conta gera o DOCX. Não instale plugins nem conecte contas.</li>
+<li>Ensaie a conferência de Bruno, Camila, restrições alimentares e a data aberta. Guarde a melhor saída (texto ou DOCX) em <code>SAIDAS_salve_aqui_o_resultado</code>.</li>
+<li>No ensaio, teste o plano B com a rede desligada: abra a reserva e localize ATA APÓS A REUNIÃO FICTÍCIA DE 15/10/2026 e RASCUNHO DE E-MAIL. Religue a rede depois.</li>
+<li>Recomendação nova (fora do kit): pré-monte a conversa antes de a plateia entrar. Abra uma conversa nova no Claude, anexe os 3 arquivos e cole o pedido, sem enviar. No palco, mostre os anexos, faça o passo 3 e envie.</li>
+<li>Recomendação nova: abra os .txt de uma demo por vez. Os pedidos começam diferente: o da A1 com &quot;Prepare um briefing&quot;, o da A2 com &quot;Gere uma ata&quot;. Confira o começo antes de enviar.</li>
+</ul>
+<h2>No palco, passo a passo</h2>
+<ol>
+<li>Abra uma conversa nova no Claude. Não reutilize a conversa do briefing.</li>
+<li>Anexe somente os 3 arquivos de <code>ANEXAR_estes_arquivos</code>: <code>01_manual_executivo.txt</code>, <code>03_transcricao_reuniao.txt</code> e <code>04_procedimento_ata.txt</code>.</li>
+<li>Mostre o <code>04_procedimento_ata.txt</code> por alguns segundos. Diga: &quot;Este é o procedimento que a IA vai seguir. Ele ensina a separar decisões, tarefas e dúvidas.&quot;</li>
+<li>Abra <code>A2_PROMPT_para_copiar.txt</code> no Bloco de Notas, Ctrl+A, Ctrl+C, cole na conversa e envie.</li>
+<li>Quando a resposta chegar, mostre as tarefas. Abra <code>ANEXAR_estes_arquivos\03_transcricao_reuniao.txt</code> e confira T3, T5 e T6.</li>
+<li>Mostre o rascunho do e-mail. Abra o DOCX se estiver pronto. Encerre e volte ao deck.</li>
+</ol>
+<p><strong>Fechamento:</strong> &quot;A ata organiza o que foi dito. Quem revisa precisa conferir responsáveis, prazos e o que ficou em aberto.&quot;</p>
+<h2>O que conferir na tela</h2>
+<ul>
+<li><strong>Decisões:</strong> encontro mantido em 05/11/2026, teto de R$ 8.000 e nenhuma contratação naquela reunião [T1 e T3].</li>
+<li><strong>Bruno:</strong> confirmar capacidade para 34 pessoas e cancelamento da Horizonte até 21/10/2026 [T3 e T4]. <strong>Camila:</strong> revisar a lista até 20/10/2026 [T5].</li>
+<li><strong>Restrições alimentares:</strong> responsável e prazo &quot;não informado&quot; [T6]. A terceira proposta também segue pendente, sem responsável atual ou prazo definidos em T4.</li>
+<li><strong>Próxima reunião:</strong> data a confirmar, sem horários livres inventados, porque a agenda não entra nesta conversa. &quot;Sexta-feira, dia 22&quot; é contraditório.</li>
+<li>O comentário pessoal de T9 fica de fora. O e-mail continua como rascunho, com assunto e até 120 palavras.</li>
+<li>A tabela do slide 15 é um exemplo preparado com as mesmas três tarefas. A resposta ao vivo pode usar outras palavras; o que vale são estes fatos.</li>
+</ul>
+<h2>Se der errado</h2>
+<ul>
+<li>Erro em responsável, prazo ou horário: abra <code>A2_PROMPT_correcao_se_precisar.txt</code>, Ctrl+A, Ctrl+C, cole e envie. Faça uma única correção.</li>
+<li>Após 2 minutos sem resposta útil, ou uma correção sem sucesso, pare. Diga: &quot;Vou usar um exemplo preparado para continuarmos a conferência.&quot;</li>
+<li>Abra <code>RESERVA_plano_B_nao_anexar\reserva_ata_e_email_trecho_do_06.txt</code>: seção ATA APÓS A REUNIÃO FICTÍCIA DE 15/10/2026 e depois RASCUNHO DE E-MAIL. Diga que é um exemplo preparado. Mostre os mesmos pontos e volte ao deck no horário previsto.</li>
+<li>Atenção: os horários da agenda F4 pertencem à demo A1. Aqui eles não podem aparecer como disponibilidade confirmada.</li>
+<li>Se guardou em <code>SAIDAS_salve_aqui_o_resultado</code> uma saída verdadeira do ensaio, pode mostrá-la no lugar da reserva, dizendo que é do ensaio.</li>
+</ul>
+<h2>Com a skill (opcional; só se o teste no ensaio passar)</h2>
+<p>Variante nova, fora do kit e ainda não ensaiada. O pedido original continua sendo o principal. Instalação e teste: <a href="00_SKILL_Padrao_Secretariado_Sob_Medida/COMO_INSTALAR_E_USAR.md">COMO_INSTALAR_E_USAR.md</a>.</p>
+<ul>
+<li><strong>Pré-requisito:</strong> a skill padrao-secretariado-sob-medida ativa no Claude, em Customize &gt; Skills (plano pago com execução de código). A skill &quot;ata-de-reuniao&quot; da sua conta precisa estar desligada. Instale só <code>padrao-secretariado-sob-medida.zip</code>, não o plugin: a skill não é plugin nem conector e não dá acesso a contas (slide 10).</li>
+<li>Se ficar com o pedido original, desligue antes também esta skill: a descrição dela cobre atas e arquivos Word, e o Claude pode usá-la sozinho. Só assim vale dizer que o procedimento usado foi o arquivo anexado.</li>
+<li><strong>Anexos:</strong> só os 2 arquivos de <a href="A2_Claude_Ata_e_acompanhamento_slide15/ANEXAR_com_skill_estes_arquivos/">ANEXAR_com_skill_estes_arquivos</a>, também na pré-montagem: <code>01_manual_executivo.txt</code> e <code>03_transcricao_reuniao.txt</code>. O 04 não entra: o procedimento da ata está dentro da skill.</li>
+<li><strong>Pedido:</strong> cole <code>A2_PROMPT_com_skill.txt</code> no lugar de <code>A2_PROMPT_para_copiar.txt</code>, também na pré-montagem.</li>
+<li><strong>Passo 3, no lugar do 04:</strong> deixe aberto no Bloco de Notas e mostre por alguns segundos o <a href="00_SKILL_Padrao_Secretariado_Sob_Medida/padrao-secretariado-sob-medida/SKILL.md">SKILL.md</a> (o passo a passo da ata fica em <code>references\modelos\ata.md</code>). Diga: &quot;Reparem que não anexei o procedimento da ata: ele está dentro da skill instalada. É o como fazer do slide 10.&quot;</li>
+<li><strong>O que conferir a mais:</strong> o Word no padrão (logo no cabeçalho, faixa &quot;Rascunho para revisão&quot;, seção &quot;O que depende de revisão humana&quot; e rodapé com a marca), com os mesmos fatos de <strong>O que conferir na tela</strong>.</li>
+<li><strong>Se a skill não carregar ou o arquivo não sair em 2 minutos:</strong> siga com o texto da conversa. Como reserva visual, mostre <a href="00_SKILL_Padrao_Secretariado_Sob_Medida/EXEMPLOS_preparados_no_padrao/A2_Ata_e_email_exemplo_preparado.pdf">A2_Ata_e_email_exemplo_preparado.pdf</a> (deixe-o aberto antes, em outra janela; só mostrar, nunca anexar) e diga que é um exemplo preparado.</li>
+</ul>
+<h2>Arquivos desta pasta</h2>
+<ul>
+<li><code>PASSO_A_PASSO.md</code>: este roteiro. Nunca anexar.</li>
+<li><a href="A2_Claude_Ata_e_acompanhamento_slide15/ANEXAR_estes_arquivos/01_manual_executivo.txt"><code>ANEXAR_estes_arquivos\01_manual_executivo.txt</code></a>: regras da executiva Ana (estilo, e-mail de até 120 palavras, &quot;não informado&quot;). <strong>Anexar.</strong></li>
+<li><a href="A2_Claude_Ata_e_acompanhamento_slide15/ANEXAR_estes_arquivos/03_transcricao_reuniao.txt"><code>ANEXAR_estes_arquivos\03_transcricao_reuniao.txt</code></a>: transcrição fictícia da reunião de 15/10/2026, trechos T1 a T10. <strong>Anexar.</strong></li>
+<li><a href="A2_Claude_Ata_e_acompanhamento_slide15/ANEXAR_estes_arquivos/04_procedimento_ata.txt"><code>ANEXAR_estes_arquivos\04_procedimento_ata.txt</code></a>: procedimento da ata, exemplo de instruções para uma skill. <strong>Anexar e mostrar.</strong></li>
+<li><a href="A2_Claude_Ata_e_acompanhamento_slide15/A2_PROMPT_para_copiar.txt"><code>A2_PROMPT_para_copiar.txt</code></a>: pedido da demo. Colar o texto.</li>
+<li><a href="A2_Claude_Ata_e_acompanhamento_slide15/A2_PROMPT_correcao_se_precisar.txt"><code>A2_PROMPT_correcao_se_precisar.txt</code></a>: correção curta, uma vez só.</li>
+<li><a href="A2_Claude_Ata_e_acompanhamento_slide15/A2_PROMPT_com_skill.txt"><code>A2_PROMPT_com_skill.txt</code></a>: pedido da variante com a skill (novo, opcional). Colar o texto só se o teste no ensaio passar.</li>
+<li><a href="A2_Claude_Ata_e_acompanhamento_slide15/ANEXAR_com_skill_estes_arquivos/"><code>ANEXAR_com_skill_estes_arquivos\</code></a>: <code>01_manual_executivo.txt</code> e <code>03_transcricao_reuniao.txt</code>, sem o 04 (novo, opcional). Anexar só na variante com a skill.</li>
+<li><a href="A2_Claude_Ata_e_acompanhamento_slide15/RESERVA_plano_B_nao_anexar/reserva_ata_e_email_trecho_do_06.txt"><code>RESERVA_plano_B_nao_anexar\reserva_ata_e_email_trecho_do_06.txt</code></a>: ata, e-mail e checklist preparados. Só mostrar; nunca anexar.</li>
+<li><code>SAIDAS_salve_aqui_o_resultado\</code>: vazia. Guarde aqui a ata em texto ou DOCX gerada no ensaio ou no palco.</li>
+</ul>
+<h2>Sugestões para a plateia sentir a aceleração</h2>
+<p>Novas e opcionais; não estão no kit.</p>
+<ul>
+<li>Frase de entrada: &quot;Depois da reunião: mesmo manual da executiva, outra tarefa.&quot;</li>
+<li>Limite a participação da plateia a 1 minuto no total.</li>
+<li>Antes de enviar, pergunte: &quot;Quanto tempo vocês levam para fazer uma ata como esta e o e-mail de acompanhamento?&quot;</li>
+<li>Cronômetro visível ao enviar, como na A1: clique em &quot;Volta&quot; quando o texto terminar e pare depois da conferência. Diga os dois tempos medidos.</li>
+<li>Enquanto o Claude trabalha, pergunte: &quot;Quem lembra do problema do dia 22? Vejam se ele volta.&quot; e &quot;O que não deveria entrar numa ata?&quot; (o comentário pessoal de T9).</li>
+<li>Essa caça ao erro só funciona se a tabela do slide 15 e a frase sobre a data da próxima reunião entrarem por clique. Hoje o PPT não tem animação. Sem isso, mostre o slide 15 só depois da resposta ou pule as perguntas.</li>
+<li>Na fala, chame o <code>04_procedimento_ata.txt</code> de &quot;procedimento padrão, como um POP&quot;: é o tipo de instrução que vira uma skill (na versão sem skill, ele só foi anexado). Diga &quot;pedido&quot; em vez de prompt.</li>
+</ul>
+</div>
+  </details>
+</section>
+<section class="card" id="A3">
+  <div class="card-head">
+    <div><span class="pill">A3</span> <b>Jarvis por voz (dot do ChatGPT)</b> · A reunião mudou: a plateia vota</div>
+    <div class="muted">Slide(s) 19–20 · 3 + 12 min</div>
+  </div>
+  <p class="lead">Quando a reunião muda em cima da hora: reorganizar a pauta, propor horários, listar o que validar e redigir o aviso à equipe, conversando por voz.</p>
+  <p class="warn">Antes de a plateia entrar: cole o caso (07) na conversa do Jarvis, envie e depois mande a fala 0. No palco, as falas 1 a 5, uma por vez.</p><p class="warn">Até 13/10: confira se o Jarvis tem Gmail ou agenda reais conectados e desconecte para a demo, porque ele fala em voz alta.</p><p class="warn">A fala 6 (documento no padrão) é opcional: só se sobrar tempo e se o ensaio mostrar que o Jarvis usa a skill.</p>
+  <h4>1. Entra na conversa</h4>
+  <div class="attach"><div><b>Cole o conteúdo na conversa do Jarvis, antes da chamada</b></div><div class="muted small">pasta <code>A3_Jarvis_voz_Reuniao_mudou_slides19-20/COLAR_na_conversa_antes_da_chamada</code></div><ul class="files"><li><code>07_caso_voz_Jarvis.txt</code></li></ul><button class="btn" data-path="A3_Jarvis_voz_Reuniao_mudou_slides19-20/COLAR_na_conversa_antes_da_chamada">Copiar caminho da pasta</button></div>
+  <h4>2. Pedidos e falas, na ordem</h4>
+  <div class="prompt"><div class="prompt-head"><span class="prompt-label">Caso para colar antes da chamada (07)</span><button class="btn btn-primary" data-copy="b11">Copiar</button></div><pre id="b11" class="prompt-text">DEMONSTRAÇÃO FICTÍCIA POR VOZ • A REUNIÃO MUDOU
+Preparação da conversa que será usada na oficina, não autorização para iniciar uma chamada agora.
+
+INSTRUÇÃO
+Vamos fazer uma demonstração ao vivo para profissionais de Secretariado. Fale em português do Brasil, com naturalidade e frases curtas. Apresente-se como Jarvis, assistente de IA. Responda a cada turno em até 40 segundos, salvo pedido de texto para a tela. Faça uma pergunta de esclarecimento por vez.
+Lawrence moderará e repetirá as falas da plateia. Não afirme ver mãos, ouvir a sala ou identificar pessoas sem receber essa informação.
+Use somente o caso abaixo. Não acesse contas, agenda ou dados reais. Não envie mensagens, crie eventos, ligue para terceiros, publique arquivos ou assuma compromissos. Prepare propostas para revisão. Não invente confirmações nem ações executadas. Espere a primeira pergunta de Lawrence.
+
+CASO
+Reunião da diretoria originalmente das 14h às 15h.
+Pauta: orçamento do evento, riscos e responsáveis.
+A diretora só estará disponível a partir das 14h20.
+Compromisso fixo com cliente: das 15h às 15h45, não pode mudar.
+Decisão do orçamento: até as 16h.
+Demais participantes e sala: disponíveis das 14h às 16h30.
+A pauta de 60 minutos pode ser condensada ou dividida, mediante escolha humana.
+Todos os horários são locais no mesmo dia e fuso. Nomes, agenda e evento são fictícios.
+
+ESCOLHA DA PLATEIA
+A. Concentrar decisões em 40 minutos e deixar informes por escrito.
+B. Dividir: orçamento antes das 15h e demais temas depois das 15h45.
+Lawrence informará a escolha. Não a presuma.
+
+SAÍDA
+Agenda proposta com duração e finalidade dos blocos.
+Lista do que falta validar.
+Mensagem de até 90 palavras à equipe fictícia, em forma de proposta até confirmação.
+Checklist de execução futura, sujeito à autorização aplicável.</pre><div class="prompt-file">Arquivo: <a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/COLAR_na_conversa_antes_da_chamada/07_caso_voz_Jarvis.txt">COLAR_na_conversa_antes_da_chamada/07_caso_voz_Jarvis.txt</a></div></div><div class="prompt"><div class="prompt-head"><span class="prompt-label">Fala 0, antes de a plateia entrar</span><button class="btn btn-primary" data-copy="b12">Copiar</button></div><pre id="b12" class="prompt-text">Vamos começar uma nova rodada deste caso. Ainda não houve voto da plateia nem mudança de prazo. Espere minha primeira pergunta.</pre><div class="prompt-file">Arquivo: <a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/0_Antes_reiniciar_rodada.txt">FALAS_para_copiar/0_Antes_reiniciar_rodada.txt</a></div></div><div class="prompt"><div class="prompt-head"><span class="prompt-label">Fala 1, minutos 0 a 2 da chamada</span><button class="btn btn-primary" data-copy="b13">Copiar</button></div><pre id="b13" class="prompt-text">Jarvis, estou com a turma de Secretariado. Apresente-se em até 25 segundos. Depois, diga qual é o conflito do caso e pergunte se a turma prefere condensar ou dividir a pauta.</pre><div class="prompt-file">Arquivo: <a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/1_Apresentacao.txt">FALAS_para_copiar/1_Apresentacao.txt</a></div></div><div class="prompt"><div class="prompt-head"><span class="prompt-label">Fala 2A, se a turma escolheu A (2 a 4)</span><button class="btn btn-primary" data-copy="b14">Copiar</button></div><pre id="b14" class="prompt-text">A turma escolheu a opção A. Use essa opção. Proponha os horários e diga o que precisamos validar. Responda em até 40 segundos.</pre><div class="prompt-file">Arquivo: <a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/2A_Escolha_opcao_A.txt">FALAS_para_copiar/2A_Escolha_opcao_A.txt</a></div></div><div class="prompt"><div class="prompt-head"><span class="prompt-label">Fala 2B, se a turma escolheu B (2 a 4)</span><button class="btn btn-primary" data-copy="b15">Copiar</button></div><pre id="b15" class="prompt-text">A turma escolheu a opção B. Use essa opção. Proponha os horários e diga o que precisamos validar. Responda em até 40 segundos.</pre><div class="prompt-file">Arquivo: <a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/2B_Escolha_opcao_B.txt">FALAS_para_copiar/2B_Escolha_opcao_B.txt</a></div></div><div class="prompt"><div class="prompt-head"><span class="prompt-label">Fala 3, minutos 4 a 7</span><button class="btn btn-primary" data-copy="b16">Copiar</button></div><pre id="b16" class="prompt-text">Escreva aqui na conversa um plano de uma página com os horários, as validações, uma mensagem de até 90 palavras para a equipe fictícia e um checklist. É um rascunho para revisão. Não envie nem altere nada.</pre><div class="prompt-file">Arquivo: <a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/3_Entrega_plano.txt">FALAS_para_copiar/3_Entrega_plano.txt</a></div></div><div class="prompt"><div class="prompt-head"><span class="prompt-label">Fala 4, a surpresa (7 a 9)</span><button class="btn btn-primary" data-copy="b17">Copiar</button></div><pre id="b17" class="prompt-text">Entrou mais uma condição: a decisão do orçamento precisa acontecer até as 14h45. Revise o plano que você acabou de propor. Ajuste somente o necessário e diga o que mudou.</pre><div class="prompt-file">Arquivo: <a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/4_Mudanca_14h45.txt">FALAS_para_copiar/4_Mudanca_14h45.txt</a></div></div><div class="prompt"><div class="prompt-head"><span class="prompt-label">Fala 5, minutos 9 a 11</span><button class="btn btn-primary" data-copy="b18">Copiar</button></div><pre id="b18" class="prompt-text">O que ainda depende de mim antes de esse plano ser executado? Responda em até 30 segundos.</pre><div class="prompt-file">Arquivo: <a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/5_Papel_humano.txt">FALAS_para_copiar/5_Papel_humano.txt</a></div></div><div class="prompt"><div class="prompt-head"><span class="prompt-label">Fala 6, opcional: documento no padrão (com a skill)</span><button class="btn btn-primary" data-copy="b19">Copiar</button></div><pre id="b19" class="prompt-text">Agora transforme o plano revisado num documento no papel timbrado do Secretariado Sob Medida, usando a skill padrao-secretariado-sob-medida, se ela estiver disponível nesta conversa. Use somente o caso, a escolha da turma e a nova condição desta conversa. É um rascunho para revisão. Não envie nem altere nada.</pre><div class="prompt-file">Arquivo: <a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/6_Opcional_documento_no_padrao.txt">FALAS_para_copiar/6_Opcional_documento_no_padrao.txt</a></div></div><div class="prompt"><div class="prompt-head"><span class="prompt-label">Só se errar um horário, uma vez (sugestão nova, não ensaiada)</span><button class="btn btn-primary" data-copy="b20">Copiar</button></div><pre id="b20" class="prompt-text">Confira o plano com as regras do caso: a diretora só está disponível a partir das 14h20, o cliente das 15h às 15h45 não pode ser movido nem sobreposto; a decisão do orçamento precisa respeitar o prazo atual; e a sala e as demais pessoas estão disponíveis só até 16h30. Corrija só o que violar essas regras e diga o que mudou.</pre><div class="prompt-file">Arquivo: <a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/X_Correcao_se_errar_horario.txt">FALAS_para_copiar/X_Correcao_se_errar_horario.txt</a></div></div>
+  <h4>3. Se der errado: reserva (nunca anexar)</h4>
+  <ul class="reserves"><li><button class="btn" data-show="b21" data-reserva="1">Mostrar em tela cheia</button> <code>08_reserva_voz_Jarvis.txt</code> <a class="small" href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/RESERVA_plano_B_nao_anexar/08_reserva_voz_Jarvis.txt">abrir o arquivo</a><pre id="b21" class="hidden">RESULTADO PREPARADO PARA CONTINGÊNCIA
+Exemplo didático com dados fictícios. Não é uma execução ao vivo nem comprovação de ações realizadas.
+
+CONFLITO
+Entre 14h20 e 15h há apenas 40 minutos. A pauta original tem 60 minutos. O compromisso com cliente ocupa 15h–15h45 e o orçamento precisa de decisão até 16h. A solução depende de autorização para condensar ou dividir a pauta.
+
+OPÇÃO A • CONCENTRAR EM 40 MINUTOS
+14h20–14h40: decisão do orçamento.
+14h40–14h50: riscos prioritários.
+14h50–15h: responsáveis e próximos passos.
+Informes sem decisão seguem por escrito, depois de revisão.
+Validação: confirmar pauta condensada, participantes e sala. Nada foi agendado ou enviado.
+Mensagem proposta:
+Olá, equipe. Proponho realizarmos a reunião das 14h20 às 15h, concentrando orçamento, riscos prioritários e responsáveis. Os informes seguem por escrito após revisão. O compromisso com o cliente às 15h permanece. Por favor, confirmem se o formato condensado atende à pauta e se participantes e sala estão disponíveis. A agenda só será atualizada após essa validação.
+
+OPÇÃO B • DIVIDIR EM DOIS BLOCOS
+14h20–14h50: orçamento do evento.
+15h45–16h15: riscos e responsáveis.
+Validação: confirmar concordância com dois blocos, presença da diretora, participantes e sala. Nada foi agendado ou enviado.
+Mensagem proposta:
+Olá, equipe. Proponho dividir a reunião em dois blocos: das 14h20 às 14h50 para o orçamento e das 15h45 às 16h15 para riscos e responsáveis. O compromisso com o cliente permanece das 15h às 15h45. Precisamos confirmar a concordância com o formato, a presença dos participantes e a sala antes de atualizar qualquer convite.
+
+NOVA CONDIÇÃO • ORÇAMENTO DECIDIDO ATÉ 14H45
+A: a decisão às 14h40 já atende. Manter o plano e confirmar essa leitura.
+B: usar 14h20–14h45 para a decisão, 14h45–14h50 para registro e encaminhamentos. Manter 15h45–16h15 para os demais temas. Verificar se 25 minutos são suficientes para a decisão e pedir confirmação se houver dúvida.
+
+CHECKLIST HUMANO
+Conferir horários e prazo.
+Confirmar se a pauta cabe no formato escolhido.
+Validar participantes e sala.
+Revisar mensagem e destinatários.
+Autorizar a ação aplicável antes de alterar sistemas.
+Depois da execução autorizada, verificar evento, horário, convidados e resultado.</pre></li><li><a class="btn" href="00_SKILL_Padrao_Secretariado_Sob_Medida/EXEMPLOS_preparados_no_padrao/A3_Plano_v2_opcao_B_exemplo_preparado.pdf" target="_blank">Abrir o PDF</a> <code>A3_Plano_v2_opcao_B_exemplo_preparado.pdf</code></li></ul>
+  <details><summary>Roteiro completo desta demo (PASSO_A_PASSO.md)</summary>
+    <div class="row"><button class="btn" data-show="b22">Tela cheia</button>
+    <a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/PASSO_A_PASSO.md">abrir o arquivo .md</a></div>
+    <div id="b22" class="roteiro md"><h1>A3 · Jarvis por voz no iPhone · A reunião mudou</h1>
+<p><strong>Slides 19 (desafio) e 20 (voz)</strong> · Tempo de palco: 3 minutos no slide 19 + 12 minutos no slide 20 (minutos 33 a 50 da palestra: slide 19 de 33 a 36 e chamada de 36 a 50, com 2 minutos de folga; os slides 16 a 18 estão ocultos) · Origem: Kit_Ensaio_Secretariado</p>
+<p>Todos os dados são fictícios. Nada é enviado, agendado, reservado ou pago.</p>
+<h2>Tarefa do dia a dia</h2>
+<p>A reunião da diretoria mudou: a diretora só chega às 14h20 e há um compromisso fixo com cliente das 15h às 15h45. Reorganizar a pauta, propor horários, listar o que validar e redigir a mensagem à equipe, conversando por voz.</p>
+<h2>Entra na conversa</h2>
+<ul>
+<li><strong>Antes da chamada</strong>, no Windows e fora da projeção (no dia 17, antes da palestra): o conteúdo completo de <a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/COLAR_na_conversa_antes_da_chamada/07_caso_voz_Jarvis.txt"><code>COLAR_na_conversa_antes_da_chamada\07_caso_voz_Jarvis.txt</code></a> (Bloco de Notas, Ctrl+A, Ctrl+C, colar na conversa com Jarvis e enviar).</li>
+<li><strong>Durante a chamada:</strong> as falas 1 a 5 de <a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/">FALAS_para_copiar</a>, uma por vez (na fala 2, só a 2A ou a 2B, conforme o voto; a fala 6 é opcional, veja <strong>Com a skill</strong>). Fora delas, só o voto e uma resposta curta da plateia, que você repete.</li>
+</ul>
+<blockquote>
+<p><strong>Nunca cole nem anexe:</strong> <code>RESERVA_plano_B_nao_anexar\08_reserva_voz_Jarvis.txt</code>, respostas de ensaio, o que estiver em <code>SAIDAS_salve_aqui_o_resultado</code>, este <code>PASSO_A_PASSO.md</code> ou a pasta inteira. Não misture Ana, fornecedores ou datas das demos A1 e A2.</p>
+</blockquote>
+<h2>Antes de subir ao palco</h2>
+<ul>
+<li><strong>Teste mínimo do iPhone:</strong> abra a conversa com Jarvis no app e localize o botão de telefone. Faça uma chamada curta fora da projeção. Verifique se você ouve a resposta e se o áudio chega à sala.</li>
+<li><strong>Som:</strong> uma única saída de som; evite dois alto-falantes ou microfones abertos próximos. Teste com a mesma ligação de áudio prevista para a sala, ouvindo e sendo ouvido. Leve carregador e o cabo ou adaptador que funcionou no ensaio.</li>
+<li><strong>Texto visível:</strong> teste o caminho para mostrar só o texto do caso no Windows. Não conte com atualização simultânea sem testar.</li>
+<li>Recomendação nova (fora do kit): deixe a conversa do Jarvis aberta numa aba do perfil de navegador da palestra, rolada até o fim. Teste que uma frase dita por voz aparece como texto no Windows.</li>
+<li>No iPhone, confira que está na conta correta. Prepare sem projetar o histórico pessoal. Desative notificações no iPhone e no Windows.</li>
+<li>Recomendação nova: até 13/10, confira se o Jarvis tem Gmail ou agenda reais conectados e desconecte para a demo, porque ele fala em voz alta.</li>
+<li>Ensaie duas rodadas: uma com <code>2A_Escolha_opcao_A.txt</code> e outra com <code>2B_Escolha_opcao_B.txt</code>. Em cada uma, informe a condição das 14h45 só depois de receber o plano inicial.</li>
+<li>No ensaio, teste o plano B com a rede desligada: abra <code>RESERVA_plano_B_nao_anexar\08_reserva_voz_Jarvis.txt</code> e localize CONFLITO, OPÇÃO A, OPÇÃO B e NOVA CONDIÇÃO. Religue a rede depois.</li>
+<li><strong>Pronto para o evento:</strong> reenvie o conteúdo de <code>COLAR_na_conversa_antes_da_chamada\07_caso_voz_Jarvis.txt</code> e diga ou cole <code>FALAS_para_copiar\0_Antes_reiniciar_rodada.txt</code>. Confira que Jarvis não começa a solução sozinho.</li>
+<li>Deixe aberto no Windows, em janela separada, <code>RESERVA_plano_B_nao_anexar\08_reserva_voz_Jarvis.txt</code>. Tenha as falas à mão para ler ou colar.</li>
+<li>A conversa é entre você e Jarvis no app. Ela não telefona para terceiros nem coloca o assistente em uma reunião externa.</li>
+</ul>
+<h2>No palco, passo a passo</h2>
+<p>Nos passos 2 a 7, os minutos são da chamada (0 = minuto 36 da palestra).</p>
+<ol>
+<li><strong>Slide 19 (3 min), antes de iniciar a voz.</strong> Apresente o caso em linguagem simples: &quot;A reunião tinha 60 minutos, das 14h às 15h. A diretora só chega às 14h20. O compromisso com cliente das 15h às 15h45 é fixo. O orçamento precisa de decisão até as 16h. As outras pessoas e a sala estão disponíveis até as 16h30. Sobram 40 minutos antes do cliente.&quot; Mostre as opções do slide: A, concentrar decisões e deixar informes por escrito; B, dividir a pauta em dois blocos. A votação acontece depois, já na chamada (2–4 min).</li>
+<li><strong>Slide 20, 0–2 min:</strong> inicie a chamada pelo botão de telefone testado e diga a fala <code>1_Apresentacao.txt</code> (as falas estão em <code>FALAS_para_copiar</code>). Daqui em diante, uma pergunta por vez: você controla o ritmo, repete as falas da plateia e informa o voto. Jarvis não vê mãos nem ouve a sala toda.
+<ul>
+<li><strong>Confira logo depois:</strong> ele reconhece que cabem só 40 minutos antes do cliente e pede a escolha humana.</li>
+</ul>
+</li>
+<li><strong>2–4 min:</strong> faça a votação por mãos levantadas, conte e diga <code>2A_Escolha_opcao_A.txt</code> ou <code>2B_Escolha_opcao_B.txt</code>, conforme o voto. Empate (sugestão nova): fico com B (mostra melhor a surpresa das 14h45).
+<ul>
+<li><strong>Confira logo depois:</strong> A, 14h20 às 15h; B, orçamento das 14h20 às 14h50 e demais temas das 15h45 às 16h15. Outras divisões podem servir se respeitarem as restrições. Na B, a presença da diretora após 15h45 ainda precisa ser confirmada; se Jarvis não disser isso, diga você.</li>
+</ul>
+</li>
+<li><strong>4–7 min:</strong> diga ou cole <code>3_Entrega_plano.txt</code>. Mostre só o texto do caso. Se ele não aparecer no computador, encerre a voz e siga por texto na mesma conversa, inclusive nos próximos passos.
+<ul>
+<li><strong>Confira logo depois:</strong> os horários, antes de ler a mensagem.</li>
+</ul>
+</li>
+<li><strong>7–9 min:</strong> só agora diga <code>4_Mudanca_14h45.txt</code>.
+<ul>
+<li><strong>Confira logo depois</strong> o plano realmente gerado: se o orçamento já terminava até 14h45, pode manter; se terminava depois, tem de mudar. Isso vale também para a A: ela só se mantém se o orçamento já terminava até 14h45 (na reserva, às 14h40). No exemplo B, cabem 25 minutos de decisão (14h20 às 14h45) e 5 de registro; é preciso validar se esse tempo basta.</li>
+</ul>
+</li>
+<li><strong>9–11 min:</strong> pergunte à turma: &quot;O que vocês ainda revisariam?&quot; Repita uma resposta curta para Jarvis. Depois diga <code>5_Papel_humano.txt</code>.
+<ul>
+<li><strong>Confira logo depois</strong> se a resposta aponta: conferir fatos, validar formato, presença e sala, revisar a mensagem e autorizar ações quando aplicável. Nada foi enviado ou agendado.</li>
+</ul>
+</li>
+<li><strong>11–12 min:</strong> use a folga para latência, encerre a chamada e volte ao slide 21.</li>
+</ol>
+<p><strong>Fechamento:</strong> &quot;A IA ajudou a reorganizar o plano. A conferência e a decisão continuam conosco.&quot;</p>
+<h2>O que conferir na tela</h2>
+<ul>
+<li><strong>Conflito:</strong> das 14h20 às 15h cabem só 40 minutos para uma pauta de 60. A escolha entre A e B é humana.</li>
+<li><strong>Antes da surpresa:</strong> A, reunião das 14h20 às 15h. B, orçamento das 14h20 às 14h50; restante das 15h45 às 16h15.</li>
+<li><strong>Depois da surpresa:</strong> orçamento decidido até 14h45. A reserva A já decide às 14h40. A reserva B decide das 14h20 às 14h45 e registra até 14h50.</li>
+<li><strong>Nunca pode acontecer:</strong> sobrepor o cliente das 15h às 15h45, assumir confirmações, ou dizer que enviou mensagem ou mudou convite.</li>
+<li>O plano é rascunho para revisão, com mensagem de até 90 palavras para a equipe fictícia.</li>
+<li>A resposta ao vivo pode organizar os blocos de outro modo. Julgue pelas restrições, não pela semelhança com a reserva.</li>
+</ul>
+<h2>Se der errado</h2>
+<ul>
+<li><strong>Erro de horário</strong> (por exemplo, invadir o cliente das 15h às 15h45): diga uma única vez <code>FALAS_para_copiar\X_Correcao_se_errar_horario.txt</code>. É uma sugestão nova, fora do kit; as notas do slide 20 preveem pedir uma verificação objetiva uma vez. Ensaie antes de usar.</li>
+<li><strong>Chamada começando com atraso</strong> (por exemplo, depois do minuto 40 da palestra): pule a fala 4 (14h45) e preserve a entrega escrita e a fala 5, como preveem as notas do slide 20.</li>
+<li><strong>Voz falhou:</strong> tente de novo uma vez, por até 30 segundos. Evite abrir configurações e histórico no telão.</li>
+<li>Se o texto ainda funcionar, siga colando as falas de <code>FALAS_para_copiar</code> na conversa. Diga que a demonstração segue por texto.</li>
+<li>Se o acesso ou a rede também falharem, abra <code>RESERVA_plano_B_nao_anexar\08_reserva_voz_Jarvis.txt</code>. Mostre CONFLITO, a opção escolhida (OPÇÃO A ou OPÇÃO B) e depois NOVA CONDIÇÃO.</li>
+<li>Explique que esse resultado foi preparado antes. Convide a plateia a conferir os horários e as validações.</li>
+<li><strong>Atrasado:</strong> o limite de encerramento vale mais que cada frase. Volte ao slide 21 até o minuto 50 da palestra e preserve os 10 minutos finais (fechamento e perguntas).</li>
+<li>Se guardou em <code>SAIDAS_salve_aqui_o_resultado</code> uma saída verdadeira do ensaio, pode mostrá-la no lugar da reserva, dizendo que é do ensaio.</li>
+</ul>
+<h2>Com a skill (opcional)</h2>
+<p>Sugestão nova, fora do kit e não ensaiada. A A3 não depende disso.</p>
+<ul>
+<li>Só se sobrar tempo no fim da chamada (minutos 12 a 14, usando a folga) e se o ensaio mostrar que o Jarvis usa a skill: depois da fala 5, diga ou cole <code>FALAS_para_copiar\6_Opcional_documento_no_padrao.txt</code>. Senão, pule. O minuto 50 da palestra continua sendo o limite.</li>
+<li>No ensaio, a fala 6 passa se sair um documento no papel timbrado (logo e rodapé) com os horários do plano revisado, como rascunho, sem nada enviado nem agendado.</li>
+<li>Não se sabe se o Jarvis (dot) usa skills; só testando. Veja <a href="00_SKILL_Padrao_Secretariado_Sob_Medida/COMO_INSTALAR_E_USAR.md">COMO_INSTALAR_E_USAR.md</a>.</li>
+<li>O exemplo preparado <a href="00_SKILL_Padrao_Secretariado_Sob_Medida/EXEMPLOS_preparados_no_padrao/A3_Plano_v2_opcao_B_exemplo_preparado.pdf">A3_Plano_v2_opcao_B_exemplo_preparado.pdf</a> só vale se a turma escolher B e a fala 4 (14h45) tiver entrado, porque é o plano v2. Deixe-o aberto antes, em outra janela; só mostrar, nunca anexar nem colar na conversa. Diga que é um exemplo preparado.</li>
+</ul>
+<h2>Arquivos desta pasta</h2>
+<ul>
+<li><code>PASSO_A_PASSO.md</code>: este roteiro. Nunca colar nem anexar.</li>
+<li><a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/COLAR_na_conversa_antes_da_chamada/07_caso_voz_Jarvis.txt"><code>COLAR_na_conversa_antes_da_chamada\07_caso_voz_Jarvis.txt</code></a>: caso e regras para Jarvis. Colar inteiro antes da chamada.</li>
+<li><a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/0_Antes_reiniciar_rodada.txt"><code>FALAS_para_copiar\0_Antes_reiniciar_rodada.txt</code></a>: reinicia a rodada antes do evento, sem voto e sem mudança de prazo.</li>
+<li><a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/1_Apresentacao.txt"><code>FALAS_para_copiar\1_Apresentacao.txt</code></a>: fala 1 (0–2 min).</li>
+<li><a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/2A_Escolha_opcao_A.txt"><code>FALAS_para_copiar\2A_Escolha_opcao_A.txt</code></a> e <a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/2B_Escolha_opcao_B.txt"><code>FALAS_para_copiar\2B_Escolha_opcao_B.txt</code></a>: fala 2, conforme o voto (2–4 min).</li>
+<li><a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/3_Entrega_plano.txt"><code>FALAS_para_copiar\3_Entrega_plano.txt</code></a>: fala 3 (4–7 min).</li>
+<li><a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/4_Mudanca_14h45.txt"><code>FALAS_para_copiar\4_Mudanca_14h45.txt</code></a>: fala 4 (7–9 min).</li>
+<li><a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/5_Papel_humano.txt"><code>FALAS_para_copiar\5_Papel_humano.txt</code></a>: fala 5 (9–11 min).</li>
+<li><a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/6_Opcional_documento_no_padrao.txt"><code>FALAS_para_copiar\6_Opcional_documento_no_padrao.txt</code></a>: fala 6, nova e opcional (fora do kit); pede o plano no papel timbrado, com a skill. Só se sobrar tempo e o ensaio aprovar.</li>
+<li><a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/FALAS_para_copiar/X_Correcao_se_errar_horario.txt"><code>FALAS_para_copiar\X_Correcao_se_errar_horario.txt</code></a>: sugestão nova (fora do kit); só se Jarvis errar um horário, uma vez.</li>
+<li><a href="A3_Jarvis_voz_Reuniao_mudou_slides19-20/RESERVA_plano_B_nao_anexar/08_reserva_voz_Jarvis.txt"><code>RESERVA_plano_B_nao_anexar\08_reserva_voz_Jarvis.txt</code></a>: resultado preparado (conflito, opções A e B, nova condição, checklist humano). Só mostrar.</li>
+<li><code>SAIDAS_salve_aqui_o_resultado\</code>: vazia. Guarde aqui o plano em texto gerado no ensaio.</li>
+</ul>
+<h2>Sugestões para a plateia sentir a aceleração</h2>
+<p>Novas e opcionais; não estão no kit.</p>
+<ul>
+<li>Frase de entrada: &quot;E quando a reunião muda em cima da hora?&quot;</li>
+<li>No slide 19, antes de ligar, pergunte: &quot;Quantos minutos cabem antes do cliente?&quot; (resposta: 40). Se fizer a pergunta, corte do passo 1 a frase &quot;Sobram 40 minutos antes do cliente.&quot; e deixe a plateia responder.</li>
+<li>Durante a contagem dos votos, silencie o microfone da chamada, se houver botão de mudo. Se não houver, faça a votação no slide 19, antes de ligar, e informe o voto na fala 2.</li>
+<li>Deixe o slide 19 na tela durante as falas 1 e 2, para a plateia conferir as restrições. Da fala 3 em diante, mostre a conversa. O slide 20 atual não tem as restrições.</li>
+<li>Opcional: convide uma voluntária para conferir em voz alta se o plano respeita a diretora às 14h20 e o cliente das 15h às 15h45. Ela só fala com o microfone da chamada no mudo ou depois de encerrar a chamada, em até 30 segundos. Se a chamada começou atrasada, pule.</li>
+</ul>
+</div>
+  </details>
+</section>
+
+  <h2 id="checklist">Checklist do dia 17</h2>
+  <div class="box"><ul class="checklist"><li><label><input type="checkbox" data-key="ck0"> Notebook carregado, sem atualização pendente; &quot;Não incomodar&quot; ligado; Outlook, Teams e WhatsApp fechados.</label></li><li><label><input type="checkbox" data-key="ck1"> Internet própria testada dentro da sala (roteador ou segundo celular).</label></li><li><label><input type="checkbox" data-key="ck2"> Projetor em Duplicar (Win+P); texto legível do fundo da sala (zoom de 150% a 175% no navegador, fonte grande no Bloco de Notas).</label></li><li><label><input type="checkbox" data-key="ck3"> Deck certo aberto antes de a plateia entrar (a cópia com os slides 16 a 18 ocultos); essa cópia e a pasta de demos marcadas como &quot;Sempre manter neste dispositivo&quot; no OneDrive.</label></li><li><label><input type="checkbox" data-key="ck4"> ChatGPT e Claude logados no perfil da palestra, com barra lateral recolhida. Conversas pré-montadas: anexos e pedido colado, sem enviar.</label></li><li><label><input type="checkbox" data-key="ck5"> Skill padrao-secretariado-sob-medida ativa no Claude (e no ChatGPT, se usar) e skill &quot;ata-de-reuniao&quot; desligada.</label></li><li><label><input type="checkbox" data-key="ck6"> iPhone com 100%, carregador, Foco ligado e bloqueio automático em &quot;Nunca&quot;.</label></li><li><label><input type="checkbox" data-key="ck7"> Áudio do iPhone testado no som da sala, com uma única saída; cabo e adaptador conferidos.</label></li><li><label><input type="checkbox" data-key="ck8"> Jarvis: caso 07 colado e fala 0 enviada; ele espera a primeira pergunta. Conversa dele aberta numa aba, rolada até o fim.</label></li><li><label><input type="checkbox" data-key="ck9"> Reservas de cada demo abertas no Bloco de Notas ou como PDF de exemplo; pasta Downloads sem saídas de ensaio.</label></li><li><label><input type="checkbox" data-key="ck10"> Cronômetro do Windows pronto e cola de palco impressa.</label></li><li><label><input type="checkbox" data-key="ck11"> Nenhum e-mail, agenda ou dado pessoal na tela.</label></li></ul>
+    <button class="btn" id="clear">Desmarcar tudo</button> <span class="muted small">As marcações ficam só neste navegador.</span></div>
+
+  <h2 id="cronograma">Cronograma de 60 minutos</h2>
+  <div class="table-wrap"><table style="min-width:520px">
+    <thead><tr><th>Minutos</th><th>Slides</th><th>Condução</th></tr></thead><tbody><tr><td>0–20</td><td>1 a 13</td><td>Abertura e conceitos (no slide 10, a skill)</td></tr><tr><td>20–27</td><td>14</td><td>Demo 1 (A1: briefing no ChatGPT)</td></tr><tr><td>27–33</td><td>15</td><td>Demo 2 (A2: ata no Claude, com a skill)</td></tr><tr><td>—</td><td>16 a 18</td><td>Ocultos na cópia do PPT (o PowerPoint pula)</td></tr><tr><td>33–36</td><td>19</td><td>Apresentar o desafio da plateia (o voto acontece na chamada, salvo decisão diferente no ensaio)</td></tr><tr><td>36–50</td><td>20</td><td>Jarvis por voz (A3) e conferência: 12 minutos e 2 de folga</td></tr><tr><td>50–60</td><td>21</td><td>Fechamento e perguntas</td></tr></tbody></table></div>
+  <p class="muted small">Adaptado do manual de ensaio: os slides 16 a 18 estão ocultos na cópia &quot;Lawrence Teixeira - Agentes de IA - slides 16 a 18 ocultos.pptx&quot;, e os 6 minutos viraram folga no Jarvis (2) e no fechamento (4). As notas dentro do PPT têm horários antigos; use esta tabela. Use o relógio da sala ou de pulso e anote na cola os horários reais (início + 20, 27, 33, 36, 50).</p>
+
+  <section id="cola-wrap">
+    <h2>Cola de palco · 17/10 · A1 → A2 → A3</h2>
+    <p class="noprint muted small">Uma página para imprimir e deixar ao lado do notebook. <button class="btn btn-primary" id="print-cola">Imprimir a cola</button></p>
+    <div class="box" id="cola"><div class="cola-bloco"><h3>Relógio e regras</h3><ul><li>Início às ____ → +20 slide 14 (A1) ____ · +27 slide 15 (A2) ____ · +33 slide 19 (desafio) ____ · +36 chamada ____ · +50 slide 21 (fechamento e perguntas) ____ · slides 16 a 18 ocultos.</li><li>2 min sem resposta útil → reserva · no máximo 1 correção · voz: 1 nova tentativa de 30 s → texto na mesma conversa → reserva 08.</li></ul></div><div class="cola-bloco"><h3>A1 · ChatGPT · slide 14 · 7 min</h3><ul><li>Conversa pré-montada: 01_manual_executivo + 02_fontes_pre_reuniao + A1_PROMPT (ou A1_PROMPT_com_skill).</li><li>Casa do Parque: 6.900 + 1.400 = R$ 8.300 (R$ 300 acima do teto de 8.000) · Horizonte: R$ 7.600 (folga de 400).</li><li>22/10 é quinta (a sexta é 23/10) · Ana ocupada às 9h do dia 22 · opções: 22/10 às 10h ou 23/10 às 9h.</li><li>Lacunas: 30 confirmados + 4 pendentes · capacidade e cancelamento da Horizonte · acessibilidade da Casa do Parque · terceira proposta.</li><li>Reserva: reserva_briefing_trecho_do_06.txt (BRIEFING) ou A1_Briefing_exemplo_preparado.pdf.</li><li>Fecho: &quot;Temos opções e perguntas para decidir. A data ainda precisa de confirmação.&quot;</li></ul></div><div class="cola-bloco"><h3>A2 · Claude · slide 15 · 6 min</h3><ul><li>Com a skill: 01 + 03 + A2_PROMPT_com_skill; mostrar o SKILL.md (&quot;o procedimento está dentro da skill&quot;). Sem a skill: 01 + 03 + 04 + A2_PROMPT; mostrar o 04.</li><li>Decisões: encontro em 05/11, teto de R$ 8.000, não contratar hoje (T1 e T3).</li><li>Bruno: capacidade para 34 e cancelamento até 21/10 (T3–T4) · Camila: lista até 20/10 (T5).</li><li>Restrições alimentares: não informado (T6) · terceira proposta pendente (T4) · próxima reunião: data a confirmar (&quot;sexta, dia 22&quot; é contraditório) · T9 fora da ata · e-mail é rascunho, até 120 palavras.</li><li>Reserva: reserva_ata_e_email_trecho_do_06.txt (ATA e RASCUNHO DE E-MAIL) ou A2_Ata_e_email_exemplo_preparado.pdf.</li><li>Fecho: &quot;A ata organiza o que foi dito. Quem revisa precisa conferir responsáveis, prazos e o que ficou em aberto.&quot;</li><li>Transição para o slide 19: &quot;O agente prepara. Enviar, reservar, pagar ou agendar continua com vocês.&quot;</li></ul></div><div class="cola-bloco"><h3>A3 · Jarvis por voz · slides 19–20 · 3 + 12 min, mais 2 de folga (minutos da chamada: 0 = min 36)</h3><ul><li>Antes da plateia: 07 colado + fala 0 · Foco no iPhone · som testado.</li><li>Slide 19: pauta de 60 min, diretora às 14h20, cliente das 15h às 15h45 (fixo), orçamento até 16h, sala até 16h30 → só 40 min antes do cliente.</li><li>0–2: fala 1 (ele vê os 40 min e pede a escolha) · 2–4: voto (empate: B) → fala 2A ou 2B.</li><li>A: 14h20–15h · B: orçamento 14h20–14h50 e demais temas 15h45–16h15 (confirmar a diretora após 15h45).</li><li>4–7: fala 3 (plano escrito) · 7–9: fala 4, orçamento até 14h45 → A mantém só se o orçamento já terminava até 14h45 (na reserva, 14h40); senão, muda · B decide 14h20–14h45 e registra até 14h50.</li><li>9–11: &quot;O que vocês ainda revisariam?&quot; → fala 5 · 11–12: encerrar e ir ao slide 21.</li><li>Chamada começou depois do min 40: pule a fala 4; faça sempre as falas 3 e 5; slide 21 até o min 50.</li><li>Nunca: invadir 15h–15h45 · dizer que enviou ou agendou · presumir confirmações.</li><li>Reserva: 08_reserva_voz_Jarvis.txt (CONFLITO, OPÇÃO A ou B, NOVA CONDIÇÃO).</li><li>Fecho: &quot;A IA ajudou a reorganizar o plano. A conferência e a decisão continuam conosco.&quot;</li></ul></div></div>
+  </section>
+
+  <p class="muted small" style="margin-top:40px">O PPT original não foi alterado; a cópia com os slides 16 a 18 ocultos está na pasta Secretariado. A origem de cada arquivo está em <a href="Z_Apoio_manuais_e_ensaio/MAPA_origem_dos_arquivos.md">Z_Apoio_manuais_e_ensaio/MAPA_origem_dos_arquivos.md</a>.</p>
+</main>
+
+<div id="overlay" role="dialog" aria-modal="true" aria-label="Texto em tela cheia">
+  <div id="ov-tag" hidden>RESULTADO PREPARADO (RESERVA) — não é execução ao vivo</div>
+  <div class="bar"><button class="btn" id="ov-minus">A−</button><button class="btn" id="ov-plus">A+</button><button class="btn btn-primary" id="ov-close">Fechar (Esc)</button></div>
+  <pre id="ov-text"></pre>
+  <div id="ov-html" class="md" hidden></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function () {
+  var toast = document.getElementById('toast');
+  function say(msg) { toast.textContent = msg; toast.classList.add('on'); setTimeout(function () { toast.classList.remove('on'); }, 1800); }
+  function store(k, v) {
+    try {
+      if (v === undefined) return localStorage.getItem(k);
+      if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v);
+    } catch (e) { return null; }
+  }
+  function copy(text, btn) {
+    function fallback() {
+      var ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed'; ta.style.top = '-1000px'; document.body.appendChild(ta); ta.select();
+      var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta); return ok;
+    }
+    function done(ok) {
+      if (btn) {
+        var old = btn.getAttribute('data-label') || btn.textContent; btn.setAttribute('data-label', old);
+        btn.textContent = ok ? 'Copiado ✓' : 'Use Ctrl+C'; setTimeout(function () { btn.textContent = old; }, 1600);
+      }
+      say(ok ? 'Copiado. Cole com Ctrl+V.' : 'Não consegui copiar; selecione o texto e use Ctrl+C.');
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(fallback()); });
+    } else { done(fallback()); }
+  }
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () { copy(document.getElementById(b.getAttribute('data-copy')).textContent, b); });
+  });
+  // Caminho da pasta calculado a partir do local deste arquivo: continua certo se a pasta for movida.
+  var here = decodeURIComponent(location.pathname).replace(/^\/(?=[A-Za-z]:)/, '').replace(/\/[^\/]*$/, '');
+  var host = location.host ? '\\\\' + location.host : '';
+  document.querySelectorAll('[data-path]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      copy((host + here + '/' + b.getAttribute('data-path')).replace(/\//g, '\\'), b);
+    });
+  });
+  var ov = document.getElementById('overlay'), ovt = document.getElementById('ov-text'), ovh = document.getElementById('ov-html'), tag = document.getElementById('ov-tag'), size = 26, opener = null;
+  function show(id, btn) {
+    var el = document.getElementById(id); opener = btn;
+    // Reservas e pedidos são texto puro; os roteiros já vêm formatados (HTML gerado a partir dos .md desta pasta).
+    if (el.tagName === 'PRE') { ovt.textContent = el.textContent; ovt.hidden = false; ovh.hidden = true; ovh.innerHTML = ''; }
+    else { ovh.innerHTML = el.innerHTML; ovh.hidden = false; ovt.hidden = true; ovt.textContent = ''; }
+    tag.hidden = !btn.hasAttribute('data-reserva');
+    ov.classList.add('on'); ov.scrollTop = 0; document.getElementById('ov-close').focus();
+  }
+  function hide() { ov.classList.remove('on'); if (opener) opener.focus(); }
+  document.querySelectorAll('[data-show]').forEach(function (b) { b.addEventListener('click', function () { show(b.getAttribute('data-show'), b); }); });
+  document.getElementById('ov-close').addEventListener('click', hide);
+  document.getElementById('ov-plus').addEventListener('click', function () { size = Math.min(48, size + 3); ov.style.setProperty('--ov-size', size + 'px'); });
+  document.getElementById('ov-minus').addEventListener('click', function () { size = Math.max(16, size - 3); ov.style.setProperty('--ov-size', size + 'px'); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && ov.classList.contains('on')) hide(); });
+  document.querySelectorAll('.checklist input').forEach(function (c) {
+    var k = 'painel17-' + c.getAttribute('data-key'); c.checked = store(k) === '1';
+    c.addEventListener('change', function () { store(k, c.checked ? '1' : null); });
+  });
+  document.getElementById('clear').addEventListener('click', function () {
+    document.querySelectorAll('.checklist input').forEach(function (c) { c.checked = false; store('painel17-' + c.getAttribute('data-key'), null); });
+  });
+  document.getElementById('print-cola').addEventListener('click', function () {
+    document.body.classList.add('print-cola'); window.print();
+  });
+  window.addEventListener('afterprint', function () { document.body.classList.remove('print-cola'); });
+  var root = document.documentElement, theme = store('painel17-tema');
+  if (theme) root.setAttribute('data-theme', theme);
+  document.getElementById('theme').addEventListener('click', function () {
+    var cur = root.getAttribute('data-theme');
+    var dark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = dark ? 'light' : 'dark'; root.setAttribute('data-theme', next); store('painel17-tema', next);
+  });
+})();
+</script>
+</body>
+</html>
