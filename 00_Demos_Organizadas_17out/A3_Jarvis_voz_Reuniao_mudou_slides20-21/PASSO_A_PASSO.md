@@ -1,10 +1,10 @@
 # A3 · Jarvis por voz no iPhone · A reunião mudou
 
-**Slides 19 (desafio) e 20 (voz)** · Tempo de palco: 3 minutos no slide 19 + 12 minutos no slide 20 (minutos 33 a 50 da palestra: slide 19 de 33 a 36 e chamada de 36 a 50, com 2 minutos de folga; os slides 16 a 18 estão ocultos) · Origem: Kit_Ensaio_Secretariado
+**Slides 20 (desafio) e 21 (voz)** · Tempo de palco: 3 minutos no slide 20 + 12 minutos no slide 21 (minutos 33 a 50 da palestra: slide 20 de 33 a 36 e chamada de 36 a 50, com 2 minutos de folga; os slides 12 e 17 a 19 estão ocultos) · Origem: Kit_Ensaio_Secretariado
 
 Todos os dados são fictícios. Nada é enviado, agendado, reservado ou pago.
 
-> **Mudança de 11/10/2026:** a pasta de reserva (`08_reserva_voz_Jarvis.txt`) saiu. O plano B agora é seguir por texto na mesma conversa e, sem rede, mostrar o exemplo em PDF (só na opção B, depois da fala 4) ou conferir o plano com a plateia pelo slide 19.
+> **Mudança de 11/10/2026:** a pasta de reserva (`08_reserva_voz_Jarvis.txt`) saiu. O plano B agora é seguir por texto na mesma conversa e, sem rede, mostrar o exemplo em PDF (só na opção B, depois da fala 4) ou conferir o plano com a plateia pelo slide 20. À tarde, com o slide novo 7 (superinteligência), esta demo passou dos slides 19 e 20 para os 20 e 21 e a pasta foi renomeada.
 
 ## Tarefa do dia a dia
 
@@ -35,8 +35,8 @@ A reunião da diretoria mudou: a diretora só chega às 14h20 e há um compromis
 
 Nos passos 2 a 7, os minutos são da chamada (0 = minuto 36 da palestra).
 
-1. **Slide 19 (3 min), antes de iniciar a voz.** Apresente o caso em linguagem simples: "A reunião tinha 60 minutos, das 14h às 15h. A diretora só chega às 14h20. O compromisso com cliente das 15h às 15h45 é fixo. O orçamento precisa de decisão até as 16h. As outras pessoas e a sala estão disponíveis até as 16h30. Sobram 40 minutos antes do cliente." Mostre as opções do slide: A, concentrar decisões e deixar informes por escrito; B, dividir a pauta em dois blocos. A votação acontece depois, já na chamada (2–4 min).
-2. **Slide 20, 0–2 min:** inicie a chamada pelo botão de telefone testado e diga a fala `1_Apresentacao.txt` (as falas estão em `FALAS_para_copiar`). Daqui em diante, uma pergunta por vez: você controla o ritmo, repete as falas da plateia e informa o voto. Jarvis não vê mãos nem ouve a sala toda.
+1. **Slide 20 (3 min), antes de iniciar a voz.** Apresente o caso em linguagem simples: "A reunião tinha 60 minutos, das 14h às 15h. A diretora só chega às 14h20. O compromisso com cliente das 15h às 15h45 é fixo. O orçamento precisa de decisão até as 16h. As outras pessoas e a sala estão disponíveis até as 16h30. Sobram 40 minutos antes do cliente." Mostre as opções do slide: A, concentrar decisões e deixar informes por escrito; B, dividir a pauta em dois blocos. A votação acontece depois, já na chamada (2–4 min).
+2. **Slide 21, 0–2 min:** inicie a chamada pelo botão de telefone testado e diga a fala `1_Apresentacao.txt` (as falas estão em `FALAS_para_copiar`). Daqui em diante, uma pergunta por vez: você controla o ritmo, repete as falas da plateia e informa o voto. Jarvis não vê mãos nem ouve a sala toda.
    - **Confira logo depois:** ele reconhece que cabem só 40 minutos antes do cliente e pede a escolha humana.
 3. **2–4 min:** faça a votação por mãos levantadas, conte e diga `2A_Escolha_opcao_A.txt` ou `2B_Escolha_opcao_B.txt`, conforme o voto. Empate (sugestão nova): fico com B (mostra melhor a surpresa das 14h45).
    - **Confira logo depois:** A, 14h20 às 15h; B, orçamento das 14h20 às 14h50 e demais temas das 15h45 às 16h15. Outras divisões podem servir se respeitarem as restrições. Na B, a presença da diretora após 15h45 ainda precisa ser confirmada; se Jarvis não disser isso, diga você.
@@ -46,7 +46,7 @@ Nos passos 2 a 7, os minutos são da chamada (0 = minuto 36 da palestra).
    - **Confira logo depois** o plano realmente gerado: se o orçamento já terminava até 14h45, pode manter; se terminava depois, tem de mudar. Isso vale também para a A: ela só se mantém se o orçamento já terminava até 14h45 (no exemplo, às 14h40). No exemplo B, cabem 25 minutos de decisão (14h20 às 14h45) e 5 de registro; é preciso validar se esse tempo basta.
 6. **9–11 min:** pergunte à turma: "O que vocês ainda revisariam?" Repita uma resposta curta para Jarvis. Depois diga `5_Papel_humano.txt`.
    - **Confira logo depois** se a resposta aponta: conferir fatos, validar formato, presença e sala, revisar a mensagem e autorizar ações quando aplicável. Nada foi enviado ou agendado.
-7. **11–12 min:** use a folga para latência, encerre a chamada e volte ao slide 21.
+7. **11–12 min:** use a folga para latência, encerre a chamada e volte ao slide 22.
 
 **Fechamento:** "A IA ajudou a reorganizar o plano. A conferência e a decisão continuam conosco."
 
@@ -61,13 +61,13 @@ Nos passos 2 a 7, os minutos são da chamada (0 = minuto 36 da palestra).
 
 ## Se der errado
 
-- **Erro de horário** (por exemplo, invadir o cliente das 15h às 15h45): diga uma única vez `FALAS_para_copiar\X_Correcao_se_errar_horario.txt`. É uma sugestão nova, fora do kit; as notas do slide 20 preveem pedir uma verificação objetiva uma vez. Ensaie antes de usar.
-- **Chamada começando com atraso** (por exemplo, depois do minuto 40 da palestra): pule a fala 4 (14h45) e preserve a entrega escrita e a fala 5, como preveem as notas do slide 20.
+- **Erro de horário** (por exemplo, invadir o cliente das 15h às 15h45): diga uma única vez `FALAS_para_copiar\X_Correcao_se_errar_horario.txt`. É uma sugestão nova, fora do kit; as notas do slide 21 preveem pedir uma verificação objetiva uma vez. Ensaie antes de usar.
+- **Chamada começando com atraso** (por exemplo, depois do minuto 40 da palestra): pule a fala 4 (14h45) e preserve a entrega escrita e a fala 5, como preveem as notas do slide 21.
 - **Voz falhou:** tente de novo uma vez, por até 30 segundos. Evite abrir configurações e histórico no telão.
 - Se o texto ainda funcionar, siga colando as falas de `FALAS_para_copiar` na conversa. Diga que a demonstração segue por texto.
-- Se o acesso ou a rede também falharem, a turma tiver escolhido B e a fala 4 já tiver entrado, mostre o `A3_Plano_v2_opcao_B_exemplo_preparado.pdf`, que é o plano depois da fala 4, e diga que é um exemplo preparado. Nos outros casos, volte ao slide 19 e confira o plano com a plateia pelas restrições: na A, das 14h20 às 15h; na B, orçamento das 14h20 às 14h50 e o restante das 15h45 às 16h15. Se a fala 4 já tiver entrado, o orçamento precisa estar decidido até 14h45.
+- Se o acesso ou a rede também falharem, a turma tiver escolhido B e a fala 4 já tiver entrado, mostre o `A3_Plano_v2_opcao_B_exemplo_preparado.pdf`, que é o plano depois da fala 4, e diga que é um exemplo preparado. Nos outros casos, volte ao slide 20 e confira o plano com a plateia pelas restrições: na A, das 14h20 às 15h; na B, orçamento das 14h20 às 14h50 e o restante das 15h45 às 16h15. Se a fala 4 já tiver entrado, o orçamento precisa estar decidido até 14h45.
 - Convide a plateia a conferir os horários e as validações.
-- **Atrasado:** o limite de encerramento vale mais que cada frase. Volte ao slide 21 até o minuto 50 da palestra e preserve os 10 minutos finais (fechamento e perguntas).
+- **Atrasado:** o limite de encerramento vale mais que cada frase. Volte ao slide 22 até o minuto 50 da palestra e preserve os 10 minutos finais (fechamento e perguntas).
 - Se guardou em `SAIDAS_salve_aqui_o_resultado` uma saída verdadeira do ensaio, pode mostrá-la, dizendo que é do ensaio.
 
 ## Com a skill (opcional)
@@ -98,7 +98,7 @@ Sugestão nova, fora do kit e não ensaiada. A A3 não depende disso.
 Novas e opcionais; não estão no kit.
 
 - Frase de entrada: "E quando a reunião muda em cima da hora?"
-- No slide 19, antes de ligar, pergunte: "Quantos minutos cabem antes do cliente?" (resposta: 40). Se fizer a pergunta, corte do passo 1 a frase "Sobram 40 minutos antes do cliente." e deixe a plateia responder.
-- Durante a contagem dos votos, silencie o microfone da chamada, se houver botão de mudo. Se não houver, faça a votação no slide 19, antes de ligar, e informe o voto na fala 2.
-- Deixe o slide 19 na tela durante as falas 1 e 2, para a plateia conferir as restrições. Da fala 3 em diante, mostre a conversa. O slide 20 atual não tem as restrições.
+- No slide 20, antes de ligar, pergunte: "Quantos minutos cabem antes do cliente?" (resposta: 40). Se fizer a pergunta, corte do passo 1 a frase "Sobram 40 minutos antes do cliente." e deixe a plateia responder.
+- Durante a contagem dos votos, silencie o microfone da chamada, se houver botão de mudo. Se não houver, faça a votação no slide 20, antes de ligar, e informe o voto na fala 2.
+- Deixe o slide 20 na tela durante as falas 1 e 2, para a plateia conferir as restrições. Da fala 3 em diante, mostre a conversa. O slide 21 atual não tem as restrições.
 - Opcional: convide uma voluntária para conferir em voz alta se o plano respeita a diretora às 14h20 e o cliente das 15h às 15h45. Ela só fala com o microfone da chamada no mudo ou depois de encerrar a chamada, em até 30 segundos. Se a chamada começou atrasada, pule.

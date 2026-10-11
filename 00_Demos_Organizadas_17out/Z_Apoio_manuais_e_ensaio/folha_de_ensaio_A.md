@@ -31,7 +31,7 @@
 
 ## Datas e tempos
 
-Datas (recomendação nova das análises; o manual sugere o ensaio completo em 16/10): ensaio completo com o deck de 7/10 em 14/10, correções em 15/10 e só uma checagem curta em 16/10.
+Datas (recomendação nova das análises; o manual sugere o ensaio completo em 16/10): ensaio completo com o deck atual (Lawrence Teixeira - Agentes de IA.pptx, 28 slides, com o slide 7 novo no cronômetro) em 14/10, correções em 15/10 e só uma checagem curta em 16/10.
 
 - Tempo A1: ____ · A2: ____ · A3: ____
 - Ensaio completo 14/10: ____ · Checagem 16/10: ____
@@ -41,4 +41,4 @@ Datas (recomendação nova das análises; o manual sugere o ensaio completo em 1
 
 ## Critério de aprovação
 
-A aprovação exige todos os itens obrigatórios, sem dados pessoais na projeção. Meta de palco: 7 + 6 + 12 minutos, mais 2 de folga no Jarvis; fechamento e perguntas a partir do minuto 50 (slides 16 a 18 ocultos). Após 2 minutos sem resposta útil, ou uma correção sem sucesso, use o plano B (saída salva ou exemplo preparado); na voz, só uma nova tentativa de até 30 segundos. Pronto é conduzir cada demo sem adivinhar o próximo passo, explicar a origem de um resultado e trocar para o plano B com tranquilidade.
+A aprovação exige todos os itens obrigatórios, sem dados pessoais na projeção. Meta de palco: 7 + 6 + 12 minutos, mais 2 de folga no Jarvis; fechamento e perguntas a partir do minuto 50 (slides 12 e 17 a 19 ocultos). Após 2 minutos sem resposta útil, ou uma correção sem sucesso, use o plano B (saída salva ou exemplo preparado); na voz, só uma nova tentativa de até 30 segundos. Pronto é conduzir cada demo sem adivinhar o próximo passo, explicar a origem de um resultado e trocar para o plano B com tranquilidade.

@@ -150,9 +150,9 @@ Todos os dados são fictícios. Nada é enviado, agendado, reservado ou pago.
 
 | Demo | Ferramenta | Tarefa do dia a dia | O que conferir |
 | --- | --- | --- | --- |
-| [A1](00_Demos_Organizadas_17out/A1_Claude_Briefing_pre-reuniao_slide14) | Claude, com a skill | **Antes da reunião:** juntar pauta, e-mails e agenda num briefing de uma página | Custos contra o teto, data, agenda e lacunas |
-| [A2](00_Demos_Organizadas_17out/A2_Claude_Ata_e_acompanhamento_slide15) | Claude, com a skill | **Depois da reunião:** ata, tarefas com responsável e prazo e e-mail de acompanhamento | Decisões, responsáveis, prazos e lacunas |
-| [A3](00_Demos_Organizadas_17out/A3_Jarvis_voz_Reuniao_mudou_slides19-20) | ChatGPT por voz (também funciona por texto) | **Quando a reunião muda:** reorganizar a pauta, com a plateia votando | Restrições de horário e a escolha que só as pessoas podem fazer |
+| [A1](00_Demos_Organizadas_17out/A1_Claude_Briefing_pre-reuniao_slide15) | Claude, com a skill | **Antes da reunião:** juntar pauta, e-mails e agenda num briefing de uma página | Custos contra o teto, data, agenda e lacunas |
+| [A2](00_Demos_Organizadas_17out/A2_Claude_Ata_e_acompanhamento_slide16) | Claude, com a skill | **Depois da reunião:** ata, tarefas com responsável e prazo e e-mail de acompanhamento | Decisões, responsáveis, prazos e lacunas |
+| [A3](00_Demos_Organizadas_17out/A3_Jarvis_voz_Reuniao_mudou_slides20-21) | ChatGPT por voz (também funciona por texto) | **Quando a reunião muda:** reorganizar a pauta, com a plateia votando | Restrições de horário e a escolha que só as pessoas podem fazer |
 
 A1 e A2 contam a mesma história fictícia (antes e depois da mesma reunião). A A3 é outra reunião, com o seu próprio caso.
 
@@ -182,11 +182,12 @@ As pastas das demos seguem o mesmo padrão:
 
 ## Os slides
 
-[`Lawrence Teixeira - Agentes de IA.pptx`](Lawrence%20Teixeira%20-%20Agentes%20de%20IA.pptx?raw=true) tem os 26 slides da palestra. O GitHub não mostra o PowerPoint na página: clique no nome do arquivo e o download começa direto. Se abrir uma página, clique no ícone de download.
+[`Lawrence Teixeira - Agentes de IA.pptx`](Lawrence%20Teixeira%20-%20Agentes%20de%20IA.pptx?raw=true) tem os 28 slides da palestra. O GitHub não mostra o PowerPoint na página: clique no nome do arquivo e o download começa direto. Se abrir uma página, clique no ícone de download.
 
-- Os slides 16 a 18 (comparação de fornecedores, viagem executiva e autonomia com limites) estão ocultos: o PowerPoint os pula na apresentação. Para mostrar um deles, digite o número do slide e tecle Enter.
-- As demos entram nos slides 14 (A1), 15 (A2), 19 e 20 (A3). Por isso, os nomes das pastas citam os slides.
-- As notas do apresentador dentro do PPT têm horários de uma versão anterior. As dos slides 14 e 15 também têm pedidos antigos, e a do 20, falas antigas da A3. A do 14 cita o arquivo `06_resultados_reserva.txt`, que não existe, e a do 15 ainda lista o procedimento da ata entre os anexos, mas agora ele vem da skill. A do 13 ainda manda abrir o ChatGPT e o Claude; desde 11/10/2026, a A1 e a A2 usam só o Claude. Para as demos, valem os `PASSO_A_PASSO.md`.
+- O slide 7, novo em 11/10/2026, explica a troca de "inteligência artificial" por "superinteligência" no governo dos EUA (ordem executiva de 29/09/2026) e a diferença entre IA, AGI e superinteligência. As fontes dele e os dados novos do slide 9 estão no slide 28.
+- Os slides 12 (limites práticos dos agentes) e 17 a 19 (comparação de fornecedores, viagem executiva e autonomia com limites) estão ocultos: o PowerPoint os pula na apresentação. Para mostrar um deles, digite o número do slide e tecle Enter.
+- As demos entram nos slides 15 (A1), 16 (A2), 20 e 21 (A3). Por isso, os nomes das pastas citam os slides.
+- As notas do apresentador dentro do PPT têm horários de uma versão anterior. As dos slides 15 e 16 também têm pedidos antigos, e a do 21, falas antigas da A3. A do 15 cita o arquivo `06_resultados_reserva.txt`, que não existe, e a do 16 ainda lista o procedimento da ata entre os anexos, mas agora ele vem da skill. A do 14 ainda manda abrir o ChatGPT e o Claude; desde 11/10/2026, a A1 e a A2 usam só o Claude. Para as demos, valem os `PASSO_A_PASSO.md`.
 
 ## Material do apresentador
 
@@ -197,7 +198,7 @@ São os arquivos da preparação da palestra. Eles citam minutos de palco, o kit
 | [`00_LEIA_PRIMEIRO.md`](00_Demos_Organizadas_17out/00_LEIA_PRIMEIRO.md) | Comece aqui: as demos na ordem do palco, o cronograma, o que tem em cada pasta, a skill e o checklist antes do dia 17 |
 | [`00_PAINEL_abrir_no_navegador.html`](00_Demos_Organizadas_17out/00_PAINEL_abrir_no_navegador.html) | Painel de preparação e ensaio: pedidos com botão Copiar, roteiros formatados, links para o plano B, checklist do dia, cronograma e cola de palco para imprimir. Funciona sem internet. No GitHub aparece só o código: baixe o repositório e abra o arquivo no navegador |
 | `PASSO_A_PASSO.md` (um em cada pasta de demo) | O roteiro de cada demo: tempo de palco, preparação, o que conferir na tela e plano B |
-| [`Z_Apoio_manuais_e_ensaio/`](00_Demos_Organizadas_17out/Z_Apoio_manuais_e_ensaio) | Manual de ensaio (Word), folha de avaliação do ensaio e o mapa de origem de cada arquivo. O manual é a versão original do kit: põe a A1 no ChatGPT e cita arquivos que saíram em 11/10/2026. Para as demos, valem os `PASSO_A_PASSO.md` |
+| [`Z_Apoio_manuais_e_ensaio/`](00_Demos_Organizadas_17out/Z_Apoio_manuais_e_ensaio) | Manual de ensaio (Word), folha de avaliação do ensaio e o mapa de origem de cada arquivo. O manual é a versão original do kit: põe a A1 no ChatGPT, cita arquivos que saíram em 11/10/2026 e usa a numeração antiga dos slides (a partir do 7, some um). Para as demos, valem os `PASSO_A_PASSO.md` |
 
 ## Adaptar para a sua empresa
 
@@ -245,9 +246,9 @@ A avaliação apontou pontos a melhorar: jargão técnico no documento, resposta
 │   │   ├── EXEMPLOS_preparados_no_padrao/         ← briefing, ata e plano no padrão
 │   │   ├── COMPARACAO_mesma_ata_sem_e_com_skill/  ← a mesma ata sem e com a skill
 │   │   └── COMO_INSTALAR_E_USAR.md                ← guia do apresentador
-│   ├── A1_Claude_Briefing_pre-reuniao_slide14/    ← demo 1: briefing antes da reunião
-│   ├── A2_Claude_Ata_e_acompanhamento_slide15/    ← demo 2: ata e e-mail de acompanhamento
-│   ├── A3_Jarvis_voz_Reuniao_mudou_slides19-20/   ← demo 3: a reunião mudou (voz)
+│   ├── A1_Claude_Briefing_pre-reuniao_slide15/    ← demo 1: briefing antes da reunião
+│   ├── A2_Claude_Ata_e_acompanhamento_slide16/    ← demo 2: ata e e-mail de acompanhamento
+│   ├── A3_Jarvis_voz_Reuniao_mudou_slides20-21/   ← demo 3: a reunião mudou (voz)
 │   └── Z_Apoio_manuais_e_ensaio/                  ← manual e folha de ensaio, mapa de origem
 ├── docs/                                          ← imagens deste README
 ├── Lawrence Teixeira - Agentes de IA.pptx         ← os slides

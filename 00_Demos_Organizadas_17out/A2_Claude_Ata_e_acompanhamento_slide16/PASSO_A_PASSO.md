@@ -1,10 +1,10 @@
 # A2 · Claude · Ata e acompanhamento da reunião
 
-**Slide 15** · Tempo de palco: 6 minutos (minutos 27 a 33 da palestra) · Origem: Kit_Ensaio_Secretariado
+**Slide 16** · Tempo de palco: 6 minutos (minutos 27 a 33 da palestra) · Origem: Kit_Ensaio_Secretariado
 
 Todos os dados são fictícios. Nada é enviado, agendado, reservado ou pago.
 
-> **Mudanças de 11/10/2026:** esta demo usa a skill padrao-secretariado-sob-medida, que traz o procedimento da ata. Por isso, entram só 2 anexos (01 e 03), e ficou um pedido só, `A2_PROMPT.txt`. Saíram o `04_procedimento_ata.txt`, o pedido sem skill, o de correção e a pasta de reserva; o plano B agora é a ata salva em `SAIDAS_salve_aqui_o_resultado` ou o exemplo em PDF. O manual de ensaio e a nota do slide 15 ainda mandam anexar e mostrar o 04; vale este roteiro.
+> **Mudanças de 11/10/2026:** esta demo usa a skill padrao-secretariado-sob-medida, que traz o procedimento da ata. Por isso, entram só 2 anexos (01 e 03), e ficou um pedido só, `A2_PROMPT.txt`. Saíram o `04_procedimento_ata.txt`, o pedido sem skill, o de correção e a pasta de reserva; o plano B agora é a ata salva em `SAIDAS_salve_aqui_o_resultado` ou o exemplo em PDF. O manual de ensaio e a nota do slide 16 ainda mandam anexar e mostrar o 04; vale este roteiro. À tarde, com o slide novo 7 (superinteligência), esta demo passou do slide 15 para o 16 e a pasta foi renomeada.
 
 ## Tarefa do dia a dia
 
@@ -20,9 +20,9 @@ Depois da reunião, transformar a transcrição em ata curta, lista de tarefas c
 
 ## Antes de subir ao palco
 
-- Use o deck "Lawrence Teixeira - Agentes de IA.pptx", que já está com os slides 16 a 18 ocultos. A numeração dos slides é a mesma do deck que o kit chama de "deck de 7/10/2026". Esta demo entra no slide 15.
+- Use o deck "Lawrence Teixeira - Agentes de IA.pptx", que já está com os slides 12 e 17 a 19 ocultos. Desde 11/10/2026, com o slide novo 7 (superinteligência), a numeração a partir do 7 está um número acima da do deck que o kit chama de "deck de 7/10/2026". Esta demo entra no slide 16.
 - Entre na conta do Claude antes de projetar. Feche e-mail, agenda e abas pessoais. Desative as notificações no Windows e no iPhone. Confira que a projeção não mostra dados pessoais.
-- **Skill:** a padrao-secretariado-sob-medida precisa estar ligada no Claude, em Customize > Skills, e a "ata-de-reuniao" da sua conta, desligada: as duas disputariam o mesmo pedido de ata. A skill exige a execução de código ligada, em Settings > Capabilities ("Code execution and file creation"). Instale só `padrao-secretariado-sob-medida.zip`, não o plugin: a skill não é plugin nem conector e não dá acesso a contas (slide 10).
+- **Skill:** a padrao-secretariado-sob-medida precisa estar ligada no Claude, em Customize > Skills, e a "ata-de-reuniao" da sua conta, desligada: as duas disputariam o mesmo pedido de ata. A skill exige a execução de código ligada, em Settings > Capabilities ("Code execution and file creation"). Instale só `padrao-secretariado-sob-medida.zip`, não o plugin: a skill não é plugin nem conector e não dá acesso a contas (slide 11).
 - Deixe aberto no Bloco de Notas o [SKILL.md](../00_SKILL_Padrao_Secretariado_Sob_Medida/padrao-secretariado-sob-medida/SKILL.md) da skill (para o passo 3). Abra o `A2_PROMPT.txt` só depois de fechar os .txt da A1. Em outras janelas, deixe abertos os dois arquivos do plano B: `SAIDAS_salve_aqui_o_resultado\Ata_reuniao_15-10-2026.docx` (saída do teste de 10/10) e o [A2_Ata_e_email_exemplo_preparado.pdf](../00_SKILL_Padrao_Secretariado_Sob_Medida/EXEMPLOS_preparados_no_padrao/A2_Ata_e_email_exemplo_preparado.pdf).
 - No ensaio, aprenda a abrir conversa nova, anexar TXT e abrir a resposta no Claude. Os nomes dos controles podem variar. Confira se o Word sai no papel timbrado e se o Claude pede autorização antes de gerá-lo. Não instale plugins nem conecte contas.
 - Ensaie a conferência de Bruno, Camila, restrições alimentares e a data aberta. Se o ensaio gerar uma saída melhor, guarde-a em `SAIDAS_salve_aqui_o_resultado`.
@@ -35,7 +35,7 @@ Depois da reunião, transformar a transcrição em ata curta, lista de tarefas c
 
 1. Abra uma conversa nova no Claude. Não reutilize a conversa do briefing.
 2. Anexe somente os 2 arquivos de `ANEXAR_estes_arquivos`: `01_manual_executivo.txt` e `03_transcricao_reuniao.txt`.
-3. Mostre o `SKILL.md` por alguns segundos (o passo a passo da ata fica em `references\modelos\ata.md`). Diga: "Reparem que não anexei o procedimento da ata: ele está dentro da skill instalada. É o como fazer do slide 10."
+3. Mostre o `SKILL.md` por alguns segundos (o passo a passo da ata fica em `references\modelos\ata.md`). Diga: "Reparem que não anexei o procedimento da ata: ele está dentro da skill instalada. É o como fazer do slide 11."
 4. Abra `A2_PROMPT.txt` no Bloco de Notas, Ctrl+A, Ctrl+C, cole na conversa e envie.
 5. Quando a resposta chegar, mostre as tarefas. Abra `ANEXAR_estes_arquivos\03_transcricao_reuniao.txt` e confira T3, T5 e T6.
 6. Mostre o rascunho do e-mail. Abra o Word se estiver pronto e mostre o papel timbrado. Encerre e volte ao deck.
@@ -50,13 +50,13 @@ Depois da reunião, transformar a transcrição em ata curta, lista de tarefas c
 - **Próxima reunião:** data a confirmar, sem horários livres inventados, porque a agenda não entra nesta conversa. "Sexta-feira, dia 22" é contraditório.
 - O comentário pessoal de T9 fica de fora. O e-mail continua como rascunho, com assunto e até 120 palavras.
 - **Word no padrão:** logo no cabeçalho, faixa "Rascunho para revisão", seção "O que depende de revisão humana" e rodapé com a marca, com os mesmos fatos acima.
-- A tabela do slide 15 é um exemplo preparado com as mesmas três tarefas. A resposta ao vivo pode usar outras palavras; o que vale são estes fatos.
+- A tabela do slide 16 é um exemplo preparado com as mesmas três tarefas. A resposta ao vivo pode usar outras palavras; o que vale são estes fatos.
 
 ## Se der errado
 
 - Erro em responsável, prazo ou horário: peça uma única correção, por exemplo: "Confira T3, T5 e T6. Corrija responsáveis e prazos usando apenas esses trechos. Remova horários sem fonte e mantenha a próxima reunião como data a confirmar."
 - Após 2 minutos sem resposta útil, ou uma correção sem sucesso, pare. Diga: "Vou mostrar o resultado de um teste feito antes, para continuarmos a conferência."
-- Abra `SAIDAS_salve_aqui_o_resultado\Ata_reuniao_15-10-2026.docx`, a ata do teste de 10/10 no Claude, com a skill. Diga que é de um teste anterior. Na revisão humana, ela pede para conferir a data da reunião (15/10), posterior à data de preparo (10/10). Se perguntarem, diga que foi a IA que notou a data. Ela tem 4 tarefas, e não 3 como o slide 15: a quarta vem de T8 (verificar a data e a agenda de Ana). O e-mail fica na página 2. Mostre os mesmos pontos e volte ao deck no horário previsto. Se o Word não abrir, mostre o [A2_Ata_e_email_exemplo_preparado.pdf](../00_SKILL_Padrao_Secretariado_Sob_Medida/EXEMPLOS_preparados_no_padrao/A2_Ata_e_email_exemplo_preparado.pdf) e diga que é um exemplo preparado.
+- Abra `SAIDAS_salve_aqui_o_resultado\Ata_reuniao_15-10-2026.docx`, a ata do teste de 10/10 no Claude, com a skill. Diga que é de um teste anterior. Na revisão humana, ela pede para conferir a data da reunião (15/10), posterior à data de preparo (10/10). Se perguntarem, diga que foi a IA que notou a data. Ela tem 4 tarefas, e não 3 como o slide 16: a quarta vem de T8 (verificar a data e a agenda de Ana). O e-mail fica na página 2. Mostre os mesmos pontos e volte ao deck no horário previsto. Se o Word não abrir, mostre o [A2_Ata_e_email_exemplo_preparado.pdf](../00_SKILL_Padrao_Secretariado_Sob_Medida/EXEMPLOS_preparados_no_padrao/A2_Ata_e_email_exemplo_preparado.pdf) e diga que é um exemplo preparado.
 - Skill que não carrega ou Word atrasado: siga com o texto da conversa. Não troque de pedido nem mexa na skill no palco.
 - Com a skill, o texto completo pode chegar só depois do Word: o `SKILL.md` manda gerar o arquivo antes de entregar a resposta. No ensaio, cronometre o tempo até o texto completo e ajuste por ele o limite de 2 minutos.
 - Atenção: os horários da agenda F4 pertencem à demo A1. Aqui eles não podem aparecer como disponibilidade confirmada.
@@ -78,5 +78,5 @@ Novas e opcionais; não estão no kit.
 - Antes de enviar, pergunte: "Quanto tempo vocês levam para fazer uma ata como esta e o e-mail de acompanhamento?"
 - Cronômetro visível ao enviar, como na A1: clique em "Volta" quando o texto terminar e pare depois da conferência. Diga os dois tempos medidos.
 - Enquanto o Claude trabalha, pergunte: "Quem lembra do problema do dia 22? Vejam se ele volta." e "O que não deveria entrar numa ata?" (o comentário pessoal de T9).
-- Essa caça ao erro só funciona se a tabela do slide 15 e a frase sobre a data da próxima reunião entrarem por clique. Hoje o PPT não tem animação. Sem isso, mostre o slide 15 só depois da resposta ou pule as perguntas.
+- Essa caça ao erro só funciona se a tabela do slide 16 e a frase sobre a data da próxima reunião entrarem por clique. Hoje o PPT não tem animação. Sem isso, mostre o slide 16 só depois da resposta ou pule as perguntas.
 - Na fala, chame o procedimento da ata, que está dentro da skill, de "procedimento padrão, como um POP": é o tipo de instrução que vira uma skill. Diga "pedido" em vez de prompt.

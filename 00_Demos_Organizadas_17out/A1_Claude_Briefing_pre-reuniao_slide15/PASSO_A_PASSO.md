@@ -1,10 +1,10 @@
 # A1 · Claude · Briefing para preparar a reunião
 
-**Slide 14** · Tempo de palco: 7 minutos (minutos 20 a 27 da palestra) · Origem: Kit_Ensaio_Secretariado
+**Slide 15** · Tempo de palco: 7 minutos (minutos 20 a 27 da palestra) · Origem: Kit_Ensaio_Secretariado
 
 Todos os dados são fictícios. Nada é enviado, agendado, reservado ou pago.
 
-> **Mudanças de 11/10/2026:** esta demo passou do ChatGPT para o Claude, o mesmo assistente da A2, e usa a skill padrao-secretariado-sob-medida. Ficou um pedido só, `A1_PROMPT.txt`. Saíram o pedido sem skill, o de correção e a pasta de reserva; o plano B agora é a saída salva em `SAIDAS_salve_aqui_o_resultado` ou o exemplo em PDF. O manual de ensaio e a nota do slide 13 ainda falam em ChatGPT; vale este roteiro.
+> **Mudanças de 11/10/2026:** esta demo passou do ChatGPT para o Claude, o mesmo assistente da A2, e usa a skill padrao-secretariado-sob-medida. Ficou um pedido só, `A1_PROMPT.txt`. Saíram o pedido sem skill, o de correção e a pasta de reserva; o plano B agora é a saída salva em `SAIDAS_salve_aqui_o_resultado` ou o exemplo em PDF. O manual de ensaio e a nota do slide 14 ainda falam em ChatGPT; vale este roteiro. À tarde, com o slide novo 7 (superinteligência), esta demo passou do slide 14 para o 15 e a pasta foi renomeada.
 
 ## Tarefa do dia a dia
 
@@ -19,9 +19,9 @@ Antes de uma reunião, juntar a pauta anterior, os e-mails e a agenda da executi
 
 ## Antes de subir ao palco
 
-- Use o deck "Lawrence Teixeira - Agentes de IA.pptx", que já está com os slides 16 a 18 ocultos. A numeração dos slides é a mesma do deck que o kit chama de "deck de 7/10/2026". Esta demo entra no slide 14.
+- Use o deck "Lawrence Teixeira - Agentes de IA.pptx", que já está com os slides 12 e 17 a 19 ocultos. Desde 11/10/2026, com o slide novo 7 (superinteligência), a numeração a partir do 7 está um número acima da do deck que o kit chama de "deck de 7/10/2026". Esta demo entra no slide 15.
 - Entre na conta do Claude antes de projetar. Feche e-mail, agenda e abas pessoais. Desative as notificações no Windows e no iPhone. Confira o que o projetor mostra: nenhum dado pessoal.
-- **Skill:** a padrao-secretariado-sob-medida precisa estar ligada no Claude, em Customize > Skills, e a "ata-de-reuniao" da sua conta, desligada. A skill exige a execução de código ligada, em Settings > Capabilities ("Code execution and file creation"). Instale só `padrao-secretariado-sob-medida.zip`, não o plugin: a skill não é plugin nem conector e não dá acesso a contas (slide 10). Instalação e teste: [COMO_INSTALAR_E_USAR.md](../00_SKILL_Padrao_Secretariado_Sob_Medida/COMO_INSTALAR_E_USAR.md).
+- **Skill:** a padrao-secretariado-sob-medida precisa estar ligada no Claude, em Customize > Skills, e a "ata-de-reuniao" da sua conta, desligada. A skill exige a execução de código ligada, em Settings > Capabilities ("Code execution and file creation"). Instale só `padrao-secretariado-sob-medida.zip`, não o plugin: a skill não é plugin nem conector e não dá acesso a contas (slide 11). Instalação e teste: [COMO_INSTALAR_E_USAR.md](../00_SKILL_Padrao_Secretariado_Sob_Medida/COMO_INSTALAR_E_USAR.md).
 - Deixe aberto no Bloco de Notas: `A1_PROMPT.txt`. Em outras janelas, deixe abertos os dois arquivos do plano B: `SAIDAS_salve_aqui_o_resultado\Briefing_Encontro_Parceiros_Aurora.docx` (saída do teste de 10/10) e o [A1_Briefing_exemplo_preparado.pdf](../00_SKILL_Padrao_Secretariado_Sob_Medida/EXEMPLOS_preparados_no_padrao/A1_Briefing_exemplo_preparado.pdf).
 - No ensaio, aprenda a abrir conversa nova, anexar TXT e abrir a resposta no Claude. Os nomes dos controles podem variar. Confira se o Word sai no papel timbrado e se o Claude pede autorização antes de gerá-lo. Não instale plugins nem conecte contas.
 - Ensaie até conduzir sem procurar arquivos. Se o ensaio gerar uma saída melhor, guarde-a em `SAIDAS_salve_aqui_o_resultado`.
@@ -39,7 +39,7 @@ Antes de uma reunião, juntar a pauta anterior, os e-mails e a agenda da executi
 3. Diga: "Vou dar duas fontes para o assistente preparar um briefing. Quero conferir o preço completo e a data da reunião."
 4. Abra `A1_PROMPT.txt` no Bloco de Notas, Ctrl+A, Ctrl+C, cole na conversa e envie. Espere a resposta sem abrir novas tarefas.
 5. Leia os três primeiros pontos de **O que conferir na tela** (preço, data e agenda, lacunas) e localize cada um na resposta. Abra `ANEXAR_estes_arquivos\02_fontes_pre_reuniao.txt`, mostre a seção de origem (F1 e F2 para preço e teto; F3 e F4 para data e agenda) e compare com a resposta.
-6. Abra o Word se ele já estiver pronto. Se ele abrir no papel timbrado, diga: "É a skill do slide 10, o como fazer: montei uma vez o padrão de documentos do Secretariado, e agora o briefing já sai no papel timbrado." Encerre e volte ao deck.
+6. Abra o Word se ele já estiver pronto. Se ele abrir no papel timbrado, diga: "É a skill do slide 11, o como fazer: montei uma vez o padrão de documentos do Secretariado, e agora o briefing já sai no papel timbrado." Encerre e volte ao deck.
 
 **Fechamento:** "Temos opções e perguntas para decidir. A data ainda precisa de confirmação."
 
@@ -50,7 +50,7 @@ Antes de uma reunião, juntar a pauta anterior, os e-mails e a agenda da executi
 - **Lacunas:** 30 confirmados e 4 pendentes. Capacidade e cancelamento da Horizonte, acessibilidade da Casa do Parque e terceira proposta ainda exigem confirmação. O prazo de Camila não está informado nesta etapa.
 - A resposta cita F1 a F4, escreve "não informado" onde falta dado e não envia nada nem cria convite.
 - **Word no padrão:** logo no cabeçalho, faixa "Rascunho para revisão", seção "O que depende de revisão humana" e rodapé com a marca Secretariado Sob Medida.
-- As palavras podem variar. O que vale é passar nestas checagens. O slide 14 mostra duas delas: R$ 8.300 e 22/10 é quinta-feira.
+- As palavras podem variar. O que vale é passar nestas checagens. O slide 15 mostra duas delas: R$ 8.300 e 22/10 é quinta-feira.
 
 ## Se der errado
 
@@ -77,5 +77,5 @@ Novas e opcionais; não estão no kit.
 - Antes de enviar o pedido, pergunte: "Quanto tempo vocês levariam para montar este briefing?" Repita duas ou três respostas. Se a A1 começar depois do marco do minuto 20 da palestra, pule esta pergunta.
 - Ao enviar, dispare um cronômetro visível (app Relógio do Windows, em janela compacta). Quando o texto terminar, clique em "Volta"; pare o cronômetro depois da sua conferência. Diga os dois tempos: o da IA (a volta) e o total com a conferência. Use só tempos medidos, nunca estimativas.
 - Enquanto a IA trabalha, mostre `ANEXAR_estes_arquivos\02_fontes_pre_reuniao.txt` e pergunte: "Qual local é o mais barato?" e "Tem algo estranho no e-mail da Camila?". Depois compare com a resposta.
-- Essa caça ao erro só funciona se os quadros do slide 14 (R$ 8.300 e 22/10 é quinta-feira) entrarem por clique. Hoje o PPT não tem animação. Sem isso, mostre o slide 14 só depois da resposta ou pule as perguntas.
+- Essa caça ao erro só funciona se os quadros do slide 15 (R$ 8.300 e 22/10 é quinta-feira) entrarem por clique. Hoje o PPT não tem animação. Sem isso, mostre o slide 15 só depois da resposta ou pule as perguntas.
 - Mostre o `01_manual_executivo.txt` por 15 segundos: "É o que vocês já sabem de cabeça sobre o seu executivo, escrito uma vez e reaproveitado em todo pedido."
