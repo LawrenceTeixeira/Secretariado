@@ -31,22 +31,22 @@ Criada em 10/10/2026 para a palestra de 17/10/2026. Os dados da A1 e da A2 são 
 
 ## ChatGPT (opcional)
 
-Desde 11/10/2026, a A1 roda no Claude. O ChatGPT fica só na A3, com o Jarvis, que não usa esta skill. Instalar a skill no ChatGPT é opcional e não faz parte das demos.
+A A1 e a A2 rodam no Claude. O ChatGPT fica só na A3, com o Jarvis, que não usa esta skill. Instalar a skill no ChatGPT é opcional e não faz parte das demos.
 
 1. As skills do ChatGPT seguem o mesmo padrão aberto (`SKILL.md`). Saíram do beta em 9/7/2026 e, em outubro de 2026, estavam disponíveis nas contas de empresa e de ensino (planos Business, Enterprise, Healthcare e Edu). Nelas, quem libera é o administrador.
 2. Para enviar, abra o ChatGPT no computador, clique em Plugins, na barra lateral, e abra a aba Skills. Clique em Create > Upload from your computer e envie o mesmo ZIP. Os nomes dos menus mudam com frequência.
 
 ## Jarvis (A3, slide 16)
 
-- Desde 12/10/2026, a A3 é o caso real do slide 16, sem esta skill. O roteiro fica na seção 8 do [00_LEIA_PRIMEIRO.md](../00_LEIA_PRIMEIRO.md#8-a3--jarvis-ao-vivo-slide-16).
-- Saíram, com a pasta antiga da A3, o caso fictício "A reunião mudou" e a fala opcional 6 (documento no padrão). Não se sabe se o dot do Jarvis usa skills; a A3 não depende disso.
+- A A3 é o caso real do slide 16, sem esta skill. O roteiro fica na seção 8 do [00_LEIA_PRIMEIRO.md](../00_LEIA_PRIMEIRO.md#8-a3--jarvis-ao-vivo-slide-16).
+- Não se sabe se o dot do Jarvis usa skills; a A3 não depende disso.
 
 ## Teste antes do evento (com os arquivos das demos)
 
 - **A1, no Claude:** `A1_PROMPT.txt`, com os 2 arquivos de `ANEXAR_estes_arquivos` (01 e 02).
 - **A2, no Claude:** `A2_PROMPT.txt`, com os 2 arquivos de `ANEXAR_estes_arquivos` (01 e 03). O procedimento da ata está dentro da skill.
 - Confira os mesmos pontos de sempre (`PASSO_A_PASSO.md` de cada demo). Confira também logo, rodapé, a faixa "Rascunho para revisão" e a seção "O que depende de revisão humana".
-- Se a skill não carregar ou o arquivo não sair, siga com o texto da conversa e, como plano B, mostre a saída salva em `SAIDAS_salve_aqui_o_resultado` ou o exemplo em PDF. Não troque de pedido nem mexa na skill no palco.
+- Se a skill não carregar ou o arquivo não sair, siga com o texto da conversa e, como plano B, mostre a saída salva em `SAIDAS_salve_aqui_o_resultado`, o exemplo em PDF ou, com internet, o exemplo pronto que o slide 15 abre ("Briefing encontro de parceiros ↗" na A1, "Ata e acompanhamento de transcrição ↗" na A2). Não troque de pedido nem mexa na skill no palco.
 - As saídas do teste de 10/10 estão em `SAIDAS_salve_aqui_o_resultado`, na pasta de cada demo.
 
 ## Como mostrar na palestra (slide 11, de 30 a 60 segundos)

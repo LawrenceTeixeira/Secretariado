@@ -25,7 +25,8 @@ Antes de uma reunião, juntar a pauta anterior, os e-mails e a agenda da executi
 - Deixe aberto no Bloco de Notas: `A1_PROMPT.txt`. Em outras janelas, deixe abertos os dois arquivos do plano B: `SAIDAS_salve_aqui_o_resultado\Briefing_Encontro_Parceiros_Aurora.docx` (saída do teste de 10/10) e o [A1_Briefing_exemplo_preparado.pdf](../00_SKILL_Padrao_Secretariado_Sob_Medida/EXEMPLOS_preparados_no_padrao/A1_Briefing_exemplo_preparado.pdf).
 - No ensaio, aprenda a abrir conversa nova, anexar TXT e abrir a resposta no Claude. Os nomes dos controles podem variar. Confira se o Word sai no papel timbrado e se o Claude pede autorização antes de gerá-lo. Não instale plugins nem conecte contas.
 - Ensaie até conduzir sem procurar arquivos. Se o ensaio gerar uma saída melhor, guarde-a em `SAIDAS_salve_aqui_o_resultado`.
-- No ensaio, teste o plano B com a rede desligada: abra a saída salva e o PDF de exemplo e localize preço, data e opções de horário. Religue a rede e teste também o link "Briefing encontro de parceiros ↗" do slide 15.
+- No ensaio, teste o plano B com a rede desligada: abra a saída salva e o PDF de exemplo e localize preço, data e opções de horário. Religue a rede depois.
+- Na checagem de 16/10 ou na manhã do dia 17, fora do telão: no modo de apresentação, clique no link "Briefing encontro de parceiros ↗" do slide 15 e confira que ele abre o exemplo pronto no perfil de navegador da palestra.
 - Recomendação nova (fora do kit): pré-monte a conversa antes de a plateia entrar. Abra uma conversa nova no Claude, anexe os 2 arquivos e cole o pedido, sem enviar. No palco, mostre os anexos, diga a frase do passo 3 e envie.
 - Recomendação nova: a A2 também roda no Claude. Pré-monte cada demo numa aba própria do navegador (A1 numa, A2 na outra) e não recarregue as abas. Nas configurações de desempenho do navegador (Chrome ou Edge), inclua claude.ai na lista de sites sempre ativos, para a aba não ser suspensa. No ensaio, deixe as duas abas paradas pelo tempo que vão esperar no dia 17 (da pré-montagem até o minuto 27 da palestra) e confira que os anexos e o pedido continuam lá, sem enviar.
 - Recomendação nova: pause a memória do Claude para o ensaio e para a palestra. Em Settings > Memory, desligue "Generate memory from chats" e escolha "Pause memory", nunca "Reset memory", que apaga tudo o que o Claude lembra, sem volta. Na mesma tela, desligue "Search and reference chats". A A1 e a A2 contam a mesma história, e a memória pode levar dados dos ensaios ou de uma demo para a outra. Na interface em português, os nomes podem estar traduzidos.
@@ -50,7 +51,7 @@ Antes de uma reunião, juntar a pauta anterior, os e-mails e a agenda da executi
 - **Lacunas:** 30 confirmados e 4 pendentes. Capacidade e cancelamento da Horizonte, acessibilidade da Casa do Parque e terceira proposta ainda exigem confirmação. O prazo de Camila não está informado nesta etapa.
 - A resposta cita F1 a F4, escreve "não informado" onde falta dado e não envia nada nem cria convite.
 - **Word no padrão:** logo no cabeçalho, faixa "Rascunho para revisão", seção "O que depende de revisão humana" e rodapé com a marca Secretariado Sob Medida.
-- As palavras podem variar. O que vale é passar nestas checagens, que você confere em voz alta: nenhum slide mostra as respostas.
+- As palavras podem variar. O que vale é passar nestas checagens. Confira cada uma em voz alta, porque nenhum slide mostra as respostas.
 
 ## Se der errado
 
