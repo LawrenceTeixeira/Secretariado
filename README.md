@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/logo_secretariado_fundo_branco.png" alt="Secretariado Sob Medida" width="380">
+  <img src="imagens/logo_secretariado_fundo_branco.png" alt="Secretariado Sob Medida" width="380">
 </p>
 
 <h1 align="center">Agentes de IA na prática para o secretariado</h1>
@@ -17,7 +17,7 @@ Este repositório reúne o material da palestra:
 - **Uma skill pronta**, `padrao-secretariado-sob-medida`. Ela reúne o papel timbrado, os modelos de documentos e as checagens que uma equipe de secretariado faz, empacotados para o agente de IA seguir sempre do mesmo jeito. Veja [Como instalar](#como-instalar).
 - **Três demonstrações.** Duas são reproduzíveis, com dados fictícios: preparar uma reunião (briefing) e registrar a reunião (ata e e-mail). A terceira é um caso real, ao vivo: o Jarvis, agente do apresentador no ChatGPT, marca 30 minutos com um convidado e envia a ele a apresentação por e-mail. Veja [Como rodar uma demo](#como-rodar-uma-demo).
 - **Os slides** da palestra, em PowerPoint. Veja [Os slides](#os-slides).
-- **O material de preparação do apresentador:** roteiros com os minutos de palco, inclusive o da demo com o Jarvis, e painel de ensaio. Veja [Material do apresentador](#material-do-apresentador).
+- **O material de preparação do apresentador:** roteiros com os minutos de palco, inclusive o da demo com o Jarvis, e uma cola de palco. Veja [Material do apresentador](#material-do-apresentador).
 
 A skill, as demos e o material do apresentador ficam na pasta [`00_Demos_Organizadas_17out`](00_Demos_Organizadas_17out). Os slides ficam na raiz.
 
@@ -52,7 +52,7 @@ Uma skill não cria acesso a contas nem a sistemas: quem dá acesso é o conecto
 
 ## A skill padrao-secretariado-sob-medida
 
-![A mesma ata, sem e com a skill](docs/comparacao_ata_sem_e_com_skill.png)
+![A mesma ata, sem e com a skill](imagens/comparacao_ata_sem_e_com_skill.png)
 
 *A mesma ata, gerada em teste a partir da mesma transcrição fictícia. Sem a skill, o agente escolheu sozinho o formato. Com a skill, o documento sai no padrão da casa.*
 
@@ -150,7 +150,7 @@ Na A1 e na A2, todos os dados são fictícios, e nada é enviado, agendado, rese
 
 | Demo | Ferramenta | Tarefa do dia a dia | O que conferir |
 | --- | --- | --- | --- |
-| [A1](00_Demos_Organizadas_17out/A1_Claude_Briefing_pre-reuniao_slide14) | Claude, com a skill | **Antes da reunião:** juntar pauta, e-mails e agenda num briefing de uma página | Custos contra o teto, data, agenda e lacunas |
+| [A1](00_Demos_Organizadas_17out/A1_Claude_Briefing_pre-reuniao_slide15) | Claude, com a skill | **Antes da reunião:** juntar pauta, e-mails e agenda num briefing de uma página | Custos contra o teto, data, agenda e lacunas |
 | [A2](00_Demos_Organizadas_17out/A2_Claude_Ata_e_acompanhamento_slide15) | Claude, com a skill | **Depois da reunião:** ata, tarefas com responsável e prazo e e-mail de acompanhamento | Decisões, responsáveis, prazos e lacunas |
 | [A3](00_Demos_Organizadas_17out/00_LEIA_PRIMEIRO.md#8-a3--jarvis-ao-vivo-slide-16) | ChatGPT por voz: o Jarvis, agente do apresentador | **Caso real, ao vivo:** marcar 30 minutos com um convidado e enviar a ele a apresentação por e-mail | Destinatário, dia e horário, anexo (a versão de 23 slides), assunto e texto, conferidos pela plateia antes do "pode enviar" |
 
@@ -165,7 +165,7 @@ Os pedidos e os anexos da A1 e da A2 estão em `.txt`, para copiar e colar sem s
 3. Anexe os arquivos da pasta `ANEXAR_estes_arquivos` da demo. Nunca anexe o `PASSO_A_PASSO.md`, o arquivo do pedido nem o que estiver em `SAIDAS_salve_aqui_o_resultado`.
 4. Abra o arquivo do pedido (`A1_PROMPT.txt` ou `A2_PROMPT.txt`), copie todo o texto, cole na caixa de mensagem e envie.
 5. Confira a resposta com a seção **O que conferir na tela** do `PASSO_A_PASSO.md` da demo.
-6. Só depois, compare com a saída de um teste do autor, em `SAIDAS_salve_aqui_o_resultado`, ou com o exemplo em PDF da pasta [`EXEMPLOS_preparados_no_padrao`](00_Demos_Organizadas_17out/00_SKILL_Padrao_Secretariado_Sob_Medida/EXEMPLOS_preparados_no_padrao). Eles têm as respostas.
+6. Só depois, compare com a saída de um teste do autor, em `SAIDAS_salve_aqui_o_resultado`, com o exemplo em PDF da pasta [`EXEMPLOS_preparados_no_padrao`](00_Demos_Organizadas_17out/00_SKILL_Padrao_Secretariado_Sob_Medida/EXEMPLOS_preparados_no_padrao) ou com a conversa de exemplo que o slide 15 abre no Claude (veja [Os slides](#os-slides)). Eles têm as respostas.
 
 **A3, caso real:** não há arquivos para refazer esta demo. Jarvis é o nome do agente que o apresentador criou no ChatGPT, ligado à conta dele. O convidado autoriza antes a participação, o convite e o envio. O roteiro, com o texto que o apresentador cola na conversa do Jarvis na manhã do dia 17, está na seção 8 do [`00_LEIA_PRIMEIRO.md`](00_Demos_Organizadas_17out/00_LEIA_PRIMEIRO.md#8-a3--jarvis-ao-vivo-slide-16). O envio com anexo foi testado em 12/10/2026; a agenda e o convite ainda vão ser ensaiados. Há também uma versão curta, só com o e-mail. Para tentar algo parecido, use a sua conta, envie só para você ou para quem autorizou e ajuste as permissões para o agente pedir a sua aprovação antes de enviar.
 
@@ -180,14 +180,13 @@ As pastas da A1 e da A2 seguem o mesmo padrão:
 
 ## Os slides
 
-[`Lawrence Teixeira - Agentes de IA.pptx`](Lawrence%20Teixeira%20-%20Agentes%20de%20IA.pptx?raw=true) tem os 23 slides da palestra, nenhum oculto. O GitHub não mostra o PowerPoint na página: clique no nome do arquivo e o download começa direto. Se abrir uma página, clique no ícone de download.
+[`Lawrence Teixeira - Agentes de IA.pptx`](Lawrence%20Teixeira%20-%20Agentes%20de%20IA.pptx?raw=true) tem 23 slides. O slide 7 é oculto: é a versão ampliada do gráfico do slide 6 e só aparece quando o apresentador passa o mouse sobre esse gráfico. Na apresentação, aparecem 22 slides. O GitHub não mostra o PowerPoint na página: clique no nome do arquivo e o download começa direto. Se abrir uma página, clique no ícone de download.
 
-- Em 12/10/2026, o PPT passou de 28 para 23 slides. Saiu o antigo slide 7, sobre a superinteligência. Saíram também os quatro slides ocultos (limites práticos dos agentes, comparação de fornecedores, viagem executiva e autonomia com limites) e o slide "A reunião mudou. E agora?", da A3 antiga. A versão de 28 slides continua no histórico do Git (commit 7691b0f).
-- No mesmo dia, os slides 5 a 8 mudaram de ordem. Agora são: 5, IA no Brasil; 6, o impacto no secretariado; 7, o que é IA generativa; 8, a evolução da IA generativa. A linha do tempo do slide 8 mantém o balão sobre a superinteligência (o governo dos EUA passou a chamar a IA de "Super Intelligence"), e as fontes estão no slide 23.
-- O slide 3 foi corrigido. O título agora é "Agentes de IA: mercado deve crescer 46% ao ano": as barras mostram só o mercado de agentes de IA, e os US$ 2,7 trilhões são o gasto com toda a IA em 2026.
-- O slide 11 é novo: "Agentes de trabalho na sua rotina", com o Claude Cowork, o ChatGPT Work e o Copilot Cowork. As fontes estão nas notas dele e no slide 22.
-- As demos entram nos slides 14 (A1), 15 (A2) e 16 (A3). Por isso, os nomes das pastas da A1 e da A2 citam os slides. O 17 é o encerramento, e do 18 ao 23 vem o apêndice: ferramentas, links para aprender e fontes.
-- As notas do slide 16 (Jarvis) estão vazias de propósito: o roteiro da A3 está na seção 8 do [`00_LEIA_PRIMEIRO.md`](00_Demos_Organizadas_17out/00_LEIA_PRIMEIRO.md#8-a3--jarvis-ao-vivo-slide-16). Outras notas ainda têm trechos antigos. As dos slides 5 a 8, que mudaram de ordem, e a do 10 têm horários antigos. A do 12 ainda traz as referências dos cartões que saíram da galeria (marcadas como só para consulta). A do 13 ainda manda abrir o ChatGPT e o Claude para os casos da reunião e da ata; desde 11/10/2026, a A1 e a A2 usam só o Claude, e o ChatGPT fica para a A3. As dos slides 14 e 15 têm pedidos antigos: a do 14 cita o arquivo `06_resultados_reserva.txt`, que não existe, e a do 15 ainda lista o procedimento da ata entre os anexos, mas agora ele vem da skill. Para a A1 e a A2, valem os `PASSO_A_PASSO.md`.
+- Do 1 ao 14, a abertura e os conceitos: mercado e adoção da IA, inclusive no Brasil; impacto no secretariado; IA generativa e a evolução dela; o que é um agente de IA e os componentes dele; agentes de trabalho (Claude Cowork, ChatGPT Work e Copilot Cowork); e assistentes de IA, com a diferença entre Cowork e assistentes persistentes.
+- O 15 abre as demonstrações e é o slide da A1 e da A2. Por isso, os nomes das pastas das duas terminam em `slide15`. Ele tem um QR que baixa este repositório em ZIP (o mesmo arquivo do botão **Code > Download ZIP**) e dois links que abrem conversas de exemplo no Claude: [Briefing encontro de parceiros](https://claude.ai/share/46d1b09c-b81a-415c-b520-5aedcec3992b), da A1, e [Ata e acompanhamento de transcrição](https://claude.ai/share/0827618b-e1ba-4bd7-9dee-896571a3be73), da A2.
+- O 16 é a A3, com o Jarvis ao vivo. O 17 é o encerramento, e do 18 ao 23 vem o apêndice de consulta: ferramentas, links para aprender e fontes.
+- As notas do slide 16 estão vazias de propósito: o roteiro da A3 está na seção 8 do [`00_LEIA_PRIMEIRO.md`](00_Demos_Organizadas_17out/00_LEIA_PRIMEIRO.md#8-a3--jarvis-ao-vivo-slide-16). Algumas notas ainda têm trechos antigos, como horários de outra ordem dos slides e, no 15, a orientação de abrir o ChatGPT e o Claude para os casos da reunião e da ata (a A1 e a A2 usam só o Claude). Para a A1 e a A2, valem os `PASSO_A_PASSO.md`.
+- As versões anteriores do PPT continuam no histórico do Git.
 
 ## Material do apresentador
 
@@ -195,8 +194,7 @@ São os arquivos da preparação da palestra. Eles citam minutos de palco e deci
 
 | Arquivo | Para que serve |
 | --- | --- |
-| [`00_LEIA_PRIMEIRO.md`](00_Demos_Organizadas_17out/00_LEIA_PRIMEIRO.md) | Comece aqui: as demos na ordem do palco, o cronograma, o que tem em cada pasta, a skill, o checklist antes do dia 17 e o roteiro da A3, com o texto para colar na conversa do Jarvis |
-| [`00_PAINEL_abrir_no_navegador.html`](00_Demos_Organizadas_17out/00_PAINEL_abrir_no_navegador.html) | Painel de preparação e ensaio: pedidos com botão Copiar, roteiros formatados (inclusive o do Jarvis, na A3), links para o plano B da A1 e da A2, checklist do dia, cronograma e cola de palco para imprimir. Funciona sem internet. No GitHub aparece só o código: baixe o repositório e abra o arquivo no navegador |
+| [`00_LEIA_PRIMEIRO.md`](00_Demos_Organizadas_17out/00_LEIA_PRIMEIRO.md) | Comece aqui: as demos na ordem do palco, o cronograma, o que tem em cada pasta, a skill, a [cola de palco](00_Demos_Organizadas_17out/00_LEIA_PRIMEIRO.md#4-cola-de-palco), o checklist antes do dia 17 e o roteiro da A3, com o texto para colar na conversa do Jarvis |
 | `PASSO_A_PASSO.md` (um na pasta da A1 e outro na da A2) | O roteiro de cada demo: tempo de palco, preparação, o que conferir na tela e plano B |
 
 ## Adaptar para a sua empresa
@@ -236,7 +234,6 @@ A avaliação apontou pontos a melhorar: jargão técnico no documento, resposta
 .
 ├── 00_Demos_Organizadas_17out/
 │   ├── 00_LEIA_PRIMEIRO.md                        ← comece aqui (apresentador) e roteiro da A3
-│   ├── 00_PAINEL_abrir_no_navegador.html          ← painel de preparação e ensaio
 │   ├── 00_SKILL_Padrao_Secretariado_Sob_Medida/
 │   │   ├── padrao-secretariado-sob-medida/        ← a skill (SKILL.md, references, assets, scripts)
 │   │   ├── padrao-secretariado-sob-medida.zip     ← o arquivo para instalar
@@ -245,9 +242,9 @@ A avaliação apontou pontos a melhorar: jargão técnico no documento, resposta
 │   │   ├── EXEMPLOS_preparados_no_padrao/         ← briefing, ata e plano no padrão
 │   │   ├── COMPARACAO_mesma_ata_sem_e_com_skill/  ← a mesma ata sem e com a skill
 │   │   └── COMO_INSTALAR_E_USAR.md                ← guia do apresentador
-│   ├── A1_Claude_Briefing_pre-reuniao_slide14/    ← demo 1: briefing antes da reunião
+│   ├── A1_Claude_Briefing_pre-reuniao_slide15/    ← demo 1: briefing antes da reunião
 │   └── A2_Claude_Ata_e_acompanhamento_slide15/    ← demo 2: ata e e-mail de acompanhamento
-├── docs/                                          ← imagens deste README
+├── imagens/                                       ← imagens deste README
 ├── Lawrence Teixeira - Agentes de IA.pptx         ← os slides
 └── README.md
 ```

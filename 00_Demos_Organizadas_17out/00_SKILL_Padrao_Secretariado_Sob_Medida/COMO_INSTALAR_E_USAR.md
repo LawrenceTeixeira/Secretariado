@@ -19,7 +19,7 @@ Criada em 10/10/2026 para a palestra de 17/10/2026. Os dados da A1 e da A2 são 
 - [plugin-secretariado-sob-medida](plugin-secretariado-sob-medida/) e `plugin-secretariado-sob-medida.zip`: o mesmo conteúdo como plugin (opcional, para o Claude Code).
 - [EXEMPLOS_preparados_no_padrao](EXEMPLOS_preparados_no_padrao/): o briefing da A1 e a ata e o e-mail da A2, em Word e PDF, gerados com a skill a partir dos resultados preparados dos kits. Mostram como fica e servem de reserva visual dessas duas demos (diga que é exemplo preparado). O plano v2 (`A3_Plano_v2_opcao_B_exemplo_preparado`) era do caso fictício antigo da A3, que saiu em 12/10/2026: fica só como exemplo do padrão de documentos, sem ser reserva de nenhuma demo.
 - [papel_timbrado.docx](padrao-secretariado-sob-medida/assets/papel_timbrado.docx): papel timbrado em branco, para uso manual no Word.
-- [COMPARACAO_mesma_ata_sem_e_com_skill](COMPARACAO_mesma_ata_sem_e_com_skill/): a mesma ata gerada em teste sem e com a skill, em PDF, para mostrar no slide 10.
+- [COMPARACAO_mesma_ata_sem_e_com_skill](COMPARACAO_mesma_ata_sem_e_com_skill/): a mesma ata gerada em teste sem e com a skill, em PDF, para mostrar no slide 11.
 
 ## Instalar no Claude (demos A1 e A2)
 
@@ -49,14 +49,14 @@ Desde 11/10/2026, a A1 roda no Claude. O ChatGPT fica só na A3, com o Jarvis, q
 - Se a skill não carregar ou o arquivo não sair, siga com o texto da conversa e, como plano B, mostre a saída salva em `SAIDAS_salve_aqui_o_resultado` ou o exemplo em PDF. Não troque de pedido nem mexa na skill no palco.
 - As saídas do teste de 10/10 estão em `SAIDAS_salve_aqui_o_resultado`, na pasta de cada demo.
 
-## Como mostrar na palestra (slide 10, de 30 a 60 segundos)
+## Como mostrar na palestra (slide 11, de 30 a 60 segundos)
 
 1. Abra a pasta `padrao-secretariado-sob-medida` e mostre: `SKILL.md` (as instruções), `references\modelos` (os modelos), `assets` (logo e papel timbrado) e `scripts` (o gerador e a conferência).
 2. Diga: "Uma skill é o jeito da casa empacotado. Montei uma vez o padrão de documentos do Secretariado; agora qualquer agente da equipe entrega no mesmo formato e com as mesmas conferências."
 3. Na A2, antes de enviar: "Reparem que não anexei o procedimento da ata: ele está dentro da skill."
 4. Plugin (opcional): "O plugin é a caixa que junta skills e, no futuro, os conectores da agenda e do e-mail, com permissão da TI." Mostre a pasta `plugin-secretariado-sob-medida`.
 5. Opcional: abra lado a lado os dois PDFs de `COMPARACAO_mesma_ata_sem_e_com_skill` e diga: "Mesma tarefa, mesma transcrição. Sem a skill, cada agente faz de um jeito; com a skill, sai no padrão da casa." Diga que são resultados de teste.
-6. Lembre o limite do slide 10: a skill não dá acesso a contas nem a sistemas (quem dá acesso é o conector, com permissão); ela ensina como fazer.
+6. Lembre o limite do slide 11: a skill não dá acesso a contas nem a sistemas (quem dá acesso é o conector, com permissão); ela ensina como fazer.
 
 ## Cuidados
 
